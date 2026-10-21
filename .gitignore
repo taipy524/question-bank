@@ -9,6 +9,9 @@
 .env.*
 !.env.example
 
+# Local database / vector index snapshots (may contain secrets)
+backups/
+
 # Runtime data (should not be committed)
 chromadb_data/
 backend/uploads/
