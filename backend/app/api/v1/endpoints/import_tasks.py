@@ -198,6 +198,8 @@ async def create_import_tasks(
             file_type = 'docx'
         elif ext == '.md':
             file_type = 'markdown'
+        elif ext == '.pdf':
+            file_type = 'pdf'
         else:
             continue 
             
@@ -223,7 +225,7 @@ async def create_import_tasks(
         created_tasks.append(task)
     
     if not created_tasks:
-         raise HTTPException(status_code=400, detail="No valid files found (supported: .docx, .md, .zip)")
+         raise HTTPException(status_code=400, detail="No valid files found (supported: .docx, .md, .pdf, .zip)")
 
     await db.commit()
     

@@ -16,6 +16,7 @@ from app.models.import_task import ImportTask, ImportTaskStatus
 from app.models.question import QuestionStatus
 from app.models.user import User
 from app.services.doc_processor import doc_processor
+from app.services.pdf_processor import pdf_processor
 from app.services.embedding import reload_embedding_function
 from app.services.importing.contracts import ImportDefaults
 from app.services.importing.normalize import question_importer
@@ -62,6 +63,17 @@ async def process_task(db: AsyncSession, task: ImportTask):
             import uuid
             proc_task_id = str(uuid.uuid4())
             result = await doc_processor.process_markdown(content, db=db, filename=task.original_filename, task_id=proc_task_id, mode=task.mode or "extract", subject_id=subject_id)
+        elif task.file_type == 'pdf':
+            import uuid
+            proc_task_id = str(uuid.uuid4())
+            result = await pdf_processor.process_pdf(
+                file_path,
+                db=db,
+                filename=task.original_filename,
+                task_id=proc_task_id,
+                mode=task.mode or "extract",
+                subject_id=subject_id,
+            )
             
         if result:
             # Save questions via the shared importer (same path as /questions/batch-legacy).

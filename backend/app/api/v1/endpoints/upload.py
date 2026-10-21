@@ -15,6 +15,7 @@ from app.models.composition import Composition
 from app.models.import_task import ImportTask
 from app.services.doc_processor import doc_processor
 from app.services.importing.review import extracted_to_v2_review
+from app.services.pdf_processor import pdf_processor
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -94,6 +95,54 @@ async def upload_docx(
     except Exception as e:
         logger.exception(
             "Failed to process DOCX: filename=%s mode=%s method=%s subject_id=%s",
+            file.filename,
+            mode,
+            method,
+            subject_id,
+        )
+        raise HTTPException(status_code=500, detail=str(e)) from e
+
+@router.post("/pdf")
+async def upload_pdf(
+    db: deps.SessionDep,
+    file: UploadFile = File(...),
+    mode: str = "extract",
+    method: str = "ai",
+    subject_id: int = None,
+):
+    """Upload and process a PDF file (text layer → markdown, scanned pages → vision)."""
+    if not (file.filename or "").lower().endswith('.pdf'):
+        raise HTTPException(status_code=400, detail="Only .pdf files are supported")
+
+    # Create upload directory
+    upload_session_id = str(uuid.uuid4())
+    upload_dir = settings.UPLOAD_DIR / upload_session_id
+    upload_dir.mkdir(parents=True, exist_ok=True)
+
+    file_path = upload_dir / file.filename
+
+    # Save file
+    content = await file.read()
+    await asyncio.to_thread(file_path.write_bytes, content)
+
+    try:
+        result = await pdf_processor.process_pdf(
+            file_path,
+            db,
+            filename=file.filename,
+            mode=mode,
+            method=method,
+            subject_id=subject_id,
+        )
+        _as_review(result, subject_id)
+        result["file_path"] = str(file_path)
+        await _attach_duplicate_hint(result, db, content)
+        return result
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    except Exception as e:
+        logger.exception(
+            "Failed to process PDF: filename=%s mode=%s method=%s subject_id=%s",
             file.filename,
             mode,
             method,

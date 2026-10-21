@@ -485,7 +485,7 @@ const getResultCount = (summaryJson?: string) => {
                     @dragover.prevent="handleDragOver"
                     @dragleave.prevent="handleDragLeave"
                     @drop.prevent="handleDrop">
-                    <input type="file" multiple accept=".docx,.md,.zip" class="hidden" id="file-upload"
+                    <input type="file" multiple accept=".docx,.md,.pdf,.zip" class="hidden" id="file-upload"
                         @change="handleFileChange" :disabled="isUploading">
                     <input ref="folderInput" type="file" webkitdirectory directory multiple class="hidden"
                         @change="handleFolderChange" :disabled="isUploading">
@@ -496,7 +496,7 @@ const getResultCount = (summaryJson?: string) => {
                         </div>
                         <div class="space-y-1">
                             <span class="text-lg font-medium block">点击选择文件 (支持多选)</span>
-                            <span class="text-sm text-muted-foreground">支持拖拽上传，支持批量上传 .docx, .md, .zip 格式。上传文件后，系统将自动处理，不需要一直👀着。</span>
+                            <span class="text-sm text-muted-foreground">支持拖拽上传，支持批量上传 .docx, .md, .pdf, .zip 格式。上传文件后，系统将自动处理，不需要一直👀着。</span>
                         </div>
                     </label>
                     <div class="mt-2 text-xs text-muted-foreground">
