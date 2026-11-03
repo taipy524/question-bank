@@ -20,6 +20,13 @@ class DocProcessor:
     def _extractor_for(self, method: str) -> ExtractionStrategy:
         return self._template_extractor if method == "structured" else self._ai_extractor
 
+    @staticmethod
+    def _attach_warnings(result: dict, extraction) -> dict:
+        """把抽取阶段的图片占位符告警并入结果,供 parse_meta/前端诊断使用。"""
+        if extraction.warnings:
+            result["warnings"] = list(extraction.warnings)
+        return result
+
     async def process_markdown(self, content: str, db: AsyncSession, filename: str = None, task_id: str = None, mode: str = "extract", method: str = "ai", subject_id: Optional[int] = None) -> dict:
         """
         Process markdown content directly and extract questions.
@@ -39,12 +46,15 @@ class DocProcessor:
         extraction = await self._extractor_for(method).extract(
             doc.markdown, db, filename=doc.filename, mode=mode, subject_id=subject_id
         )
-        return {
-            "task_id": doc.task_id,
-            "content": doc.markdown,
-            "questions": extraction.questions,
-            "paper": extraction.paper,
-        }
+        return self._attach_warnings(
+            {
+                "task_id": doc.task_id,
+                "content": doc.markdown,
+                "questions": extraction.questions,
+                "paper": extraction.paper,
+            },
+            extraction,
+        )
 
     async def process_markdown_archive(self, file_path: Path, db: AsyncSession, task_id: str = None, mode: str = "extract", method: str = "ai", subject_id: Optional[int] = None) -> dict:
         """Extract a markdown archive (zip with local images) and parse questions.
@@ -56,12 +66,15 @@ class DocProcessor:
         extraction = await self._extractor_for(method).extract(
             doc.markdown, db, filename=doc.filename, mode=mode, subject_id=subject_id
         )
-        return {
-            "task_id": doc.task_id,
-            "content": doc.markdown,
-            "questions": extraction.questions,
-            "paper": extraction.paper,
-        }
+        return self._attach_warnings(
+            {
+                "task_id": doc.task_id,
+                "content": doc.markdown,
+                "questions": extraction.questions,
+                "paper": extraction.paper,
+            },
+            extraction,
+        )
 
     async def process_image(self, image_file: BinaryIO, db: AsyncSession, task_id: str = None, mode: str = "extract", subject_id: Optional[int] = None) -> dict:
         """
@@ -80,12 +93,15 @@ class DocProcessor:
         extraction = await self._ai_extractor.extract(
             "", db, image_data=doc.image_data, mode=mode, subject_id=subject_id
         )
-        return {
-            "task_id": doc.task_id,
-            "image_url": doc.image_url,
-            "questions": extraction.questions,
-            "paper": extraction.paper,
-        }
+        return self._attach_warnings(
+            {
+                "task_id": doc.task_id,
+                "image_url": doc.image_url,
+                "questions": extraction.questions,
+                "paper": extraction.paper,
+            },
+            extraction,
+        )
 
     async def process_docx(self, file_path: Path, db: AsyncSession = None, task_id: str = None, mode: str = "extract", method: str = "ai", subject_id: Optional[int] = None) -> dict:
         """
@@ -95,11 +111,14 @@ class DocProcessor:
         extraction = await self._extractor_for(method).extract(
             doc.markdown, db, filename=doc.filename, mode=mode, subject_id=subject_id
         )
-        return {
-            "task_id": doc.task_id,
-            "content": doc.markdown,
-            "questions": extraction.questions,
-            "paper": extraction.paper,
-        }
+        return self._attach_warnings(
+            {
+                "task_id": doc.task_id,
+                "content": doc.markdown,
+                "questions": extraction.questions,
+                "paper": extraction.paper,
+            },
+            extraction,
+        )
 
 doc_processor = DocProcessor()

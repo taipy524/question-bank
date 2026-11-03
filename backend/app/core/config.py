@@ -4,7 +4,7 @@ import secrets
 import sys
 from pathlib import Path
 
-from pydantic import model_validator
+from pydantic import SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # Sentinel: any value other than this means SECRET_KEY was supplied explicitly
@@ -90,6 +90,16 @@ class Settings(BaseSettings):
     # "" = auto: embedded (PersistentClient) when frozen/desktop, http otherwise.
     # Explicit values: "embedded" | "http".
     CHROMADB_MODE: str = ""
+
+    # MinerU 解析服务(自托管 V1 API)。默认关闭:只有显式打开才会走 MinerU。
+    # MINERU_API_KEY 只从环境变量读取,不落源码/数据库/日志。
+    MINERU_ENABLED: bool = False
+    MINERU_API_URL: str = "http://mineru-api:8000"
+    MINERU_API_KEY: SecretStr = SecretStr("")
+    MINERU_TIER: str = "standard"
+    MINERU_TIMEOUT_SECONDS: int = 600
+    # MinerU 失败时是否允许回退旧 PDF 解析;认证/配置/请求错误不回退。
+    MINERU_FALLBACK: bool = True
 
     # ``extra="ignore"``: a packaged desktop build may run in a directory that
     # happens to contain an unrelated ``.env`` (or the host may export unrelated

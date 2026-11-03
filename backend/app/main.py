@@ -13,7 +13,8 @@ from app._version import __version__
 from app.api.v1.api import api_router
 from app.capabilities.errors import DomainError, status_for
 from app.core.config import settings, is_configured
-from app.services.embedding import reload_embedding_function
+from app.services.ai_provider import AIProviderError, AIResponseFormatError
+from app.services.embedding import init_embedding_with_retry, reload_embedding_function
 
 logging.basicConfig(level=settings.LOG_LEVEL)
 logger = logging.getLogger(__name__)
@@ -23,7 +24,7 @@ async def lifespan(app: FastAPI):
     # Startup: only touch the database once the app has been configured.
     # Before first-run setup there is no database to talk to.
     if is_configured():
-        await reload_embedding_function()
+        await init_embedding_with_retry()
     else:
         logger.warning("No database configured yet - starting in setup mode.")
 
@@ -37,6 +38,17 @@ app = FastAPI(title="QuestionBank API", version=__version__, lifespan=lifespan)
 async def domain_error_handler(_request: Request, exc: DomainError) -> JSONResponse:
     """领域错误 → HTTP。端点因此可以直接 await capabilities.run(...) 而不用 try/except。"""
     return JSONResponse(status_code=status_for(exc), content={"detail": exc.detail})
+
+
+@app.exception_handler(AIProviderError)
+async def ai_provider_error_handler(_request: Request, exc: AIProviderError) -> JSONResponse:
+    """AI 上游/格式错误 → 502（与用户输入错误的 400 区分）。"""
+    if isinstance(exc, AIResponseFormatError):
+        detail = "AI 返回内容格式异常（无法解析为题目 JSON），请稍后重试"
+    else:
+        detail = str(exc) or "AI 服务暂不可用，请稍后重试"
+    logger.warning("AI provider error: %s", exc)
+    return JSONResponse(status_code=502, content={"detail": detail})
 
 
 _SETUP_PREFIX = f"{settings.API_V1_STR}/setup"

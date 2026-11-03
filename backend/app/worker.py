@@ -91,13 +91,18 @@ async def process_task(db: AsyncSession, task: ImportTask):
                 defaults=defaults,
             )
 
-            task.result_summary = json.dumps(
-                {
-                    "count": report.saved_count,
-                    "failed": report.failed_count,
-                    "proc_task_id": result.get("task_id"),
-                }
-            )
+            parse_meta = result.get("parse_meta") or {}
+            summary = {
+                "count": report.saved_count,
+                "failed": report.failed_count,
+                "proc_task_id": result.get("task_id"),
+                "engine": parse_meta.get("engine", "legacy"),
+            }
+            if parse_meta.get("engine") == "mineru":
+                summary["mineru_tier"] = parse_meta.get("tier")
+                summary["parse_seconds"] = parse_meta.get("parse_seconds")
+                summary["parse_warnings"] = parse_meta.get("warnings") or []
+            task.result_summary = json.dumps(summary, ensure_ascii=False)
             task.status = ImportTaskStatus.COMPLETED
             logger.info(
                 f"Task {task.id} completed. Saved {report.saved_count} questions, "

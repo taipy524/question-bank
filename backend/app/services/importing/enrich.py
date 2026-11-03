@@ -22,8 +22,14 @@ class KnowledgePointEnricher:
         subject_id: int | None,
         provider: AIProvider,
         config: dict,
-    ) -> None:
-        """就地回填 questions[].knowledge_points / knowledge_point_ids。"""
+    ) -> list[str]:
+        """就地回填 questions[].knowledge_points / knowledge_point_ids。
+
+        返回告警列表:检索服务不可用时返回 ``["knowledge_points_unavailable"]``;
+        "没有合适候选"属于正常结果,不产生告警。
+        """
+        warnings: list[str] = []
+        unavailable = 0
         batch_items = []
         batch_context = {}
 
@@ -41,6 +47,10 @@ class KnowledgePointEnricher:
                     subject_id=subject_id,
                     limit=5,  # Increase limit to get more candidates for reranking
                 )
+                if results is None:
+                    # 服务不可用(与"没有候选"区分):等待后续受控恢复,本次不匹配。
+                    unavailable += 1
+                    continue
 
                 if results and results.get("documents") and results["documents"][0]:
                     candidates = results["documents"][0]
@@ -71,6 +81,7 @@ class KnowledgePointEnricher:
                     }
 
             except Exception as vs_e:
+                unavailable += 1
                 logger.error(f"Vector store search failed: {vs_e}")
 
         # Batch AI verification / reranking
@@ -132,3 +143,12 @@ class KnowledgePointEnricher:
                     q.knowledge_point_ids = []
 
                 logger.debug(f"Fallback to top candidate: {q.knowledge_points}")
+
+        if unavailable:
+            warnings.append("knowledge_points_unavailable")
+            logger.warning(
+                "Knowledge point retrieval unavailable for %d question(s); "
+                "skipped enrichment this run",
+                unavailable,
+            )
+        return warnings

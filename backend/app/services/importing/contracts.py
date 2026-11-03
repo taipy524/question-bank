@@ -106,6 +106,8 @@ class ExtractionResult:
 
     questions: List[dict] = field(default_factory=list)
     paper: Optional[PaperExtraction] = None
+    # 抽取阶段的可诊断问题(如图片占位符未被 AI 引用),由调用方并入 parse_meta。
+    warnings: List[str] = field(default_factory=list)
 
 
 @dataclass

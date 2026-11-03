@@ -96,13 +96,17 @@ class AIExtractor:
         try:
             questions = await provider.extract_questions(final_content, image_data, config)
             # 文本路径无论是否遮罩到图片都跑还原,以清掉 AI 凭空写出的裸露占位符;视觉路径不涉及。
+            image_warnings: list[str] = []
             if not image_data:
-                questions = self._restore_images(questions, image_map)
-            await self.enricher.enrich(
+                questions, image_warnings = self._restore_images(questions, image_map)
+            kp_warnings = await self.enricher.enrich(
                 questions, subject_id=subject_id, provider=provider, config=config
             )
             extracted = [q.model_dump() for q in questions]
-            return ExtractionResult(questions=_assign_temp_ids(extracted))
+            return ExtractionResult(
+                questions=_assign_temp_ids(extracted),
+                warnings=image_warnings + list(kp_warnings or []),
+            )
         except Exception as e:
             logger.error(f"AI Provider error: {e}")
             raise
@@ -110,21 +114,28 @@ class AIExtractor:
     @staticmethod
     def _restore_images(
         questions: list[AIQuestion], image_map: dict[str, str]
-    ) -> list[AIQuestion]:
-        """把 AI 返回题目里的 @@IMGn@@ 占位符换回真实图片 token(容忍编号写错)，并记录异常。"""
+    ) -> tuple[list[AIQuestion], list[str]]:
+        """把 AI 返回题目里的 @@IMGn@@ 占位符换回真实图片 token(容忍编号写错)，并记录异常。
+
+        返回 ``(questions, warnings)``;warnings 供上层并入 ``parse_meta.warnings``,
+        使"AI 丢弃了未引用的图片"对用户可见。
+        """
         dumped = [q.model_dump() for q in questions]
         restored, dropped, unresolved = restore_images(dumped, image_map)
+        warnings: list[str] = []
         if dropped:
             logger.warning(
                 "AI extraction referenced %d more image placeholder(s) than exist; extras stripped",
                 dropped,
             )
+            warnings.append(f"image_placeholder_overflow:{dropped}")
         if unresolved:
             logger.warning(
                 "AI extraction result is missing %d/%d image placeholder(s)",
                 unresolved, len(image_map),
             )
-        return [AIQuestion(**item) for item in restored]
+            warnings.append(f"image_placeholder_unused:{unresolved}")
+        return [AIQuestion(**item) for item in restored], warnings
 
 
 class TemplateExtractor:

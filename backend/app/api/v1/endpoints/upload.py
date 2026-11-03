@@ -13,6 +13,7 @@ from app.api import deps
 from app.core.config import settings
 from app.models.composition import Composition
 from app.models.import_task import ImportTask
+from app.services.ai_provider import AIProviderError
 from app.services.doc_processor import doc_processor
 from app.services.importing.review import extracted_to_v2_review
 from app.services.pdf_processor import pdf_processor
@@ -92,6 +93,8 @@ async def upload_docx(
         result["file_path"] = str(file_path)
         await _attach_duplicate_hint(result, db, content)
         return result
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process DOCX: filename=%s mode=%s method=%s subject_id=%s",
@@ -140,6 +143,8 @@ async def upload_pdf(
         return result
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process PDF: filename=%s mode=%s method=%s subject_id=%s",
@@ -184,6 +189,8 @@ async def upload_markdown(
         result["file_path"] = str(file_path)
         await _attach_duplicate_hint(result, db, markdown_content_bytes)
         return result
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process Markdown: filename=%s mode=%s method=%s subject_id=%s",
@@ -204,6 +211,8 @@ async def upload_markdown_text(
         result = await doc_processor.process_markdown(request.content, db=db, filename=request.filename, mode=request.mode, method=request.method, subject_id=request.subject_id)
         _as_review(result, request.subject_id)
         return result
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process Markdown text: filename=%s mode=%s method=%s subject_id=%s",
@@ -241,6 +250,8 @@ async def upload_markdown_archive(
         return result
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process Markdown archive: filename=%s mode=%s method=%s subject_id=%s",
@@ -266,6 +277,8 @@ async def upload_image_recognition(
         result = await doc_processor.process_image(file.file, db=db, mode=mode, subject_id=subject_id)
         _as_review(result, subject_id)
         return result
+    except AIProviderError:
+        raise
     except Exception as e:
         logger.exception(
             "Failed to process image: filename=%s mode=%s subject_id=%s",

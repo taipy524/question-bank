@@ -1,17 +1,20 @@
-"""PDF 导入摄取：有文本层的 PDF 转成 markdown 走文本管线，扫描件逐页渲染成图片走视觉管线。"""
+"""PDF 导入摄取：优先用 MinerU 转 markdown 走文本管线，失败按配置回退到
+“有文本层走文本管线、扫描件逐页视觉管线”的原有实现。"""
 from __future__ import annotations
 
 import asyncio
 import io
 import logging
+import time
 import uuid
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
 from app.services.doc_processor import doc_processor
+from app.services.importing.mineru_ingest import MinerUError, mineru_ingestor
 from app.services.importing.provider_config import resolve_active_provider
 
 logger = logging.getLogger(__name__)
@@ -132,12 +135,62 @@ class PdfProcessor:
         method: str = "ai",
         subject_id: Optional[int] = None,
     ) -> dict:
-        """解析 PDF:文本型走 markdown 管线,扫描件走逐页视觉抽取并合并结果。"""
+        """解析 PDF:启用 MinerU 时优先转 markdown,否则走原有的文本/扫描双路径。"""
+        media_task_id = task_id or str(uuid.uuid4())
+        mineru_failure: list[MinerUError] = []
+
+        # MINERU_ENABLED 默认 False;测试里用 getattr 兜底以兼容仅带 MEDIA_DIR 的桩配置。
+        if getattr(settings, "MINERU_ENABLED", False):
+            mineru_result = await self._process_with_mineru(
+                file_path,
+                db,
+                filename=filename,
+                task_id=media_task_id,
+                mode=mode,
+                method=method,
+                subject_id=subject_id,
+                on_fallback=mineru_failure.append,
+            )
+            if mineru_result is not None:
+                return mineru_result
+            logger.info("回退到内置 PDF 解析: %s", file_path.name)
+
+        try:
+            return await self._process_legacy_pdf(
+                file_path,
+                db,
+                filename=filename,
+                task_id=media_task_id,
+                mode=mode,
+                method=method,
+                subject_id=subject_id,
+            )
+        except ValueError as exc:
+            # P4:MinerU 回退后的失败要带上前因,便于用户区分"服务不可用"与"文件/模型问题"。
+            if mineru_failure:
+                failure = mineru_failure[0]
+                raise ValueError(
+                    f"MinerU 不可用（{failure.code}），已回退内置 PDF 解析但仍失败：{exc}"
+                ) from exc
+            raise
+
+    async def _process_legacy_pdf(
+        self,
+        file_path: Path,
+        db: AsyncSession,
+        *,
+        filename: Optional[str],
+        task_id: str,
+        mode: str,
+        method: str,
+        subject_id: Optional[int],
+    ) -> dict:
+        """原有的内置解析路径(文本层走 markdown,扫描件逐页视觉)。"""
+        media_task_id = task_id
         text = await asyncio.to_thread(extract_pdf_text, file_path)
         if len(text) >= _MIN_TEXT_CHARS:
             logger.info("PDF 文本层可用 (%d chars),按文本导入: %s", len(text), file_path.name)
             # 插图与后续 markdown 摄取共用同一 task_id,媒体落在 MEDIA_DIR/task_id 下。
-            media_task_id = task_id or str(uuid.uuid4())
             markdown = await asyncio.to_thread(extract_pdf_markdown, file_path, media_task_id)
             return await doc_processor.process_markdown(
                 markdown,
@@ -183,6 +236,63 @@ class PdfProcessor:
             "questions": merged,
             "paper": first.get("paper"),
         }
+
+    async def _process_with_mineru(
+        self,
+        file_path: Path,
+        db: AsyncSession,
+        *,
+        filename: Optional[str],
+        task_id: str,
+        mode: str,
+        method: str,
+        subject_id: Optional[int],
+        on_fallback: Optional[Any] = None,
+    ) -> Optional[dict]:
+        """MinerU 解析 → 交给现有 markdown 管线。
+
+        返回 None 表示"允许回退"调用方继续走旧流程;不可回退的错误(配置/认证/
+        请求问题,或 MINERU_FALLBACK=false)直接抛出,由调用方映射成 400/任务失败。
+        """
+        started = time.monotonic()
+        try:
+            markdown, meta = await mineru_ingestor.ingest(file_path, task_id=task_id)
+        except MinerUError as exc:
+            allow_fallback = getattr(settings, "MINERU_FALLBACK", True) and exc.fallback_ok
+            if allow_fallback:
+                logger.warning(
+                    "MinerU 解析失败(%s),按配置回退原 PDF 流程: %s", exc.code, exc
+                )
+                if on_fallback is not None:
+                    on_fallback(exc)
+                return None
+            logger.error("MinerU 解析失败(%s)且不允许回退: %s", exc.code, exc)
+            raise
+
+        meta["parse_seconds"] = round(time.monotonic() - started, 3)
+        logger.info(
+            "MinerU 解析成功: tier=%s images=%s html_tables=%s warnings=%s parse_seconds=%s",
+            meta.get("tier"),
+            meta.get("images"),
+            meta.get("html_tables"),
+            meta.get("warnings"),
+            meta.get("parse_seconds"),
+        )
+        result = await doc_processor.process_markdown(
+            markdown,
+            db,
+            filename=filename or file_path.name,
+            task_id=task_id,
+            mode=mode,
+            method=method,
+            subject_id=subject_id,
+        )
+        # P1:AI 抽取阶段丢弃/多写占位符的告警并入 parse_meta,让用户可见。
+        ai_warnings = result.pop("warnings", None)
+        if ai_warnings:
+            meta.setdefault("warnings", []).extend(ai_warnings)
+        result["parse_meta"] = meta
+        return result
 
 
 pdf_processor = PdfProcessor()
