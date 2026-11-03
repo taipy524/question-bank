@@ -1,4 +1,6 @@
+import asyncio
 import logging
+import time
 from typing import List, Dict, Any
 from chromadb import EmbeddingFunction, Documents, Embeddings
 import openai
@@ -77,6 +79,54 @@ class AIProviderEmbeddingFunction(EmbeddingFunction):
             embeddings.append(resp.embedding.values)
             
         return embeddings
+
+# 初始化失败后的受控恢复:同一时刻只允许一次重载,失败后冷却一段时间再试。
+# 说明:标志位在首个 await 之前置位,借助事件循环单线程特性避免并发重复初始化。
+_ENSURE_COOLDOWN_SECONDS = 30.0
+_last_ensure_attempt = 0.0
+_reload_in_progress = False
+
+
+async def ensure_embedding_function() -> bool:
+    """确保 embedding 可用;不可用时按冷却窗口做一次受控重载。返回当前是否可用。"""
+    if VectorStore.is_available():
+        return True
+    global _last_ensure_attempt, _reload_in_progress
+    now = time.monotonic()
+    if _reload_in_progress or now - _last_ensure_attempt < _ENSURE_COOLDOWN_SECONDS:
+        return False
+    _reload_in_progress = True
+    _last_ensure_attempt = now
+    try:
+        logger.info("Embedding unavailable; attempting controlled reload")
+        await reload_embedding_function()
+    except Exception as exc:  # reload 自身已捕获异常,这里兜底避免影响请求
+        logger.warning("Controlled embedding reload failed: %s", exc)
+    finally:
+        _reload_in_progress = False
+    return VectorStore.is_available()
+
+
+async def init_embedding_with_retry(attempts: int = 3, base_delay: float = 1.0) -> bool:
+    """启动时有界重试(指数退避);返回最终是否可用。"""
+    for attempt in range(1, max(1, attempts) + 1):
+        await reload_embedding_function()
+        if VectorStore.is_available():
+            return True
+        if attempt < attempts:
+            delay = base_delay * (2 ** (attempt - 1))
+            logger.warning(
+                "Embedding init failed (attempt %d/%d); retrying in %.1fs",
+                attempt, attempts, delay,
+            )
+            await asyncio.sleep(delay)
+    logger.error(
+        "Embedding init failed after %d attempt(s); knowledge-point retrieval unavailable "
+        "until a later controlled reload succeeds",
+        attempts,
+    )
+    return False
+
 
 async def reload_embedding_function():
     """

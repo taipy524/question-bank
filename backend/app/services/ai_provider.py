@@ -3,10 +3,262 @@ from typing import List, Dict, Optional, AsyncGenerator, Any, Union
 import json
 import logging
 import asyncio
+import re
+from typing import List
+
 from pydantic import BaseModel
 from app.schemas.ai import AIQuestion, QuestionList
 
 logger = logging.getLogger(__name__)
+
+
+class AIProviderError(Exception):
+    """AI 上游错误基类(非用户输入问题,HTTP 层应映射为 502)。"""
+
+
+class AIProviderUnavailableError(AIProviderError):
+    """AI 服务网络/DNS/连接类不可用。"""
+
+
+class AIResponseFormatError(AIProviderError):
+    """AI 返回内容无法解析为合法题目 JSON。"""
+
+
+# 常见 LaTeX 命令(小写)。用于区分 `\n`(换行) 与 `\nu`(LaTeX) 这类
+# "既是合法 JSON 转义、又可能是 LaTeX 命令"的冲突。
+_LATEX_COMMANDS = frozenset({
+    "alpha", "approx", "angle", "approxeq", "ast", "asymp",
+    "bar", "bbox", "because", "begin", "beta", "bf", "big", "bigcap", "bigcirc",
+    "bigcup", "bigodot", "bigoplus", "bigotimes", "bigsqcup", "bigstar", "bigtriangledown",
+    "bigtriangleup", "biguplus", "bigvee", "bigwedge", "binom", "bmod", "bot", "bowtie",
+    "boxed", "bmatrix", "boldsymbol", "bullet",
+    "cap", "cdot", "cdots", "celsius", "checkmark", "chi", "circ", "circlearrowleft",
+    "circlearrowright", "colon", "cong", "cos", "cosh", "cot", "coth", "csc", "cup",
+    "curlyeqprec", "curlyeqsucc",
+    "dag", "dagger", "dashv", "ddag", "ddagger", "ddots", "deg", "delta", "dfrac",
+    "diamond", "digamma", "displaystyle", "div", "divideontimes", "doteq", "dotplus",
+    "dots", "downarrow", "downdownarrows", "downharpoonleft", "downharpoonright",
+    "ell", "emptyset", "enspace", "epsilon", "eqcirc", "eqsim", "equiv", "eta",
+    "exists", "fallingdotseq", "fbox", "flat", "forall", "frac", "frown",
+    "gamma", "ge", "geq", "gets", "gg", "gt", "gtrapprox",
+    "hat", "hbar", "hbox", "heartsuit", "hline", "hookleftarrow", "hookrightarrow",
+    "hphantom", "hspace",
+    "imath", "in", "infty", "int", "iota", "it",
+    "kappa", "ker", "lVert", "lambda", "land", "langle", "lbrace", "lbrack", "lceil",
+    "ldots", "le", "left", "leftarrow", "leftarrowtail", "leftharpoondown",
+    "leftharpoonup", "leftleftarrows", "leftrightarrow", "leftrightarrows",
+    "leftrightharpoons", "leftrightsquigarrow", "leftthreetimes", "leq", "lfloor",
+    "lg", "lhd", "lim", "liminf", "limsup", "ll", "llcorner", "ln", "log", "longleftarrow",
+    "longleftrightarrow", "longmapsto", "longrightarrow", "lor", "lrcorner", "lt",
+    "ltimes", "lVert", "lvert",
+    "mapsto", "mathbb", "mathbf", "mathcal", "mathfrak", "mathit", "mathop", "mathrm",
+    "mathsf", "mathstrut", "mathtt", "max", "measuredangle", "mid", "min", "models",
+    "mp", "mu", "nabla", "natural", "ncong", "ne", "nearrow", "neg", "neq", "newline",
+    "nexists", "ngeq", "ni", "nleftarrow", "nleftrightarrow", "nleq", "nmid", "not",
+    "notin", "nparallel", "nprec", "nrightarrow", "nsim", "nsubseteq", "nsucc",
+    "nsupseteq", "ntriangleleft", "ntrianglelefteq", "ntriangleright",
+    "ntrianglerighteq", "nu", "nwarrow",
+    "odot", "oint", "omega", "ominus", "oplus", "oslash", "otimes", "overbrace",
+    "overleftarrow", "overline", "overleftrightarrow", "overrightarrow", "overset",
+    "parallel", "partial", "perp", "phi", "pi", "pm", "prec", "preceq", "prime", "prod",
+    "propto", "psi",
+    "qquad", "quad", "radic", "rangle", "rbrace", "rbrack", "rceil", "rfloor", "rho",
+    "right", "rightarrow", "rightarrowtail", "rightharpoondown", "rightharpoonup",
+    "rightleftarrows", "rightleftharpoons", "rightrightarrows", "rightsquigarrow",
+    "rightthreetimes", "risingdotseq", "rlap", "rmoustache", "rtimes",
+    "searrow", "setminus", "sharp", "sigma", "sim", "simeq", "sin", "sinh", "smallsetminus",
+    "smile", "space", "sqcap", "sqcup", "sqrt", "sqsubset", "sqsubseteq", "sqsupset",
+    "sqsupseteq", "square", "star", "subset", "subseteq", "succ", "succeq", "sum",
+    "supset", "supseteq", "surd", "swarrow",
+    "tan", "tanh", "tau", "tbinom", "text", "textbf", "textit", "textrm", "textsf",
+    "textstyle", "texttt", "tfrac", "therefore", "theta", "thickapprox", "thicksim",
+    "thinspace", "tilde", "times", "tiny", "to", "top", "triangle", "triangleleft",
+    "trianglelefteq", "triangleq", "triangleright", "trianglerighteq", "twoheadleftarrow",
+    "twoheadrightarrow",
+    "underbrace", "underline", "underset", "uparrow", "updownarrow", "upharpoonleft",
+    "upharpoonright", "uplus", "upsilon",
+    "varepsilon", "varphi", "varpi", "varrho", "varsigma", "vartheta", "vdash", "vee",
+    "vert", "vphantom", "wedge", "widehat", "widetilde", "wp", "wr",
+    "xi", "zeta",
+})
+_JSON_OUTPUT_RULE = r"""JSON 输出约束（必须遵守）：
+1. 只输出一个合法的 JSON 对象；不要输出 Markdown 代码围栏（```）或 JSON 之外的任何解释文字。
+2. JSON 字符串中的 LaTeX 反斜杠必须写成两个反斜杠（例如 \frac、\theta、\begin、\sqrt、\text、\pi、\alpha、\left、\right）。
+3. 不要省略、改写或截断公式，LaTeX 内容必须完整保留。"""
+
+_JSON_SIMPLE_ESCAPES = "bfnrt"
+_HEX4_RE = re.compile(r"[0-9a-fA-F]{4}")
+_LATEX_TOKEN_RE = re.compile(r"[A-Za-z]+")
+
+_UNAVAILABLE_TYPE_NAMES = {
+    "APIConnectionError", "APITimeoutError", "APIConnectionTimeoutError", "APIError",
+    "ConnectError", "ConnectTimeout", "ReadTimeout", "WriteTimeout", "PoolTimeout",
+    "ReadError", "WriteError", "RemoteProtocolError", "ProtocolError", "TransportError",
+    "gaierror", "NameResolutionError", "TimeoutException",
+}
+
+
+def _exception_type_names(exc: BaseException) -> set[str]:
+    names = {base.__name__ for base in type(exc).__mro__}
+    chain = exc.__cause__ or exc.__context__
+    seen = 0
+    while chain is not None and seen < 5:
+        names |= {base.__name__ for base in type(chain).__mro__}
+        chain = chain.__cause__ or chain.__context__
+        seen += 1
+    return names
+
+
+def is_upstream_unavailable(exc: BaseException) -> bool:
+    """是否为 AI 上游网络/DNS/连接类异常(不含业务/格式错误)。"""
+    return bool(_exception_type_names(exc) & _UNAVAILABLE_TYPE_NAMES)
+
+
+def unavailable_message(exc: BaseException) -> str:
+    """面向用户的网络类错误说明(不含密钥/堆栈/内部配置)。"""
+    names = _exception_type_names(exc)
+    if {"gaierror", "NameResolutionError"} & names:
+        return "AI 服务域名解析失败（DNS），请检查网络后重试"
+    if any("Timeout" in name for name in names):
+        return "AI 服务请求超时，请稍后重试"
+    return "AI 服务连接失败（网络），请稍后重试"
+
+
+def _is_latex_escape(escape_char: str, run: str, in_math: bool) -> bool:
+    """判断 `\\x...` 是 LaTeX 命令还是合法 JSON 转义。
+
+    ``run`` 是从反斜杠后的转义字符开始匹配到的字母串(含该字符),
+    因此 ``\\frac`` 的 run 是 ``"frac"``,``\\nu`` 的 run 是 ``"nu"``。
+    """
+    if len(run) <= 1:
+        return False
+    if in_math:
+        return True
+    return run in _LATEX_COMMANDS
+
+
+def repair_json_latex_escapes(raw: str) -> str:
+    r"""把 JSON 字符串里未转义的 LaTeX 反斜杠补成双反斜杠。
+
+    只在 JSON 字符串内部处理,保留正常转义 (`\\`、`\"`、`\n`、`\t`、`\uXXXX`)。
+    对 `\f/\b/\n/\r/\t` 这类"合法但与 LaTeX 冲突"的转义,按已知 LaTeX 命令
+    或是否处于 `$...$` 数学环境判定,避免把公式变成制表符/换行/退格。
+    """
+    out: List[str] = []
+    index = 0
+    length = len(raw)
+    in_string = False
+    in_math = False
+    while index < length:
+        char = raw[index]
+        if not in_string:
+            out.append(char)
+            if char == '"':
+                in_string = True
+            index += 1
+            continue
+
+        if char == '"':
+            in_string = False
+            out.append(char)
+            index += 1
+            continue
+
+        if char != "\\":
+            if char == "$":
+                if index + 1 < length and raw[index + 1] == "$":
+                    out.append("$$")
+                    index += 2
+                else:
+                    out.append(char)
+                    index += 1
+                in_math = not in_math
+                continue
+            out.append(char)
+            index += 1
+            continue
+
+        if index + 1 >= length:
+            out.append("\\\\")
+            index += 1
+            continue
+        nxt = raw[index + 1]
+        if nxt == "\\":
+            out.append("\\\\")
+            index += 2
+            continue
+        if nxt in ('"', "/"):
+            out.append("\\" + nxt)
+            index += 2
+            continue
+        if nxt == "u" and index + 5 < length and _HEX4_RE.fullmatch(raw[index + 2:index + 6]):
+            out.append(raw[index:index + 6])
+            index += 6
+            continue
+
+        token = _LATEX_TOKEN_RE.match(raw, index + 1)
+        run = token.group(0) if token else ""
+        if nxt in _JSON_SIMPLE_ESCAPES and not _is_latex_escape(nxt, run, in_math):
+            out.append("\\" + nxt)
+            index += 2
+            continue
+
+        out.append("\\\\")
+        index += 1
+    return "".join(out)
+
+
+def _strip_code_fence(text: str) -> str:
+    stripped = text.strip()
+    if not stripped.startswith("```"):
+        return stripped
+    first_newline = stripped.find("\n")
+    if first_newline == -1:
+        return stripped.strip("`").strip()
+    body = stripped[first_newline + 1:]
+    if body.rstrip().endswith("```"):
+        body = body.rstrip()[:-3]
+    return body.strip()
+
+
+def _coerce_question_list(data: Any) -> List[AIQuestion]:
+    if isinstance(data, dict):
+        questions = data.get("questions")
+        data = questions if isinstance(questions, list) else [data]
+    if not isinstance(data, list):
+        raise ValueError("AI payload is not a question list")
+    return [AIQuestion(**item) for item in data]
+
+
+def parse_questions_payload(text: str) -> List[AIQuestion]:
+    """解析 AI 返回的题目 JSON;失败抛 ``AIResponseFormatError``。
+
+    依次尝试:原样 → 去掉 Markdown 围栏 → 修复 LaTeX 反斜杠。
+    每一版都先按 ``{questions: [...]}`` 校验,再兼容裸 list / 单对象。
+    """
+    if not text or not text.strip():
+        return []
+    base_candidates: List[str] = [text.strip(), _strip_code_fence(text)]
+    # 先尝试修复版:否则 `\t`/`\f`/`\b` 这类合法转义会让原样 JSON "解析成功",
+    # 但公式已被悄悄变成制表符/换页/退格。
+    candidates: List[str] = []
+    for base in base_candidates:
+        repaired = repair_json_latex_escapes(base)
+        for candidate in (repaired, base):
+            if candidate not in candidates:
+                candidates.append(candidate)
+
+    last_error: Optional[Exception] = None
+    for candidate in candidates:
+        try:
+            return QuestionList.model_validate_json(candidate).questions
+        except Exception as exc:
+            last_error = exc
+        try:
+            return _coerce_question_list(json.loads(candidate))
+        except Exception as exc:
+            last_error = exc
+    raise AIResponseFormatError("AI 返回内容无法解析为合法的题目 JSON") from last_error
 
 class ToolCall(BaseModel):
     id: str
@@ -363,16 +615,14 @@ class GeminiProvider(AIProvider):
             
             if response.text:
                 logger.debug(f"Gemini response: {response.text}")
-                cleaned_text = self._clean_json_response(response.text)
-                try:
-                    return [AIQuestion(**q) for q in json.loads(cleaned_text)]
-                except json.JSONDecodeError as e:
-                    logger.error(f"JSON Decode Error: {e}. Text: {cleaned_text}")
-                    # Try to repair common JSON errors if needed, or just fail gracefully
-                    raise e
+                return parse_questions_payload(self._clean_json_response(response.text))
         except Exception as e:
+            if isinstance(e, AIProviderError):
+                raise
             logger.error(f"Gemini API error: {e}")
-            raise e
+            if is_upstream_unavailable(e):
+                raise AIProviderUnavailableError(unavailable_message(e)) from e
+            raise
         return []
 
     def _clean_json_response(self, text: str) -> str:
@@ -687,7 +937,9 @@ class OpenAIProvider(AIProvider):
 
 下面是输出格式的 JSON Schema 定义，仅供你理解字段结构，不要把这段 Schema 本身（如 $defs、properties 等）当作答案输出：
 {schema_json}
-请只输出符合上述 Schema 的实际数据 JSON。"""
+请只输出符合上述 Schema 的实际数据 JSON。
+
+{_JSON_OUTPUT_RULE}"""
             messages.append({"role": "system", "content": system_prompt})
 
             if image_data:
@@ -731,31 +983,25 @@ class OpenAIProvider(AIProvider):
                 messages.append({"role": "user", "content": prompt})
 
             # Use standard create method for better compatibility with non-OpenAI providers
-            response = await client.chat.completions.create(
-                model=model_name,
-                messages=messages,
-                response_format={"type": "json_object"},
-            )
-            
+            try:
+                response = await client.chat.completions.create(
+                    model=model_name,
+                    messages=messages,
+                    response_format={"type": "json_object"},
+                )
+            except Exception as exc:
+                if is_upstream_unavailable(exc):
+                    raise AIProviderUnavailableError(unavailable_message(exc)) from exc
+                raise
+
             content = response.choices[0].message.content
             logger.debug(f"OpenAI raw response content: {content}")
             if not content:
                 logger.warning("OpenAI returned empty content")
                 return []
-            
-            try:
-                return QuestionList.model_validate_json(content).questions
-            except Exception as e:
-                logger.warning(f"Failed to parse as QuestionList, trying raw list: {e}")
-                # Fallback: some providers ignore the wrapper schema and return either a bare list
-                # of questions or a single question object. Normalize both to a list.
-                data = json.loads(content)
-                if isinstance(data, dict):
-                    questions = data.get("questions")
-                    data = questions if isinstance(questions, list) else [data]
-                if isinstance(data, list):
-                    return [AIQuestion(**q) for q in data]
-                raise e
+
+            # 统一解析:容忍 Markdown 围栏、裸 list、以及未转义的 LaTeX 反斜杠。
+            return parse_questions_payload(content)
             
         except Exception as e:
             # Propagate: swallowing here used to make extraction failures look like "0 questions
