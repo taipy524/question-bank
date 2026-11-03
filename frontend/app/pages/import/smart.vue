@@ -34,6 +34,7 @@ import { toast } from 'vue-sonner'
 import { zipFolder } from '@/lib/zipFolder'
 import type { CompositionFolder, CompositionScope, KnowledgePoint, Subject } from '@/types'
 import { buildFolderTree } from '@/lib/compositions'
+import { describeParseWarnings } from '@/lib/importWarnings'
 import {
     buildSubmitOutline,
     hasPaperStructure,
@@ -74,6 +75,9 @@ const importList = ref<ImportDraft[]>([])
 const editingItemId = ref<string | null>(null)
 const importedTaskId = ref<number | null>(null)
 const uploadedFilePath = ref<string | null>(null)
+// 后端 parse_meta.warnings(图片锚定/占位符告警),仅在审核页做提示,不改变导入行为
+const parseWarnings = ref<string[]>([])
+const parseWarningItems = computed(() => describeParseWarnings(parseWarnings.value))
 
 // --- 整卷结构与稿件选项 ---
 const paper = ref<PaperExtraction | null>(null)
@@ -278,6 +282,7 @@ const acceptExtraction = (data: any) => {
         return
     }
     importList.value = drafts
+    parseWarnings.value = Array.isArray(data?.parse_meta?.warnings) ? data.parse_meta.warnings : []
     paper.value = data.paper ?? null
     contentSha256.value = data.content_sha256 ?? null
     duplicateOf.value = data.duplicate_of ?? null
@@ -565,6 +570,7 @@ const reset = () => {
     fileTextPreview.value = null
     uploadedFilePath.value = null
     importList.value = []
+    parseWarnings.value = []
     step.value = 'upload'
     error.value = null
     paper.value = null
@@ -880,6 +886,17 @@ const reset = () => {
                         :to="`/compositions/shared/${duplicateOf.composition_id}`"
                         class="underline font-medium ml-1"
                     >查看上次生成的稿件</NuxtLink>
+                </AlertDescription>
+            </Alert>
+
+            <!-- 解析提示:图片锚定/占位符告警(不阻塞导入) -->
+            <Alert v-if="parseWarningItems.length">
+                <AlertCircle class="h-4 w-4 text-amber-500" />
+                <AlertDescription>
+                    <div class="font-medium mb-1">图片识别提示（不影响继续导入，可人工核对）</div>
+                    <ul class="list-disc pl-5 space-y-0.5">
+                        <li v-for="(item, idx) in parseWarningItems" :key="idx">{{ item }}</li>
+                    </ul>
                 </AlertDescription>
             </Alert>
 
