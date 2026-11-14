@@ -163,13 +163,15 @@ gunzip -c /home/yuwan/backups/mysql/question_bank_pre_legacy_cleanup_20261115_01
 
 ---
 
-## 8. 后续
+## 8. GitHub 同步结果
 
-第一阶段已通过验收，**已暂停**。
+| 项 | 值 |
+|---|---|
+| 仓库 | `https://github.com/taipy524/question-bank` |
+| 分支 | `main` |
+| 功能提交 | `0bb54d4c347b56e1975ca420c4c008397b4181f2` |
+| 远程 main | 与本地一致 |
+| 提交文件 | 158 个（代码、迁移、测试、数据包、报告、原型） |
+| 强制推送 / reset / clean / checkout / stash | 未执行 |
 
-GitHub 同步（第二阶段）尚未执行；待审阅后再提交：
-
-- 代码、迁移、测试
-- 数据包 `data/cn-math-taxonomy/cf73951/`
-- `reports/`（含本报告）
-- `tools/taxonomy_import_prototype/`
+第一阶段与第二阶段均已完成。
