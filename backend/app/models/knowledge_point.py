@@ -32,6 +32,14 @@ class KnowledgePoint(Base):
         cascade="all, delete-orphan"
     )
     questions = relationship("Question", secondary="question_knowledge_points", back_populates="knowledge_points")
+    # Official taxonomy metadata (grade/semester/chapter/domain); optional for
+    # manually created knowledge points.
+    taxonomy_meta = relationship(
+        "KnowledgePointTaxonomy",
+        back_populates="knowledge_point",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
     __table_args__ = (
         UniqueConstraint('subject_id', 'slug', name='uq_knowledge_point_subject_slug'),

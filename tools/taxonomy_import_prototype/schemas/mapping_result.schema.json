@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mapping_result",
+  "type": "object",
+  "required": ["meta", "stats", "external_topics", "components"],
+  "properties": {
+    "meta": {"type": "object"},
+    "stats": {"type": "object"},
+    "external_topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["external_id", "external_name", "match_type", "review_status", "candidates"],
+        "properties": {
+          "external_id": {"type": "string"},
+          "external_name": {"type": "string"},
+          "match_type": {"enum": ["exact", "semantic", "one_to_many", "many_to_one", "many_to_many", "new_topic"]},
+          "review_status": {"const": "pending_review"},
+          "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "best_internal_id": {"type": ["integer", "null"]},
+          "candidates": {"type": "array"}
+        }
+      }
+    },
+    "components": {"type": "array"}
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "cn-math-taxonomy junior-high math package",
+  "source": {
+    "repo_url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+    "commit": "cf73951",
+    "commit_note": "short SHA as published by the source repository",
+    "retrieved_from": "/home/yuwan/taxonomy-external"
+  },
+  "license": {
+    "id": "CC BY-NC 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "note": "Non-commercial use only. Commercial use requires separate permission from the source author.",
+    "file_sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+  },
+  "scope": {
+    "included": [
+      "315 junior-high math knowledge points",
+      "563 internal prerequisite edges",
+      "157 curriculum standards",
+      "383 topic-standard mappings"
+    ],
+    "excluded": [
+      "45 primary-to-junior prerequisite edges (not imported in this phase)",
+      "external practice questions",
+      "primary school, high school and other subjects"
+    ]
+  },
+  "counts": {
+    "topics": 315,
+    "internal_edges": 563,
+    "cross_stage_edges_excluded": 45,
+    "standards": 157,
+    "topic_standards": 383,
+    "grades": {
+      "7": 119,
+      "8": 114,
+      "9": 82
+    },
+    "strengths": {
+      "hard": 454,
+      "soft": 109
+    },
+    "confidence": {
+      "exact": 286,
+      "inferred": 97
+    }
+  },
+  "source_files_sha256": {
+    "topics.json": "fee361e7545188b7004c1a5a73d36a074b9d272f35d682ce54bae3892bb05cf2",
+    "dependencies.json": "6d753df2d3b5a3a7c89b828f8935d6eea0e5e0be8759842b4102163d314a03d5",
+    "cn-curriculum-standards.json": "972af03491f27be1c4fd08c7db267693598d9dc3b8101e082bdb1517f3adf9ec",
+    "id-aliases.json": "791334fe08835c539ce7dd6afa686dffebba5f810d11ec616b5c5d70a87864fb"
+  },
+  "package_files_sha256": {
+    "data/cn-curriculum-standards.json": "b875acac8dc7317aa66e2a1aa7d0f7fa01ccc8922e89bbac6335a895626a9511",
+    "data/dependencies.json": "a7212c4887a29761192a0c0bd8b1d161977e65efabf8d6014213e22f3100a12c",
+    "data/id-aliases.json": "791334fe08835c539ce7dd6afa686dffebba5f810d11ec616b5c5d70a87864fb",
+    "data/topic-standards.json": "67034c03c3e3e8d3c4676735ef946b920d466e4ff2ff665abf2b1f3b227de9b2",
+    "data/topics.json": "b7a4fc0918cb2de65eafef21da5b30d30fb251718541afa56c40592f47e90275"
+  },
+  "generated_at": "2026-11-14T08:56:11.620773+00:00",
+  "generator": "backend/scripts/build_junior_taxonomy_package.py",
+  "modifications": [
+    "Filtered topics to cnm_* with grade 7-9",
+    "Filtered dependencies to both endpoints in the junior set",
+    "Filtered standards to CMS 2022 4.x math domains",
+    "Flattened topic standards into data/topic-standards.json (also kept on each topic)",
+    "Excluded 45 primary-to-junior edges"
+  ]
+}

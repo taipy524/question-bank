@@ -15,6 +15,20 @@ from .chat import ChatSession, ChatMessage
 from .agent import AgentRun, AgentStep
 from .prompt import PromptTemplate
 from .paper import Paper, PaperQuestion
+from .taxonomy import (
+    TaxonomySource,
+    TaxonomyExternalTopic,
+    TaxonomyTopicMapping,
+    TaxonomyPrerequisite,
+    TaxonomyStandard,
+    TaxonomyTopicStandard,
+    TaxonomyImportBatch,
+    TaxonomyImportChange,
+    TaxonomyExternalRelation,
+    TaxonomyExternalTopicStandard,
+    TaxonomyMappingTarget,
+    TaxonomyQuestionLinkMigration,
+)
 from .composition import (
     ScopeType,
     CompositionStatus,

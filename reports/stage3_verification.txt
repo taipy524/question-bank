@@ -1,0 +1,82 @@
+Stage-3 isolated verification
+date: 2026-11-07T22:14:46+08:00
+
+=== Alembic upgrade head (temporary SQLite) ===
+INFO  [alembic.runtime.migration] Running upgrade c3d4e5f6a7b8 -> d4e5f6a7b8c9, agent runs and steps
+INFO  [alembic.runtime.migration] Running upgrade d4e5f6a7b8c9 -> b7c1e94d2a35, paper import: file hash, idempotency, composition link
+INFO  [alembic.runtime.migration] Running upgrade b7c1e94d2a35 -> e5f6a7b8c9d0, Preserve AI model identity when model configuration is deleted.
+INFO  [alembic.runtime.migration] Running upgrade e5f6a7b8c9d0 -> bbd8a6cc6284, taxonomy stage3
+
+=== Alembic check ===
+  context.run_migrations()
+No new upgrade operations detected.
+
+=== In-memory service flow (sample data only) ===
+{
+  "migration_tables": [
+    "taxonomy_external_topics",
+    "taxonomy_import_batches",
+    "taxonomy_import_changes",
+    "taxonomy_prerequisites",
+    "taxonomy_sources",
+    "taxonomy_standards",
+    "taxonomy_topic_mappings",
+    "taxonomy_topic_standards"
+  ],
+  "high_risk_confirmed": "confirmed",
+  "new_knowledge_point": {
+    "id": 3,
+    "name": "正数与负数的概念",
+    "slug": "zheng-shu-yu-fu-shu-de-gai-nian",
+    "parent_id": 1,
+    "subject_id": 1
+  },
+  "preview": {
+    "pending_prerequisites": 1,
+    "pending_standard_links": 1,
+    "current_mappings": 2,
+    "pending_new_topics": 0,
+    "high_risk_mappings": 1,
+    "prerequisite_conflicts": 0
+  },
+  "batch": {
+    "batch_id": 1,
+    "status": "applied",
+    "change_count": 2,
+    "summary": {
+      "pending_prerequisites": 1,
+      "pending_standard_links": 1,
+      "current_mappings": 2,
+      "pending_new_topics": 0,
+      "high_risk_mappings": 1,
+      "prerequisite_conflicts": 0,
+      "applied_prerequisites": 1,
+      "applied_standard_links": 1
+    }
+  },
+  "idempotent_second_execute": {
+    "batch_id": 1,
+    "status": "applied",
+    "change_count": 0,
+    "summary": {
+      "pending_prerequisites": 1,
+      "pending_standard_links": 1,
+      "current_mappings": 2,
+      "pending_new_topics": 0,
+      "high_risk_mappings": 1,
+      "prerequisite_conflicts": 0,
+      "applied_prerequisites": 1,
+      "applied_standard_links": 1
+    }
+  },
+  "rollback": {
+    "batch_id": 1,
+    "status": "rolled_back",
+    "restored_changes": 2,
+    "rollback_batch_id": 2
+  },
+  "existing_ids_preserved": true,
+  "knowledge_point_count": 3,
+  "prereq_status_after_rollback": "pending_review",
+  "standard_status_after_rollback": "pending_review"
+}

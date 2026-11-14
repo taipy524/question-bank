@@ -23,8 +23,33 @@ const emit = defineEmits<{
 
 const open = ref(false)
 const searchQuery = ref('')
+const showLegacy = ref(false)
+const filterGrade = ref<number | null>(null)
+const filterSemester = ref<string | null>(null)
+const filterChapter = ref<string | null>(null)
+const filterDomain = ref<string | null>(null)
 
-const tree = computed(() => buildKnowledgePointTree(props.knowledgePoints ?? []))
+const legacyCount = computed(
+  () => (props.knowledgePoints ?? []).filter(kp => kp.is_formal === false).length,
+)
+
+const selectableKnowledgePoints = computed(() =>
+  (props.knowledgePoints ?? []).filter(
+    kp => showLegacy.value || kp.is_formal !== false,
+  ),
+)
+
+const filteredKnowledgePoints = computed(() =>
+  selectableKnowledgePoints.value.filter((kp) => {
+    if (filterGrade.value != null && kp.grade !== filterGrade.value) return false
+    if (filterSemester.value && kp.semester !== filterSemester.value) return false
+    if (filterChapter.value && kp.chapter !== filterChapter.value) return false
+    if (filterDomain.value && kp.domain !== filterDomain.value) return false
+    return true
+  }),
+)
+
+const tree = computed(() => buildKnowledgePointTree(filteredKnowledgePoints.value))
 const filteredTree = computed(() => filterKnowledgePointTree(tree.value, searchQuery.value))
 // KnowledgePointTreeItem works with string ids so it can be shared with the filter-side tree selector.
 const selectedIdStrings = computed(() => props.modelValue.map(String))
@@ -87,6 +112,28 @@ const remove = (id: number) => {
       </Button>
     </PopoverTrigger>
     <PopoverContent class="w-(--reka-popover-trigger-width) min-w-[280px] p-2">
+      <Button
+        v-if="legacyCount > 0"
+        variant="ghost"
+        size="sm"
+        class="mb-2 h-7 px-2 text-xs"
+        @click="showLegacy = !showLegacy"
+      >
+        {{ showLegacy ? '隐藏旧知识点' : `显示旧知识点（${legacyCount}）` }}
+      </Button>
+      <KnowledgePointTaxonomyFilters
+        :knowledge-points="knowledgePoints"
+        :grade="filterGrade"
+        :semester="filterSemester"
+        :chapter="filterChapter"
+        :domain="filterDomain"
+        compact
+        class="mb-2"
+        @update:grade="filterGrade = $event"
+        @update:semester="filterSemester = $event"
+        @update:chapter="filterChapter = $event"
+        @update:domain="filterDomain = $event"
+      />
       <div class="relative mb-2">
         <Search class="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
         <ClearableInput v-model="searchQuery" placeholder="搜索知识点..." class="pl-7" autofocus />

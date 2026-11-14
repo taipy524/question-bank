@@ -1,0 +1,119 @@
+{
+  "aliases": {
+    "alias_ids": [
+      "cnm_ext_001",
+      "cnm_ext_002",
+      "cnm_ext_003",
+      "cnm_ext_004",
+      "cnm_ext_005",
+      "cnm_ext_006",
+      "cnm_ext_007",
+      "cnm_ext_008",
+      "cnm_ext_009",
+      "cnm_ext_010",
+      "cnm_ext_011",
+      "cnm_ext_012",
+      "cnm_ext_013",
+      "cnm_ext_014",
+      "cnm_ext_015",
+      "cnm_ext_016",
+      "cnm_ext_017",
+      "cnm_ext_018"
+    ],
+    "alias_total": 18
+  },
+  "all_subjects": {
+    "topics_by_id_prefix": {
+      "cnb": 66,
+      "cnc": 682,
+      "cnd": 159,
+      "cne": 791,
+      "cng": 59,
+      "cnh": 134,
+      "cnk": 45,
+      "cnm": 870,
+      "cnp": 269,
+      "cns": 222
+    },
+    "topics_total": 3297
+  },
+  "dependencies": {
+    "by_strength": {
+      "hard": 2537,
+      "soft": 2331
+    },
+    "edges_total": 4868,
+    "junior_internal_by_strength": {
+      "hard": 454,
+      "soft": 109
+    },
+    "junior_internal_edges": 563,
+    "junior_to_primary_edges": 45,
+    "senior_to_junior_edges": 69
+  },
+  "junior_math": {
+    "by_domain": {
+      "图形与几何": 117,
+      "数与代数": 142,
+      "统计与概率": 43,
+      "综合与实践": 13
+    },
+    "by_type": {
+      "application": 23,
+      "conceptual": 102,
+      "modeling": 31,
+      "procedural": 101,
+      "reasoning": 58
+    },
+    "by_volume": {
+      "7上": 61,
+      "7下": 58,
+      "8上": 57,
+      "8下": 57,
+      "9上": 49,
+      "9下": 33
+    },
+    "distinct_chapters": 139,
+    "external_flag_true": 0,
+    "standard_refs_missing_from_file": [],
+    "standards_refs": 383,
+    "standards_refs_by_confidence": {
+      "exact": 286,
+      "inferred": 97
+    },
+    "topic_total": 315,
+    "topics_without_standards": [
+      "cnm_130",
+      "cnm_192"
+    ]
+  },
+  "meta": {
+    "file_sha256": {
+      "CHANGELOG.md": "3cac1287c7bee40e5942f6eb7e64b4ec0ca20a9120898069771eeec6f9086433",
+      "LICENSE": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+      "data/cn-curriculum-standards.json": "972af03491f27be1c4fd08c7db267693598d9dc3b8101e082bdb1517f3adf9ec",
+      "data/dependencies.json": "6d753df2d3b5a3a7c89b828f8935d6eea0e5e0be8759842b4102163d314a03d5",
+      "data/id-aliases.json": "791334fe08835c539ce7dd6afa686dffebba5f810d11ec616b5c5d70a87864fb",
+      "data/topics.json": "fee361e7545188b7004c1a5a73d36a074b9d272f35d682ce54bae3892bb05cf2",
+      "docs/standards-mapping.md": "93d451a2b23a341f47c69113757264858f9ddf9657891f4ef81dea8fa44177e7",
+      "scripts/validate.py": "d6f4ad898fa51ef887aa6a0a093ea17f635c6de4d478ce1eebb023718e9465d1"
+    },
+    "source_commit": "cf73951cf4b5d2bdbc8a75bb9cb9e961e55277ab",
+    "source_dir": "/workspace/.opencode/tmp/cn-math-taxonomy-cf73951",
+    "source_license_status": "unconfirmed (GitHub license metadata: Other / NOASSERTION)",
+    "source_repo": "https://github.com/xiaoyang111222/cn-math-taxonomy"
+  },
+  "standards": {
+    "math_items_total": 786,
+    "stage4_by_domain": {
+      "图形与几何": 92,
+      "数与代数": 49,
+      "统计与概率": 13,
+      "综合与实践": 3
+    },
+    "stage4_math_total": 157,
+    "stage4_verbatim": {
+      "None": 157
+    }
+  }
+}

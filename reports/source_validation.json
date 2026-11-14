@@ -1,0 +1,97 @@
+{
+  "counts": {
+    "alias_edges": 0,
+    "aliases": 18,
+    "all_topics": 3297,
+    "dependencies_total": 4868,
+    "domains": {
+      "图形与几何": 117,
+      "数与代数": 142,
+      "统计与概率": 43,
+      "综合与实践": 13
+    },
+    "junior_internal_edges": 563,
+    "junior_internal_strength": {
+      "hard": 454,
+      "soft": 109
+    },
+    "junior_to_primary_edges": 45,
+    "junior_to_primary_strength": {
+      "hard": 32,
+      "soft": 13
+    },
+    "junior_topics": 315,
+    "senior_to_junior_edges": 69,
+    "standards_math_items": 786,
+    "standards_stage4_math": 157,
+    "topic_standard_refs": 383,
+    "topic_standard_refs_by_confidence": {
+      "exact": 286,
+      "inferred": 97
+    },
+    "topics_without_standards": [
+      "cnm_130",
+      "cnm_192"
+    ],
+    "unused_stage4_standards": [
+      "cms-2022:4.GG.05",
+      "cms-2022:4.GG.20",
+      "cms-2022:4.GG.21",
+      "cms-2022:4.GG.38",
+      "cms-2022:4.GG.42",
+      "cms-2022:4.GG.51",
+      "cms-2022:4.GG.59",
+      "cms-2022:4.GG.63",
+      "cms-2022:4.GG.66",
+      "cms-2022:4.GG.67",
+      "cms-2022:4.GG.69",
+      "cms-2022:4.GG.70",
+      "cms-2022:4.GG.84",
+      "cms-2022:4.NA.05",
+      "cms-2022:4.SP.06"
+    ],
+    "volumes": {
+      "7上": 61,
+      "7下": 58,
+      "8上": 57,
+      "8下": 57,
+      "9上": 49,
+      "9下": 33
+    }
+  },
+  "errors": [],
+  "meta": {
+    "expected": {
+      "junior_internal_edges": 563,
+      "junior_to_primary_edges": 45,
+      "junior_topics": 315,
+      "stage4_math_standards": 157,
+      "volumes": {
+        "7上": 61,
+        "7下": 58,
+        "8上": 57,
+        "8下": 57,
+        "9上": 49,
+        "9下": 33
+      }
+    },
+    "file_sha256": {
+      "CHANGELOG.md": "3cac1287c7bee40e5942f6eb7e64b4ec0ca20a9120898069771eeec6f9086433",
+      "LICENSE": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0",
+      "data/cn-curriculum-standards.json": "972af03491f27be1c4fd08c7db267693598d9dc3b8101e082bdb1517f3adf9ec",
+      "data/dependencies.json": "6d753df2d3b5a3a7c89b828f8935d6eea0e5e0be8759842b4102163d314a03d5",
+      "data/id-aliases.json": "791334fe08835c539ce7dd6afa686dffebba5f810d11ec616b5c5d70a87864fb",
+      "data/topics.json": "fee361e7545188b7004c1a5a73d36a074b9d272f35d682ce54bae3892bb05cf2",
+      "docs/standards-mapping.md": "93d451a2b23a341f47c69113757264858f9ddf9657891f4ef81dea8fa44177e7",
+      "scripts/validate.py": "d6f4ad898fa51ef887aa6a0a093ea17f635c6de4d478ce1eebb023718e9465d1"
+    },
+    "source_commit": "cf73951cf4b5d2bdbc8a75bb9cb9e961e55277ab",
+    "source_dir": "/workspace/.opencode/tmp/cn-math-taxonomy-cf73951",
+    "source_license_status": "unconfirmed (GitHub license metadata: Other / NOASSERTION)",
+    "source_repo": "https://github.com/xiaoyang111222/cn-math-taxonomy"
+  },
+  "warnings": [
+    "2 junior topics have no standards: ['cnm_130', 'cnm_192']",
+    "15 stage-4 standards are not referenced by junior topics"
+  ]
+}

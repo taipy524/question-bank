@@ -1,0 +1,2578 @@
+{
+  "direct_suggestions": [
+    {
+      "confidence": 0.625,
+      "external_id": "cnm_041",
+      "external_name": "一元一次方程的概念",
+      "internal_id": 9,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.667,
+      "external_id": "cnm_080",
+      "external_name": "实数的运算",
+      "internal_id": 3,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.9,
+      "external_id": "cnm_174",
+      "external_name": "勾股定理",
+      "internal_id": 30,
+      "match_type": "exact",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.625,
+      "external_id": "cnm_213",
+      "external_name": "中位数与众数",
+      "internal_id": 51,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.625,
+      "external_id": "cnm_219",
+      "external_name": "一元二次方程的概念",
+      "internal_id": 13,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.75,
+      "external_id": "cnm_224",
+      "external_name": "因式分解法",
+      "internal_id": 5,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.625,
+      "external_id": "cnm_276",
+      "external_name": "锐角三角函数的定义",
+      "internal_id": 39,
+      "match_type": "semantic",
+      "review_status": "pending_review",
+      "risk": null
+    },
+    {
+      "confidence": 0.9,
+      "external_id": "cnm_278",
+      "external_name": "解直角三角形",
+      "internal_id": 40,
+      "match_type": "exact",
+      "review_status": "pending_review",
+      "risk": null
+    }
+  ],
+  "high_risk_candidates": [
+    {
+      "external_id": "cnm_093",
+      "external_name": "三元一次方程组",
+      "internal_id": 10,
+      "internal_name": "二元一次方程组",
+      "reason": "semantic_bigram_jaccard=0.714 (threshold 0.6); domain=数与代数; path=初三数学 > 方程与不等式",
+      "risk": "confusable_single_char:三->二"
+    },
+    {
+      "external_id": "cnm_200",
+      "external_name": "正比例函数",
+      "internal_id": 19,
+      "internal_name": "反比例函数",
+      "reason": "semantic_bigram_jaccard=0.600 (threshold 0.6); domain=数与代数; path=初三数学 > 函数",
+      "risk": "confusable_single_char:正->反"
+    },
+    {
+      "external_id": "cnm_208",
+      "external_name": "一次函数与二元一次方程组",
+      "internal_id": 10,
+      "internal_name": "二元一次方程组",
+      "reason": "semantic_bigram_jaccard=0.600 (threshold 0.6); domain=数与代数; path=初三数学 > 方程与不等式",
+      "risk": "composite_topic_contains_other_concept"
+    }
+  ],
+  "inputs": {
+    "source_dir": "/workspace/.opencode/tmp/cn-math-taxonomy-cf73951",
+    "source_topics": 315
+  },
+  "meta": {
+    "confirmed_mappings_available": false,
+    "database_writes": 0,
+    "dry_run": true,
+    "external_commit": "cf73951cf4b5d2bdbc8a75bb9cb9e961e55277ab",
+    "internal_snapshot_sha256": "126ea8f5a2952b2a2b6d01ca82e832c2fb79acf11b80a22501b0f98897dd963f",
+    "mode": "dry_run",
+    "projection_basis": "candidate_projection",
+    "review_policy": "all pending_review; nothing auto-confirmed"
+  },
+  "no_candidate_nodes": [
+    {
+      "chapter": "七上 第一章 有理数 1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_001",
+      "external_name": "正数与负数的概念",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_002",
+      "external_name": "用正负数表示相反意义的量",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.1",
+      "domain": "数与代数",
+      "external_id": "cnm_003",
+      "external_name": "有理数的分类",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_004",
+      "external_name": "数轴",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_005",
+      "external_name": "在数轴上表示有理数",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.3",
+      "domain": "数与代数",
+      "external_id": "cnm_006",
+      "external_name": "相反数",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.4",
+      "domain": "数与代数",
+      "external_id": "cnm_007",
+      "external_name": "绝对值的概念与几何意义",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.4",
+      "domain": "数与代数",
+      "external_id": "cnm_008",
+      "external_name": "绝对值的化简与计算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第一章 有理数 1.2.5",
+      "domain": "数与代数",
+      "external_id": "cnm_009",
+      "external_name": "有理数的大小比较",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_010",
+      "external_name": "有理数的加法法则",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_011",
+      "external_name": "加法运算律与简便运算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.1.2",
+      "domain": "数与代数",
+      "external_id": "cnm_012",
+      "external_name": "有理数的减法法则",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.1.2",
+      "domain": "数与代数",
+      "external_id": "cnm_013",
+      "external_name": "有理数的加减混合运算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.2.1",
+      "domain": "数与代数",
+      "external_id": "cnm_014",
+      "external_name": "有理数的乘法法则",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.2.1",
+      "domain": "数与代数",
+      "external_id": "cnm_015",
+      "external_name": "乘法运算律与多个因数相乘",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_016",
+      "external_name": "倒数",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_017",
+      "external_name": "有理数的除法",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_018",
+      "external_name": "有理数的加减乘除混合运算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_019",
+      "external_name": "乘方的概念",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_020",
+      "external_name": "乘方的运算与符号规律",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_021",
+      "external_name": "含乘方的有理数混合运算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.3.2",
+      "domain": "数与代数",
+      "external_id": "cnm_022",
+      "external_name": "科学记数法",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 2.3.3",
+      "domain": "数与代数",
+      "external_id": "cnm_023",
+      "external_name": "近似数与有效数字",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第二章 有理数的运算 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_024",
+      "external_name": "进位制的认识与探究",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_025",
+      "external_name": "用字母表示数",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_026",
+      "external_name": "代数式的概念与书写规范",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_027",
+      "external_name": "列代数式",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.1",
+      "domain": "数与代数",
+      "external_id": "cnm_028",
+      "external_name": "解释代数式的实际意义",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.2",
+      "domain": "数与代数",
+      "external_id": "cnm_029",
+      "external_name": "代数式的值",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第三章 代数式 3.1/3.2",
+      "domain": "数与代数",
+      "external_id": "cnm_030",
+      "external_name": "用代数式表示规律",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.1",
+      "domain": "数与代数",
+      "external_id": "cnm_031",
+      "external_name": "单项式",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.1",
+      "domain": "数与代数",
+      "external_id": "cnm_032",
+      "external_name": "多项式与整式",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_033",
+      "external_name": "同类项",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_034",
+      "external_name": "合并同类项",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_035",
+      "external_name": "去括号法则",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_036",
+      "external_name": "整式的加减",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_037",
+      "external_name": "整式化简求值",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第四章 整式的加减 4.2",
+      "domain": "数与代数",
+      "external_id": "cnm_038",
+      "external_name": "整式加减的应用",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_039",
+      "external_name": "方程与方程的解",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.1.2",
+      "domain": "数与代数",
+      "external_id": "cnm_040",
+      "external_name": "等式的性质",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.2",
+      "domain": "数与代数",
+      "external_id": "cnm_042",
+      "external_name": "移项与合并同类项解方程",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.2",
+      "domain": "数与代数",
+      "external_id": "cnm_043",
+      "external_name": "含括号的一元一次方程",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.2",
+      "domain": "数与代数",
+      "external_id": "cnm_044",
+      "external_name": "含分母的一元一次方程",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.3",
+      "domain": "数与代数",
+      "external_id": "cnm_045",
+      "external_name": "列一元一次方程解应用题的步骤",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.3",
+      "domain": "数与代数",
+      "external_id": "cnm_046",
+      "external_name": "配套与工程问题",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.3",
+      "domain": "数与代数",
+      "external_id": "cnm_047",
+      "external_name": "行程问题（相遇与追及）",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.3",
+      "domain": "数与代数",
+      "external_id": "cnm_048",
+      "external_name": "销售与利润问题",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第五章 一元一次方程 5.3",
+      "domain": "数与代数",
+      "external_id": "cnm_049",
+      "external_name": "分段计费与方案选择",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_050",
+      "external_name": "立体图形与平面图形",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_051",
+      "external_name": "从不同方向看与立体图形的展开图",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.1.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_052",
+      "external_name": "点、线、面、体",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.2.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_053",
+      "external_name": "直线、射线、线段",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.2.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_054",
+      "external_name": "直线与线段的基本事实",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.2.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_055",
+      "external_name": "线段的比较与运算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.3.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_056",
+      "external_name": "角的概念与表示",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.3.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_057",
+      "external_name": "度、分、秒及其换算",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.3.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_058",
+      "external_name": "角的比较与运算（含角平分线）",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.3.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_059",
+      "external_name": "余角和补角",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 6.3.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_060",
+      "external_name": "同角（等角）的余角、补角相等",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七上 第六章 几何图形初步 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_061",
+      "external_name": "综合与实践：设计学校田径运动会比赛场地",
+      "grade": 7,
+      "semester": "上"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_062",
+      "external_name": "邻补角",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_063",
+      "external_name": "对顶角及其性质",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.1.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_064",
+      "external_name": "垂线",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.1.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_065",
+      "external_name": "垂线段最短与点到直线的距离",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.1.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_066",
+      "external_name": "同位角、内错角、同旁内角",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.2.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_067",
+      "external_name": "平行线与平行公理",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.2.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_068",
+      "external_name": "平行线的判定",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.2.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_069",
+      "external_name": "平行线的性质",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.2.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_070",
+      "external_name": "平行线判定与性质的综合应用",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_071",
+      "external_name": "定义、命题与定理",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.4",
+      "domain": "图形与几何",
+      "external_id": "cnm_072",
+      "external_name": "平移的概念与性质",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第七章 相交线与平行线 7.4",
+      "domain": "图形与几何",
+      "external_id": "cnm_073",
+      "external_name": "平移作图",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.1",
+      "domain": "数与代数",
+      "external_id": "cnm_074",
+      "external_name": "平方根与算术平方根",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.1",
+      "domain": "数与代数",
+      "external_id": "cnm_075",
+      "external_name": "开平方与平方根的求法",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.2",
+      "domain": "数与代数",
+      "external_id": "cnm_076",
+      "external_name": "立方根",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.3",
+      "domain": "数与代数",
+      "external_id": "cnm_077",
+      "external_name": "无理数",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.3",
+      "domain": "数与代数",
+      "external_id": "cnm_078",
+      "external_name": "实数的分类与数轴表示",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第八章 实数 8.3",
+      "domain": "数与代数",
+      "external_id": "cnm_079",
+      "external_name": "算术平方根的估值与大小比较",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_081",
+      "external_name": "有序数对",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_082",
+      "external_name": "平面直角坐标系与点的坐标",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.1.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_083",
+      "external_name": "象限与坐标轴上点的坐标特征",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.1.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_084",
+      "external_name": "用坐标描述简单几何图形",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.2.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_085",
+      "external_name": "用坐标表示地理位置",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第九章 平面直角坐标系 9.2.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_086",
+      "external_name": "用坐标表示平移",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十章 二元一次方程组 10.1",
+      "domain": "数与代数",
+      "external_id": "cnm_087",
+      "external_name": "二元一次方程及其解",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十章 二元一次方程组 10.2.1",
+      "domain": "数与代数",
+      "external_id": "cnm_089",
+      "external_name": "代入消元法",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十章 二元一次方程组 10.2.2",
+      "domain": "数与代数",
+      "external_id": "cnm_090",
+      "external_name": "加减消元法",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十章 二元一次方程组 10.3",
+      "domain": "数与代数",
+      "external_id": "cnm_091",
+      "external_name": "列二元一次方程组解应用题",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十章 二元一次方程组 10.3",
+      "domain": "数与代数",
+      "external_id": "cnm_092",
+      "external_name": "方程组应用的常见类型",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_094",
+      "external_name": "不等式及其解集",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.1.1",
+      "domain": "数与代数",
+      "external_id": "cnm_095",
+      "external_name": "在数轴上表示不等式的解集",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.1.2",
+      "domain": "数与代数",
+      "external_id": "cnm_096",
+      "external_name": "不等式的性质",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.2",
+      "domain": "数与代数",
+      "external_id": "cnm_097",
+      "external_name": "一元一次不等式的解法",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.2",
+      "domain": "数与代数",
+      "external_id": "cnm_098",
+      "external_name": "一元一次不等式的应用",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.3",
+      "domain": "数与代数",
+      "external_id": "cnm_099",
+      "external_name": "一元一次不等式组的解法",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 11.3",
+      "domain": "数与代数",
+      "external_id": "cnm_100",
+      "external_name": "不等式组的应用",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十一章 不等式与不等式组 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_101",
+      "external_name": "综合与实践：低碳生活",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_102",
+      "external_name": "全面调查与抽样调查",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_103",
+      "external_name": "总体、个体、样本与样本容量",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_104",
+      "external_name": "样本的代表性与随机抽样",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_105",
+      "external_name": "扇形图、条形图与折线图",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_106",
+      "external_name": "频数分布表与数据分组",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_107",
+      "external_name": "频数分布直方图",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_108",
+      "external_name": "趋势图",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_109",
+      "external_name": "综合与实践：日昼时长规律的探究",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_110",
+      "external_name": "三角形的概念与分类",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_111",
+      "external_name": "三角形三边关系",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_112",
+      "external_name": "三角形的高",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_113",
+      "external_name": "三角形的中线",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_114",
+      "external_name": "三角形的角平分线",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_115",
+      "external_name": "三角形内角和定理",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_116",
+      "external_name": "直角三角形的两个锐角互余",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_117",
+      "external_name": "三角形的外角及其性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 13.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_118",
+      "external_name": "几何证明的基本格式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十三章 三角形 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_119",
+      "external_name": "综合与实践：确定匀质薄板的重心位置",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_120",
+      "external_name": "全等图形与全等三角形",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_121",
+      "external_name": "全等三角形的性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_122",
+      "external_name": "全等判定：边边边（SSS）",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_123",
+      "external_name": "全等判定：边角边（SAS）",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_124",
+      "external_name": "全等判定：角边角（ASA）与角角边（AAS）",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_125",
+      "external_name": "全等判定：斜边、直角边（HL）",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_126",
+      "external_name": "综合运用全等判定与规范书写",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.2/14.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_127",
+      "external_name": "基本尺规作图：作等角与角平分线",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_128",
+      "external_name": "角平分线的性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 14.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_129",
+      "external_name": "角平分线的判定",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十四章 全等三角形 综合",
+      "domain": "图形与几何",
+      "external_id": "cnm_130",
+      "external_name": "全等三角形的常见辅助线与模型",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_131",
+      "external_name": "轴对称图形与两个图形成轴对称",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_132",
+      "external_name": "轴对称的性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_133",
+      "external_name": "线段垂直平分线的性质与判定",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_134",
+      "external_name": "作线段的垂直平分线",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_135",
+      "external_name": "画轴对称图形",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_136",
+      "external_name": "坐标系中的轴对称",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_137",
+      "external_name": "等腰三角形的性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_138",
+      "external_name": "等腰三角形的判定",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_139",
+      "external_name": "等边三角形的性质与判定",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 15.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_140",
+      "external_name": "含 30° 角的直角三角形的性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十五章 轴对称 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_141",
+      "external_name": "综合与实践：最短路径问题",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.1",
+      "domain": "数与代数",
+      "external_id": "cnm_142",
+      "external_name": "同底数幂的乘法",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.1",
+      "domain": "数与代数",
+      "external_id": "cnm_143",
+      "external_name": "幂的乘方与积的乘方",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.2",
+      "domain": "数与代数",
+      "external_id": "cnm_144",
+      "external_name": "单项式乘单项式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.2",
+      "domain": "数与代数",
+      "external_id": "cnm_145",
+      "external_name": "单项式乘多项式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.2",
+      "domain": "数与代数",
+      "external_id": "cnm_146",
+      "external_name": "多项式乘多项式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.3",
+      "domain": "数与代数",
+      "external_id": "cnm_147",
+      "external_name": "平方差公式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.3",
+      "domain": "数与代数",
+      "external_id": "cnm_148",
+      "external_name": "完全平方公式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十六章 整式的乘法 16.3",
+      "domain": "数与代数",
+      "external_id": "cnm_149",
+      "external_name": "乘法公式的综合运用",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17",
+      "domain": "数与代数",
+      "external_id": "cnm_150",
+      "external_name": "因式分解的概念",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17.1",
+      "domain": "数与代数",
+      "external_id": "cnm_151",
+      "external_name": "提公因式法",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17.2",
+      "domain": "数与代数",
+      "external_id": "cnm_152",
+      "external_name": "公式法：平方差",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17.2",
+      "domain": "数与代数",
+      "external_id": "cnm_153",
+      "external_name": "公式法：完全平方",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17.2",
+      "domain": "数与代数",
+      "external_id": "cnm_154",
+      "external_name": "综合运用因式分解",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十七章 因式分解 17",
+      "domain": "数与代数",
+      "external_id": "cnm_155",
+      "external_name": "因式分解的应用",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.1",
+      "domain": "数与代数",
+      "external_id": "cnm_156",
+      "external_name": "分式的概念",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.1",
+      "domain": "数与代数",
+      "external_id": "cnm_157",
+      "external_name": "分式的基本性质",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.1",
+      "domain": "数与代数",
+      "external_id": "cnm_158",
+      "external_name": "分式的约分与最简分式",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.1",
+      "domain": "数与代数",
+      "external_id": "cnm_159",
+      "external_name": "分式的通分",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.2",
+      "domain": "数与代数",
+      "external_id": "cnm_160",
+      "external_name": "分式的乘除",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.3",
+      "domain": "数与代数",
+      "external_id": "cnm_161",
+      "external_name": "分式的加减",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.3",
+      "domain": "数与代数",
+      "external_id": "cnm_162",
+      "external_name": "分式的混合运算与化简求值",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.4",
+      "domain": "数与代数",
+      "external_id": "cnm_163",
+      "external_name": "同底数幂的除法",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.4",
+      "domain": "数与代数",
+      "external_id": "cnm_164",
+      "external_name": "零指数幂、负整数指数幂与科学记数法",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.5",
+      "domain": "数与代数",
+      "external_id": "cnm_165",
+      "external_name": "分式方程的解法与增根",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八上 第十八章 分式 18.5",
+      "domain": "数与代数",
+      "external_id": "cnm_166",
+      "external_name": "分式方程的应用",
+      "grade": 8,
+      "semester": "上"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.1",
+      "domain": "数与代数",
+      "external_id": "cnm_167",
+      "external_name": "二次根式的概念与有意义的条件",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.1",
+      "domain": "数与代数",
+      "external_id": "cnm_168",
+      "external_name": "二次根式的性质",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.2",
+      "domain": "数与代数",
+      "external_id": "cnm_169",
+      "external_name": "二次根式的乘法",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.2",
+      "domain": "数与代数",
+      "external_id": "cnm_170",
+      "external_name": "二次根式的除法",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.2",
+      "domain": "数与代数",
+      "external_id": "cnm_171",
+      "external_name": "最简二次根式与分母有理化",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.3",
+      "domain": "数与代数",
+      "external_id": "cnm_172",
+      "external_name": "二次根式的加减",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第十九章 二次根式 19.3",
+      "domain": "数与代数",
+      "external_id": "cnm_173",
+      "external_name": "二次根式的混合运算",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十章 勾股定理 20.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_175",
+      "external_name": "勾股定理的证明",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十章 勾股定理 20.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_176",
+      "external_name": "勾股定理的应用",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十章 勾股定理 20.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_177",
+      "external_name": "勾股定理的逆定理",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十章 勾股定理 20.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_178",
+      "external_name": "勾股定理逆定理的应用",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十章 勾股定理 20.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_179",
+      "external_name": "用勾股定理在数轴上表示无理数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_180",
+      "external_name": "多边形及其对角线",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_181",
+      "external_name": "多边形的内角和",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_182",
+      "external_name": "多边形的外角和",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_183",
+      "external_name": "平行四边形的性质",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_184",
+      "external_name": "平行四边形的判定",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_185",
+      "external_name": "三角形的中位线",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_186",
+      "external_name": "矩形的性质",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_187",
+      "external_name": "直角三角形斜边上的中线",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_188",
+      "external_name": "矩形的判定",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_189",
+      "external_name": "菱形的性质",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_190",
+      "external_name": "菱形的判定",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 21.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_191",
+      "external_name": "正方形的性质与判定",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十一章 四边形 综合",
+      "domain": "图形与几何",
+      "external_id": "cnm_192",
+      "external_name": "四边形中的折叠与动点问题",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.1",
+      "domain": "数与代数",
+      "external_id": "cnm_193",
+      "external_name": "变量与常量",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.1",
+      "domain": "数与代数",
+      "external_id": "cnm_194",
+      "external_name": "函数的概念",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.1",
+      "domain": "数与代数",
+      "external_id": "cnm_195",
+      "external_name": "自变量的取值范围",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.1",
+      "domain": "数与代数",
+      "external_id": "cnm_196",
+      "external_name": "函数值",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.2",
+      "domain": "数与代数",
+      "external_id": "cnm_197",
+      "external_name": "函数的图象",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.2",
+      "domain": "数与代数",
+      "external_id": "cnm_198",
+      "external_name": "函数的三种表示方法",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十二章 函数 22.2",
+      "domain": "数与代数",
+      "external_id": "cnm_199",
+      "external_name": "用函数刻画实际变化规律",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.1",
+      "domain": "数与代数",
+      "external_id": "cnm_201",
+      "external_name": "一次函数的概念",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.2",
+      "domain": "数与代数",
+      "external_id": "cnm_202",
+      "external_name": "一次函数的图象与画法",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.2",
+      "domain": "数与代数",
+      "external_id": "cnm_203",
+      "external_name": "一次函数的性质",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.2",
+      "domain": "数与代数",
+      "external_id": "cnm_204",
+      "external_name": "一次函数图象的平移",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.2",
+      "domain": "数与代数",
+      "external_id": "cnm_205",
+      "external_name": "待定系数法求一次函数解析式",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.3",
+      "domain": "数与代数",
+      "external_id": "cnm_206",
+      "external_name": "一次函数与一元一次方程",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.3",
+      "domain": "数与代数",
+      "external_id": "cnm_207",
+      "external_name": "一次函数与一元一次不等式",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 23.4",
+      "domain": "数与代数",
+      "external_id": "cnm_209",
+      "external_name": "实际问题与一次函数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十三章 一次函数 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_210",
+      "external_name": "综合与实践：音乐与数学",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_211",
+      "external_name": "平均数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_212",
+      "external_name": "加权平均数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_214",
+      "external_name": "集中趋势统计量的选择",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_215",
+      "external_name": "极差、方差与标准差",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_216",
+      "external_name": "数据的四分位数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.4",
+      "domain": "统计与概率",
+      "external_id": "cnm_217",
+      "external_name": "数据的分组与由分组数据估计平均数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_218",
+      "external_name": "综合与实践：学生体质健康调查与分析",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.2",
+      "domain": "数与代数",
+      "external_id": "cnm_220",
+      "external_name": "直接开平方法",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.2",
+      "domain": "数与代数",
+      "external_id": "cnm_221",
+      "external_name": "配方法",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.2",
+      "domain": "数与代数",
+      "external_id": "cnm_222",
+      "external_name": "公式法与求根公式",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.2",
+      "domain": "数与代数",
+      "external_id": "cnm_223",
+      "external_name": "根的判别式",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.2",
+      "domain": "数与代数",
+      "external_id": "cnm_225",
+      "external_name": "一元二次方程解法的选择",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 拓展",
+      "domain": "数与代数",
+      "external_id": "cnm_226",
+      "external_name": "一元二次方程根与系数的关系（拓展）",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.3",
+      "domain": "数与代数",
+      "external_id": "cnm_227",
+      "external_name": "增长率与传播问题",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十五章 一元二次方程 25.3",
+      "domain": "数与代数",
+      "external_id": "cnm_228",
+      "external_name": "面积与销售利润问题",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.1",
+      "domain": "数与代数",
+      "external_id": "cnm_229",
+      "external_name": "二次函数的概念",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.2",
+      "domain": "数与代数",
+      "external_id": "cnm_230",
+      "external_name": "y=ax² 的图象与性质",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.2",
+      "domain": "数与代数",
+      "external_id": "cnm_231",
+      "external_name": "y=a(x-h)²+k 的图象与平移",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.2",
+      "domain": "数与代数",
+      "external_id": "cnm_232",
+      "external_name": "y=ax²+bx+c 的图象与性质",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.2",
+      "domain": "数与代数",
+      "external_id": "cnm_233",
+      "external_name": "待定系数法求二次函数解析式",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.3",
+      "domain": "数与代数",
+      "external_id": "cnm_234",
+      "external_name": "二次函数与一元二次方程",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.4",
+      "domain": "数与代数",
+      "external_id": "cnm_235",
+      "external_name": "二次函数的最值",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十六章 二次函数 26.4",
+      "domain": "数与代数",
+      "external_id": "cnm_236",
+      "external_name": "实际问题与二次函数",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.1",
+      "domain": "数与代数",
+      "external_id": "cnm_237",
+      "external_name": "反比例函数的概念",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.2",
+      "domain": "数与代数",
+      "external_id": "cnm_238",
+      "external_name": "反比例函数的图象与性质",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_239",
+      "external_name": "反比例函数中 k 的几何意义",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.2",
+      "domain": "数与代数",
+      "external_id": "cnm_240",
+      "external_name": "待定系数法求反比例函数解析式",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.2",
+      "domain": "数与代数",
+      "external_id": "cnm_241",
+      "external_name": "反比例函数与一次函数的综合",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 27.3",
+      "domain": "数与代数",
+      "external_id": "cnm_242",
+      "external_name": "实际问题与反比例函数",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十七章 反比例函数 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_243",
+      "external_name": "综合与实践：高铁列车运行中的数量关系",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_244",
+      "external_name": "图形的旋转",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_245",
+      "external_name": "旋转的性质",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_246",
+      "external_name": "旋转作图",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_247",
+      "external_name": "旋转变换在证明与计算中的应用",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_248",
+      "external_name": "中心对称与中心对称图形",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十八章 旋转 28.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_249",
+      "external_name": "关于原点对称的点的坐标",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_250",
+      "external_name": "圆的有关概念",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_251",
+      "external_name": "垂径定理",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_252",
+      "external_name": "弧、弦、圆心角的关系",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_253",
+      "external_name": "圆周角定理",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_254",
+      "external_name": "直径所对的圆周角",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_255",
+      "external_name": "圆内接四边形",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_256",
+      "external_name": "弧长",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_257",
+      "external_name": "扇形面积",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第二十九章 圆 29.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_258",
+      "external_name": "圆锥的侧面积与全面积",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_259",
+      "external_name": "点与圆的位置关系",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_260",
+      "external_name": "直线与圆的位置关系",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_261",
+      "external_name": "切线的判定",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_262",
+      "external_name": "切线的性质",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.1",
+      "domain": "图形与几何",
+      "external_id": "cnm_263",
+      "external_name": "切线长定理",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_264",
+      "external_name": "三角形的内切圆",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.2",
+      "domain": "图形与几何",
+      "external_id": "cnm_265",
+      "external_name": "三角形的外接圆",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 30.3",
+      "domain": "图形与几何",
+      "external_id": "cnm_266",
+      "external_name": "正多边形与圆",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九上 第三十章 直线与圆的位置关系 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_267",
+      "external_name": "综合与实践：生活中的优化问题",
+      "grade": 9,
+      "semester": "上"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_268",
+      "external_name": "成比例线段",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_269",
+      "external_name": "平行线分线段成比例",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_270",
+      "external_name": "相似多边形",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_271",
+      "external_name": "相似三角形的判定",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_272",
+      "external_name": "相似三角形的性质",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_273",
+      "external_name": "相似三角形的基本模型",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_274",
+      "external_name": "相似三角形的实际应用",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十一章 相似",
+      "domain": "图形与几何",
+      "external_id": "cnm_275",
+      "external_name": "位似",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十二章 锐角三角函数",
+      "domain": "数与代数",
+      "external_id": "cnm_277",
+      "external_name": "特殊角的三角函数值与计算",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十二章 锐角三角函数",
+      "domain": "图形与几何",
+      "external_id": "cnm_279",
+      "external_name": "仰角、俯角与方向角问题",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十二章 锐角三角函数",
+      "domain": "图形与几何",
+      "external_id": "cnm_280",
+      "external_name": "坡度与坡角问题",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十三章 投影与视图",
+      "domain": "图形与几何",
+      "external_id": "cnm_281",
+      "external_name": "平行投影与中心投影",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十三章 投影与视图",
+      "domain": "图形与几何",
+      "external_id": "cnm_282",
+      "external_name": "正投影",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十三章 投影与视图",
+      "domain": "图形与几何",
+      "external_id": "cnm_283",
+      "external_name": "三视图及由三视图想象立体图形",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.1.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_284",
+      "external_name": "随机事件、必然事件与不可能事件",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_285",
+      "external_name": "概率的意义与等可能事件的概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_286",
+      "external_name": "用列举法求概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_287",
+      "external_name": "用列表法与树状图求概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_288",
+      "external_name": "用频率估计概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_289",
+      "external_name": "概率的应用与游戏的公平性",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十二章 锐角三角函数 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_290",
+      "external_name": "综合与实践：停车设计问题",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十三章 投影与视图 综合与实践",
+      "domain": "综合与实践",
+      "external_id": "cnm_291",
+      "external_name": "综合与实践：建筑中的数学",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_292",
+      "external_name": "数据收集的方法：问卷调查、实验与查阅资料",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_293",
+      "external_name": "数据的分类整理与划记法、统计表",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_294",
+      "external_name": "条形图与折线图的绘制",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_295",
+      "external_name": "扇形图的绘制：百分比与圆心角的换算",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_296",
+      "external_name": "统计图的误导与偏差辨识",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_297",
+      "external_name": "频率（相对频数）的计算与意义",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_298",
+      "external_name": "简单随机抽样的实施（抽签法与随机数）",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_299",
+      "external_name": "用样本百分比估计总体数量",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_300",
+      "external_name": "统计活动的基本过程",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "七下 第十二章 数据的收集、整理与描述 12.2.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_301",
+      "external_name": "频数分布直方图的读图与分析",
+      "grade": 7,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_302",
+      "external_name": "用样本平均数估计总体平均数",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_303",
+      "external_name": "极端值对平均数与中位数的影响",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_304",
+      "external_name": "用方差比较两组数据的稳定性",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_305",
+      "external_name": "箱线图的读取与比较",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "八下 第二十四章 数据的分析 24.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_306",
+      "external_name": "用样本方差估计总体的稳定性",
+      "grade": 8,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.1.1",
+      "domain": "统计与概率",
+      "external_id": "cnm_307",
+      "external_name": "事件发生可能性大小的比较与排序",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_308",
+      "external_name": "概率的取值范围与概率的性质",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.1.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_309",
+      "external_name": "等可能性与古典概型的判断",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_310",
+      "external_name": "放回与不放回摸球问题的区分",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_311",
+      "external_name": "三步及以上试验用树状图求概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_312",
+      "external_name": "用频率估计合格率、发芽率等实际概率",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.2",
+      "domain": "统计与概率",
+      "external_id": "cnm_313",
+      "external_name": "概率与统计图表综合问题",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 34.3",
+      "domain": "统计与概率",
+      "external_id": "cnm_314",
+      "external_name": "对概率意义的常见误解辨析",
+      "grade": 9,
+      "semester": "下"
+    },
+    {
+      "chapter": "九下 第三十四章 随机事件的概率 综合应用（补充课题，非已核实的教材栏目）",
+      "domain": "综合与实践",
+      "external_id": "cnm_315",
+      "external_name": "综合与实践：用随机试验检验游戏的公平性（补充课题）",
+      "grade": 9,
+      "semester": "下"
+    }
+  ],
+  "risks": [
+    "3 个节点仅含高风险候选，已从普通建议中排除。",
+    "候选投影出现 1 条候选映射冲突（自环形态），不是真实先修自环；排除高风险候选后为 0 条。",
+    "当前没有 confirmed 映射，确认口径下真实先修自环为 0。"
+  ],
+  "summary": {
+    "candidate_nodes": 12,
+    "candidate_pairs": 12,
+    "confirmed_mappings": 0,
+    "dependencies_candidate_both_mapped": 4,
+    "dependencies_candidate_conflicts": 1,
+    "dependencies_confirmed_self_loops": 0,
+    "dependencies_internal_edges": 563,
+    "direct_suggestions": 8,
+    "external_total": 315,
+    "high_risk_nodes": 3,
+    "internal_candidate_mapped": 10,
+    "internal_total": 62,
+    "internal_unmatched": 51,
+    "match_type_counts": {
+      "exact": 2,
+      "new_topic": 303,
+      "one_to_many": 3,
+      "semantic": 7
+    },
+    "no_candidate_nodes": 303,
+    "pending_review_nodes": 12,
+    "standards_candidate_coverage": 12,
+    "standards_confirmed_coverage": 0,
+    "standards_total": 157,
+    "suggestion_nodes": 9
+  },
+  "validation": {
+    "mapping_errors": [],
+    "mapping_warnings": []
+  }
+}

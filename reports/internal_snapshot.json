@@ -1,0 +1,577 @@
+{
+  "knowledge_points": [
+    {
+      "internal_id": 1,
+      "name": "初三数学",
+      "parent_id": null,
+      "parent_path": "初三数学",
+      "slug": "初中数学",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 2,
+      "name": "数与式",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "shu-yu-shi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 3,
+      "name": "实数与数的运算",
+      "parent_id": 2,
+      "parent_path": "初三数学 > 数与式",
+      "slug": "shi-shu-yu-shu-de-yun-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 4,
+      "name": "整式运算",
+      "parent_id": 2,
+      "parent_path": "初三数学 > 数与式",
+      "slug": "zheng-shi-yun-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 5,
+      "name": "因式分解",
+      "parent_id": 2,
+      "parent_path": "初三数学 > 数与式",
+      "slug": "yin-shi-fen-jie",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 6,
+      "name": "分式及其运算",
+      "parent_id": 2,
+      "parent_path": "初三数学 > 数与式",
+      "slug": "fen-shi-ji-qi-yun-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 7,
+      "name": "二次根式及其运算",
+      "parent_id": 2,
+      "parent_path": "初三数学 > 数与式",
+      "slug": "er-ci-gen-shi-ji-qi-yun-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 8,
+      "name": "方程与不等式",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "fang-cheng-yu-bu-deng-shi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 9,
+      "name": "一元一次方程",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "yi-yuan-yi-ci-fang-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 10,
+      "name": "二元一次方程组",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "er-yuan-yi-ci-fang-cheng-zu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 11,
+      "name": "一元一次不等式与不等式组",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "yi-yuan-yi-ci-bu-deng-shi-yu-bu-deng-shi-zu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 12,
+      "name": "分式方程",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "fen-shi-fang-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 13,
+      "name": "一元二次方程",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "yi-yuan-er-ci-fang-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 14,
+      "name": "方程的实际应用",
+      "parent_id": 8,
+      "parent_path": "初三数学 > 方程与不等式",
+      "slug": "fang-cheng-de-shi-ji-ying-yong",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 15,
+      "name": "函数",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "han-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 16,
+      "name": "平面直角坐标系",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "ping-mian-zhi-jiao-zuo-biao-xi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 17,
+      "name": "函数的概念与表示",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "han-shu-de-gai-nian-yu-biao-shi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 18,
+      "name": "一次函数",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "yi-ci-han-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 19,
+      "name": "反比例函数",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "fan-bi-li-han-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 20,
+      "name": "二次函数",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "er-ci-han-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 21,
+      "name": "函数图像与性质",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "han-shu-tu-xiang-yu-xing-zhi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 22,
+      "name": "函数与方程",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "han-shu-yu-fang-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 23,
+      "name": "函数实际应用",
+      "parent_id": 15,
+      "parent_path": "初三数学 > 函数",
+      "slug": "han-shu-shi-ji-ying-yong",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 24,
+      "name": "图形与几何",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "tu-xing-yu-ji-he",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 25,
+      "name": "直线、射线与线段",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "zhi-xian-she-xian-yu-xian-duan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 26,
+      "name": "角与平行线",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "jiao-yu-ping-xing-xian",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 27,
+      "name": "三角形及其性质",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "san-jiao-xing-ji-qi-xing-zhi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 28,
+      "name": "全等三角形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "quan-deng-san-jiao-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 29,
+      "name": "等腰三角形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "deng-yao-san-jiao-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 30,
+      "name": "勾股定理",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "gou-gu-ding-li",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 31,
+      "name": "相似三角形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "xiang-si-san-jiao-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 32,
+      "name": "四边形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "si-bian-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 33,
+      "name": "平行四边形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "ping-xing-si-bian-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 34,
+      "name": "矩形、菱形与正方形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "ju-xing-ling-xing-yu-zheng-fang-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 35,
+      "name": "圆的基本性质",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "yuan-de-ji-ben-xing-zhi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 36,
+      "name": "圆周角与圆心角",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "yuan-zhou-jiao-yu-yuan-xin-jiao",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 37,
+      "name": "切线及其性质",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "qie-xian-ji-qi-xing-zhi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 38,
+      "name": "圆与三角形综合",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "yuan-yu-san-jiao-xing-zong-he",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 39,
+      "name": "锐角三角函数",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "rui-jiao-san-jiao-han-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 40,
+      "name": "解直角三角形",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "jie-zhi-jiao-san-jiao-xing",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 41,
+      "name": "图形面积与长度计算",
+      "parent_id": 24,
+      "parent_path": "初三数学 > 图形与几何",
+      "slug": "tu-xing-mian-ji-yu-chang-du-ji-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 42,
+      "name": "图形变换",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "tu-xing-bian-huan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 43,
+      "name": "轴对称",
+      "parent_id": 42,
+      "parent_path": "初三数学 > 图形变换",
+      "slug": "zhou-dui-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 44,
+      "name": "平移",
+      "parent_id": 42,
+      "parent_path": "初三数学 > 图形变换",
+      "slug": "ping-yi",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 45,
+      "name": "旋转",
+      "parent_id": 42,
+      "parent_path": "初三数学 > 图形变换",
+      "slug": "xuan-zhuan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 46,
+      "name": "中心对称",
+      "parent_id": 42,
+      "parent_path": "初三数学 > 图形变换",
+      "slug": "zhong-xin-dui-cheng",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 47,
+      "name": "图形变换与坐标",
+      "parent_id": 42,
+      "parent_path": "初三数学 > 图形变换",
+      "slug": "tu-xing-bian-huan-yu-zuo-biao",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 48,
+      "name": "统计与概率",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "tong-ji-yu-gai-lu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 49,
+      "name": "数据收集与整理",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "shu-ju-shou-ji-yu-zheng-li",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 50,
+      "name": "统计图表",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "tong-ji-tu-biao",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 51,
+      "name": "平均数、中位数与众数",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "ping-jun-shu-zhong-wei-shu-yu-zhong-shu",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 52,
+      "name": "方差",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "fang-chai",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 53,
+      "name": "简单随机事件",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "jian-dan-sui-ji-shi-jian",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 54,
+      "name": "概率计算",
+      "parent_id": 48,
+      "parent_path": "初三数学 > 统计与概率",
+      "slug": "gai-lu-ji-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 55,
+      "name": "综合与应用",
+      "parent_id": 1,
+      "parent_path": "初三数学",
+      "slug": "zong-he-yu-ying-yong",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 56,
+      "name": "代数综合",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "dai-shu-zong-he",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 57,
+      "name": "函数综合",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "han-shu-zong-he",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 58,
+      "name": "几何证明",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "ji-he-zheng-ming",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 59,
+      "name": "几何计算",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "ji-he-ji-suan",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 60,
+      "name": "动态几何问题",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "dong-tai-ji-he-wen-ti",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 61,
+      "name": "最值问题",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "zui-zhi-wen-ti",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    },
+    {
+      "internal_id": 62,
+      "name": "实际应用建模",
+      "parent_id": 55,
+      "parent_path": "初三数学 > 综合与应用",
+      "slug": "shi-ji-ying-yong-jian-mo",
+      "subject_id": 1,
+      "subject_name": "初三数学"
+    }
+  ],
+  "meta": {
+    "exported_at": "2026-10-25 15:55:35",
+    "fields": [
+      "internal_id",
+      "name",
+      "slug",
+      "subject_id",
+      "subject_name",
+      "parent_id",
+      "parent_path"
+    ],
+    "row_count": 62,
+    "snapshot_sha256": "126ea8f5a2952b2a2b6d01ca82e832c2fb79acf11b80a22501b0f98897dd963f",
+    "source": "mysqldump: /workspace/.opencode/tmp/finalize-20261025_235534/mysql.sql"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "internal_snapshot",
+  "type": "object",
+  "required": ["meta", "knowledge_points"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["source", "exported_at", "row_count", "snapshot_sha256"],
+      "properties": {
+        "source": {"type": "string"},
+        "exported_at": {"type": "string"},
+        "row_count": {"type": "integer", "minimum": 0},
+        "snapshot_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "fields": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "knowledge_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["internal_id", "name", "slug", "subject_id", "subject_name", "parent_id", "parent_path"],
+        "properties": {
+          "internal_id": {"type": "integer"},
+          "name": {"type": "string", "minLength": 1},
+          "slug": {"type": "string", "minLength": 1},
+          "subject_id": {"type": "integer"},
+          "subject_name": {"type": "string", "minLength": 1},
+          "parent_id": {"type": ["integer", "null"]},
+          "parent_path": {"type": "string"}
+        }
+      }
+    }
+  }
+}

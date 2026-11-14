@@ -1,0 +1,15 @@
+Stage-3 test results
+date: 2026-11-07T22:21:16+08:00
+
+=== Backend: pytest -q ===
+SKIPPED [1] tests/test_migrations.py:114: MYSQL_TEST_URL not set (needs a real MySQL)
+749 passed, 1 skipped, 2 warnings in 61.24s (0:01:01)
+
+Note: MYSQL_TEST_URL is not set; the real-MySQL migration test is skipped.
+
+=== Migration (temporary SQLite) ===
+No new upgrade operations detected.
+
+=== Frontend: vitest run ===
+ Test Files  21 passed (21)
+      Tests  248 passed (248)

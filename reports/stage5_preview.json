@@ -1,0 +1,40 @@
+{
+  "mode": "preview",
+  "database_writes": 0,
+  "validation": {
+    "errors": [],
+    "warnings": [
+      "2 topics without standards: ['cnm_130', 'cnm_192']"
+    ],
+    "counts": {
+      "topics_total": 3297,
+      "junior_topics": 315,
+      "internal_edges": 563,
+      "cross_stage_edges": 45,
+      "standards": 157,
+      "standard_refs": 383,
+      "exact_refs": 286,
+      "inferred_refs": 97,
+      "topics_without_standards": [
+        "cnm_130",
+        "cnm_192"
+      ],
+      "aliases": 18,
+      "mapping_rows": 315,
+      "mapping_candidates": 12,
+      "new_topic_rows": 303
+    }
+  },
+  "source_slug": "cn-math-taxonomy",
+  "commit_sha": "cf73951cf4b5d2bdbc8a75bb9cb9e961e55277ab",
+  "source_exists": false,
+  "counts": {
+    "topics_to_import": 315,
+    "standards_to_import": 157,
+    "internal_relations_to_import": 563,
+    "cross_stage_relations_to_import": 45,
+    "standard_refs_to_import": 383,
+    "mapping_rows_to_import": 12,
+    "new_topic_rows_to_import": 303
+  }
+}

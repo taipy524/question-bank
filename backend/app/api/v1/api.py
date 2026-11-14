@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import subjects, knowledge_points, tags, tag_categories, questions, upload, login, users, system_settings, ai_config, chat, tools, activity_logs, import_tasks, prompts, setup, system, subject_prompts, compositions, paper_imports
+from app.api.v1.endpoints import subjects, knowledge_points, tags, tag_categories, questions, upload, login, users, system_settings, ai_config, chat, tools, activity_logs, import_tasks, prompts, setup, system, subject_prompts, compositions, paper_imports, taxonomy
 
 api_router = APIRouter()
 api_router.include_router(setup.router, prefix="/setup", tags=["setup"])
@@ -22,5 +22,6 @@ api_router.include_router(chat.router, prefix="/chat", tags=["chat"])
 api_router.include_router(prompts.router, prefix="/chat/prompts", tags=["prompts"])
 api_router.include_router(tools.router, prefix="/tools", tags=["tools"])
 api_router.include_router(activity_logs.router, prefix="/activity-logs", tags=["activity-logs"])
+api_router.include_router(taxonomy.router, prefix="/taxonomy", tags=["taxonomy"])
 
 

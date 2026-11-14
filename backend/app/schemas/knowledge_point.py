@@ -20,6 +20,12 @@ class KnowledgePoint(KnowledgePointBase):
     subject_id: int
     created_at: datetime
     updated_at: datetime
+    # Official taxonomy metadata.  None for manually created knowledge points.
+    grade: Optional[int] = None
+    semester: Optional[str] = None
+    chapter: Optional[str] = None
+    domain: Optional[str] = None
+    is_formal: bool = False
 
     class Config:
         from_attributes = True

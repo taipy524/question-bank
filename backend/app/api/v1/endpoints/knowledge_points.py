@@ -8,6 +8,63 @@ from app.api import deps
 from app.core.permissions import Permission
 from app.core.vector_store import VectorStore
 from app.services import kp_import_service
+from sqlalchemy import func, select
+from sqlalchemy.orm import selectinload
+from app.models.knowledge_point import KnowledgePoint
+from app.models.taxonomy import (
+    KnowledgePointTaxonomy,
+    TaxonomyPrerequisite,
+    TaxonomyStandard,
+    TaxonomyTopicStandard,
+)
+
+
+def _kp_payload(kp: KnowledgePoint) -> dict:
+    meta = kp.taxonomy_meta
+    return {
+        "id": kp.id,
+        "name": kp.name,
+        "slug": kp.slug,
+        "subject_id": kp.subject_id,
+        "parent_id": kp.parent_id,
+        "created_at": kp.created_at,
+        "updated_at": kp.updated_at,
+        "grade": meta.grade if meta else None,
+        "semester": meta.semester if meta else None,
+        "chapter": meta.chapter if meta else None,
+        "domain": meta.domain if meta else None,
+        # Formal = imported/manually-created with taxonomy metadata. Legacy
+        # knowledge points (the pre-import 62) have no metadata row.
+        "is_formal": bool(meta is not None and not meta.is_legacy),
+    }
+
+
+async def _count_formal_kps(db, subject_id: Optional[int] = None) -> int:
+    stmt = (
+        select(func.count())
+        .select_from(KnowledgePoint)
+        .join(
+            KnowledgePointTaxonomy,
+            KnowledgePointTaxonomy.knowledge_point_id == KnowledgePoint.id,
+        )
+        .where(
+            KnowledgePointTaxonomy.is_legacy.is_(False),
+            KnowledgePointTaxonomy.is_active.is_(True),
+        )
+    )
+    if subject_id is not None:
+        stmt = stmt.where(KnowledgePoint.subject_id == subject_id)
+    return (await db.execute(stmt)).scalar_one()
+
+
+async def _load_kp(db, kp_id: int) -> KnowledgePoint | None:
+    return (
+        await db.execute(
+            select(KnowledgePoint)
+            .options(selectinload(KnowledgePoint.taxonomy_meta))
+            .where(KnowledgePoint.id == kp_id)
+        )
+    ).scalar_one_or_none()
 
 router = APIRouter()
 
@@ -20,21 +77,131 @@ async def read_knowledge_points(
     skip: int = 0,
     limit: int = 100,
     subject_id: Optional[int] = None,
+    grade: Optional[int] = None,
+    semester: Optional[str] = None,
+    chapter: Optional[str] = None,
+    domain: Optional[str] = None,
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
     """
     Retrieve knowledge points.
-    Set limit to -1 to retrieve all knowledge points.
-    """
-    if limit == -1:
-        limit = None
 
+    Supports grade / semester / chapter / domain filtering.  Set limit to -1
+    to retrieve every matching knowledge point.
+    """
     if subject_id:
         deps.require(current_user, Permission.VIEW_QUESTION, subject_id=subject_id)
-        knowledge_points = await crud.knowledge_point.get_by_subject(db, subject_id=subject_id, skip=skip, limit=limit)
-    else:
-        knowledge_points = await crud.knowledge_point.get_multi(db, skip=skip, limit=limit)
-    return knowledge_points
+
+    stmt = select(KnowledgePoint).options(selectinload(KnowledgePoint.taxonomy_meta))
+    if subject_id:
+        stmt = stmt.where(KnowledgePoint.subject_id == subject_id)
+    if any(value is not None for value in (grade, semester, chapter, domain)):
+        stmt = stmt.join(
+            KnowledgePointTaxonomy,
+            KnowledgePointTaxonomy.knowledge_point_id == KnowledgePoint.id,
+        )
+        if grade is not None:
+            stmt = stmt.where(KnowledgePointTaxonomy.grade == grade)
+        if semester is not None:
+            stmt = stmt.where(KnowledgePointTaxonomy.semester == semester)
+        if chapter is not None:
+            stmt = stmt.where(KnowledgePointTaxonomy.chapter == chapter)
+        if domain is not None:
+            stmt = stmt.where(KnowledgePointTaxonomy.domain == domain)
+
+    stmt = stmt.order_by(KnowledgePoint.id)
+    if limit != -1:
+        stmt = stmt.offset(skip).limit(limit)
+
+    rows = (await db.execute(stmt)).scalars().all()
+    return [_kp_payload(kp) for kp in rows]
+
+
+@router.get("/{id}/prerequisites")
+async def read_knowledge_point_prerequisites(
+    *,
+    db: deps.SessionDep,
+    id: int,
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """Prerequisites (what must be learned before this knowledge point)."""
+    kp = await _load_kp(db, id)
+    if not kp:
+        raise HTTPException(status_code=404, detail="Knowledge point not found")
+    deps.require(current_user, Permission.VIEW_QUESTION, subject_id=kp.subject_id)
+
+    rows = (
+        await db.execute(
+            select(TaxonomyPrerequisite, KnowledgePoint, KnowledgePointTaxonomy)
+            .join(
+                KnowledgePoint,
+                KnowledgePoint.id == TaxonomyPrerequisite.prerequisite_knowledge_point_id,
+            )
+            .outerjoin(
+                KnowledgePointTaxonomy,
+                KnowledgePointTaxonomy.knowledge_point_id == KnowledgePoint.id,
+            )
+            .where(
+                TaxonomyPrerequisite.knowledge_point_id == id,
+                TaxonomyPrerequisite.is_current.is_(True),
+            )
+            .order_by(KnowledgePoint.id)
+        )
+    ).all()
+    return [
+        {
+            "id": link.id,
+            "prerequisite_id": prereq.id,
+            "name": prereq.name,
+            "slug": prereq.slug,
+            "strength": link.strength,
+            "grade": meta.grade if meta else None,
+            "semester": meta.semester if meta else None,
+            "chapter": meta.chapter if meta else None,
+            "domain": meta.domain if meta else None,
+        }
+        for link, prereq, meta in rows
+    ]
+
+
+@router.get("/{id}/standards")
+async def read_knowledge_point_standards(
+    *,
+    db: deps.SessionDep,
+    id: int,
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """Curriculum standards mapped to this knowledge point."""
+    kp = await _load_kp(db, id)
+    if not kp:
+        raise HTTPException(status_code=404, detail="Knowledge point not found")
+    deps.require(current_user, Permission.VIEW_QUESTION, subject_id=kp.subject_id)
+
+    rows = (
+        await db.execute(
+            select(TaxonomyTopicStandard, TaxonomyStandard)
+            .join(
+                TaxonomyStandard,
+                TaxonomyStandard.id == TaxonomyTopicStandard.standard_id,
+            )
+            .where(
+                TaxonomyTopicStandard.knowledge_point_id == id,
+                TaxonomyTopicStandard.is_current.is_(True),
+            )
+            .order_by(TaxonomyStandard.standard_id)
+        )
+    ).all()
+    return [
+        {
+            "id": link.id,
+            "standard_id": standard.standard_id,
+            "content": standard.content,
+            "domain": standard.domain,
+            "section": standard.section,
+            "confidence": link.confidence,
+        }
+        for link, standard in rows
+    ]
 
 
 # --- Vector sync (deferred indexing) ---
@@ -49,12 +216,7 @@ async def get_embedding_status(
     embedding_configured = VectorStore.is_available()
     chroma_reachable = VectorStore.is_reachable()
 
-    if subject_id is not None:
-        kps = await crud.knowledge_point.get_by_subject(db, subject_id=subject_id, limit=None)
-        kp_total = len(kps)
-    else:
-        all_kps = await crud.knowledge_point.get_multi(db, limit=None)
-        kp_total = len(all_kps)
+    kp_total = await _count_formal_kps(db, subject_id)
 
     # Empty subject has nothing to vectorize; treat as "vectorized".
     kp_vectorized = True
@@ -82,14 +244,14 @@ async def get_vector_status(
     """
     embedding_configured = VectorStore.is_available()
 
-    if subject_id:
-        kps = await crud.knowledge_point.get_by_subject(db, subject_id=subject_id, limit=None)
-        db_count = len(kps)
-    else:
-        all_kps = await crud.knowledge_point.get_multi(db, limit=None)
-        db_count = len(all_kps)
+    db_count = await _count_formal_kps(db, subject_id)
 
-    vector_count = VectorStore.count() if embedding_configured else 0
+    if not embedding_configured:
+        vector_count = 0
+    elif subject_id is not None:
+        vector_count = VectorStore.count_by_subject(subject_id)
+    else:
+        vector_count = VectorStore.count()
 
     if not embedding_configured:
         needs_reindex = False
@@ -116,6 +278,7 @@ async def reindex_vectors(
     *,
     db: deps.SessionDep,
     subject_id: Optional[int] = None,
+    full: bool = False,
     current_user: models.User = Depends(deps.get_current_active_superuser),
 ) -> Any:
     """
@@ -129,7 +292,9 @@ async def reindex_vectors(
     import time
     started = time.perf_counter()
     try:
-        count = await crud.knowledge_point.reindex_vectors(db, subject_id=subject_id)
+        count = await crud.knowledge_point.reindex_vectors(
+            db, subject_id=subject_id, full=full
+        )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
@@ -206,7 +371,8 @@ async def create_knowledge_point(
     deps.require(current_user, Permission.MANAGE_SUBJECT, subject_id=knowledge_point_in.subject_id)
     try:
         knowledge_point = await crud.knowledge_point.create(db=db, obj_in=knowledge_point_in, user_id=current_user.id)
-        return knowledge_point
+        knowledge_point = await _load_kp(db, knowledge_point.id)
+        return _kp_payload(knowledge_point)
     except IntegrityError:
         raise HTTPException(status_code=400, detail="Knowledge point with this slug already exists in this subject")
 
@@ -223,7 +389,8 @@ async def update_knowledge_point(
         raise HTTPException(status_code=404, detail="Knowledge point not found")
     deps.require(current_user, Permission.MANAGE_SUBJECT, subject_id=knowledge_point.subject_id)
     knowledge_point = await crud.knowledge_point.update(db=db, db_obj=knowledge_point, obj_in=knowledge_point_in, user_id=current_user.id)
-    return knowledge_point
+    knowledge_point = await _load_kp(db, knowledge_point.id)
+    return _kp_payload(knowledge_point)
 
 @router.get("/{id}", response_model=schemas.KnowledgePoint)
 async def read_knowledge_point(
@@ -235,11 +402,11 @@ async def read_knowledge_point(
     """
     Get knowledge point by ID.
     """
-    knowledge_point = await crud.knowledge_point.get(db=db, id=id)
+    knowledge_point = await _load_kp(db, id)
     if not knowledge_point:
         raise HTTPException(status_code=404, detail="Knowledge point not found")
     deps.require(current_user, Permission.VIEW_QUESTION, subject_id=knowledge_point.subject_id)
-    return knowledge_point
+    return _kp_payload(knowledge_point)
 
 @router.delete("/{id}", response_model=schemas.KnowledgePoint)
 async def delete_knowledge_point(

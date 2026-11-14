@@ -1,0 +1,12 @@
+Stage-5 test summary (with independent MySQL)
+date: 2026-11-11T00:36:24+08:00
+
+Backend full (MYSQL_TEST_URL set):
+765 passed, 2 warnings in 65.58s (0:01:05)
+
+MySQL targeted:
+11 passed (test_taxonomy_mysql.py + test_migrations.py)
+
+Frontend: 21 files / 248 tests passed
+
+Migration: a66fc95be990 (head), alembic check clean

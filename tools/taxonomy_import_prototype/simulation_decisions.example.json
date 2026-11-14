@@ -1,0 +1,30 @@
+{
+  "simulation_only": true,
+  "not_for_production": true,
+  "confirmed_mappings": [
+    [
+      "cnm_041",
+      9
+    ],
+    [
+      "cnm_080",
+      3
+    ],
+    [
+      "cnm_174",
+      30
+    ],
+    [
+      "cnm_276",
+      39
+    ]
+  ],
+  "confirmed_new_topics": [
+    "cnm_001"
+  ],
+  "new_topic_parents": {
+    "cnm_001": 2
+  },
+  "reviewer": "stage2-simulation",
+  "comment": "示例决策，仅用于内存模拟与回滚验证；不代表任何真实确认"
+}

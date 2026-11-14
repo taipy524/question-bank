@@ -1,0 +1,149 @@
+test_confirmed_projection_only_uses_confirmed_rows (test_candidate_vs_confirmed.CandidateConfirmedIsolationTests.test_confirmed_projection_only_uses_confirmed_rows) ... ok
+test_default_projection_has_no_confirmed_mappings (test_candidate_vs_confirmed.CandidateConfirmedIsolationTests.test_default_projection_has_no_confirmed_mappings) ... ok
+test_standards_candidate_coverage_is_not_confirmed (test_candidate_vs_confirmed.CandidateConfirmedIsolationTests.test_standards_candidate_coverage_is_not_confirmed) ... ok
+test_outputs_are_deterministic (test_determinism.DeterminismTests.test_outputs_are_deterministic) ... WARNING: 2 junior topics have no standards: ['cnm_130', 'cnm_192']
+WARNING: 15 stage-4 standards are not referenced by junior topics
+WARNING: 2 junior topics have no standards: ['cnm_130', 'cnm_192']
+WARNING: 15 stage-4 standards are not referenced by junior topics
+ok
+test_antonym_variant_is_high_risk (test_high_risk.HighRiskTests.test_antonym_variant_is_high_risk) ... ok
+test_composite_topic_is_high_risk_without_equal_length (test_high_risk.HighRiskTests.test_composite_topic_is_high_risk_without_equal_length) ... ok
+test_high_risk_never_in_preview_suggestions (test_high_risk.HighRiskTests.test_high_risk_never_in_preview_suggestions) ... ok
+test_safe_qualifier_is_not_high_risk (test_high_risk.HighRiskTests.test_safe_qualifier_is_not_high_risk) ... ok
+test_sequence_variant_is_high_risk (test_high_risk.HighRiskTests.test_sequence_variant_is_high_risk) ... ok
+test_build_mapping_missing_snapshot (test_input_errors.InputErrorTests.test_build_mapping_missing_snapshot) ... ERROR: internal snapshot not found: /workspace/.opencode/tmp/tmpvhnt9v4y/nope.json
+ok
+test_export_without_input (test_input_errors.InputErrorTests.test_export_without_input) ... ERROR: internal dump not found: /workspace/.opencode/tmp/tmppnozw7qh/nope.sql
+ok
+test_invalid_json (test_input_errors.InputErrorTests.test_invalid_json) ... ok
+test_missing_source_dir (test_input_errors.InputErrorTests.test_missing_source_dir) ... ERROR: topics.json not found: /workspace/.opencode/tmp/tmp5xu8xzaq/missing-source/data/topics.json
+ERROR: topics.json not found: /workspace/.opencode/tmp/tmp5xu8xzaq/missing-source/data/topics.json
+ok
+test_preview_missing_mapping (test_input_errors.InputErrorTests.test_preview_missing_mapping) ... ERROR: mapping_result.json not found: /workspace/.opencode/tmp/tmpi2vpgkdq/nope.json
+ok
+test_snapshot_duplicate_ids (test_input_errors.InputErrorTests.test_snapshot_duplicate_ids) ... ok
+test_validate_mapping_missing_mapping (test_input_errors.InputErrorTests.test_validate_mapping_missing_mapping) ... ERROR: internal snapshot not found: /workspace/.opencode/tmp/tmpfryw49qm/o/internal_snapshot.json
+ok
+test_all_external_topics_present_once (test_mapping_rules.MappingRuleTests.test_all_external_topics_present_once) ... ok
+test_component_statistics_do_not_double_count (test_mapping_rules.MappingRuleTests.test_component_statistics_do_not_double_count) ... ok
+test_confusable_semantic_variant_is_high_risk (test_mapping_rules.MappingRuleTests.test_confusable_semantic_variant_is_high_risk) ... ok
+test_exact_name_conflict_is_flagged (test_mapping_rules.MappingRuleTests.test_exact_name_conflict_is_flagged) ... ok
+test_exact_one_to_one (test_mapping_rules.MappingRuleTests.test_exact_one_to_one) ... ok
+test_internal_duplicate_and_unmatched (test_mapping_rules.MappingRuleTests.test_internal_duplicate_and_unmatched) ... ok
+test_many_to_many_component (test_mapping_rules.MappingRuleTests.test_many_to_many_component) ... ok
+test_many_to_one_component (test_mapping_rules.MappingRuleTests.test_many_to_one_component) ... ok
+test_new_topic_has_no_confidence (test_mapping_rules.MappingRuleTests.test_new_topic_has_no_confidence) ... ok
+test_one_to_many_component (test_mapping_rules.MappingRuleTests.test_one_to_many_component) ... ok
+test_pairs_are_deduplicated (test_mapping_rules.MappingRuleTests.test_pairs_are_deduplicated) ... ok
+test_second_exact_one_to_one (test_mapping_rules.MappingRuleTests.test_second_exact_one_to_one) ... ok
+test_counts_add_up (test_mapping_validation.MappingValidationTests.test_counts_add_up) ... ok
+test_detects_candidate_mapping_conflict_not_real_self_loop (test_mapping_validation.MappingValidationTests.test_detects_candidate_mapping_conflict_not_real_self_loop) ... ok
+test_duplicate_mapped_edges_are_reported (test_mapping_validation.MappingValidationTests.test_duplicate_mapped_edges_are_reported) ... ok
+test_duplicate_pair_is_an_error (test_mapping_validation.MappingValidationTests.test_duplicate_pair_is_an_error) ... ok
+test_missing_external_is_an_error (test_mapping_validation.MappingValidationTests.test_missing_external_is_an_error) ... ok
+test_no_mapping_errors (test_mapping_validation.MappingValidationTests.test_no_mapping_errors) ... ok
+test_standards_candidate_vs_confirmed (test_mapping_validation.MappingValidationTests.test_standards_candidate_vs_confirmed) ... ok
+test_preview_manifest_declares_no_database_writes (test_preview_dry_run.DryRunSafetyTests.test_preview_manifest_declares_no_database_writes) ... WARNING: 2 junior topics have no standards: ['cnm_130', 'cnm_192']
+WARNING: 15 stage-4 standards are not referenced by junior topics
+ok
+test_preview_writes_only_inside_out_dir (test_preview_dry_run.DryRunSafetyTests.test_preview_writes_only_inside_out_dir) ... WARNING: 2 junior topics have no standards: ['cnm_130', 'cnm_192']
+WARNING: 15 stage-4 standards are not referenced by junior topics
+ok
+test_prototype_has_no_forbidden_imports (test_preview_dry_run.DryRunSafetyTests.test_prototype_has_no_forbidden_imports) ... ok
+test_runtime_does_not_load_forbidden_modules (test_preview_dry_run.DryRunSafetyTests.test_runtime_does_not_load_forbidden_modules) ... ok
+test_source_and_snapshot_are_not_modified (test_preview_dry_run.DryRunSafetyTests.test_source_and_snapshot_are_not_modified) ... ok
+WARNING: 2 junior topics have no standards: ['cnm_130', 'cnm_192']
+WARNING: 15 stage-4 standards are not referenced by junior topics
+test_all_deliverables_are_generated (test_real_pipeline.RealPipelineTests.test_all_deliverables_are_generated) ... ok
+test_candidate_and_confirmed_projections_are_separate (test_real_pipeline.RealPipelineTests.test_candidate_and_confirmed_projections_are_separate) ... ok
+test_high_risk_pairs_are_the_expected_ones (test_real_pipeline.RealPipelineTests.test_high_risk_pairs_are_the_expected_ones) ... ok
+test_mapping_covers_every_external_topic (test_real_pipeline.RealPipelineTests.test_mapping_covers_every_external_topic) ... ok
+test_mapping_validation_has_no_errors (test_real_pipeline.RealPipelineTests.test_mapping_validation_has_no_errors) ... ok
+test_preview_is_dry_run (test_real_pipeline.RealPipelineTests.test_preview_is_dry_run) ... ok
+test_malformed_dump_returns_error (test_snapshot.SnapshotTests.test_malformed_dump_returns_error) ... ERROR: INSERT statement for subjects not found in dump
+ok
+test_missing_dump_returns_error (test_snapshot.SnapshotTests.test_missing_dump_returns_error) ... ERROR: internal dump not found: /workspace/.opencode/tmp/tmpd56rwv86/missing.sql
+ok
+test_snapshot_is_deterministic (test_snapshot.SnapshotTests.test_snapshot_is_deterministic) ... ok
+test_snapshot_shape (test_snapshot.SnapshotTests.test_snapshot_shape) ... ok
+test_snapshot_source_is_unchanged (test_snapshot.SnapshotTests.test_snapshot_source_is_unchanged) ... ok
+test_aliases_are_present (test_source_validation.SourceValidationTests.test_aliases_are_present) ... ok
+test_expected_counts (test_source_validation.SourceValidationTests.test_expected_counts) ... ok
+test_no_errors (test_source_validation.SourceValidationTests.test_no_errors) ... ok
+test_no_self_loops_duplicates_or_cycles (test_source_validation.SourceValidationTests.test_no_self_loops_duplicates_or_cycles) ... ok
+test_source_files_are_not_modified (test_source_validation.SourceValidationTests.test_source_files_are_not_modified) ... ok
+test_standards_references (test_source_validation.SourceValidationTests.test_standards_references) ... ok
+test_strength_and_cross_stage (test_source_validation.SourceValidationTests.test_strength_and_cross_stage) ... ok
+test_high_risk_pair_requires_ack_in_simulation (test_stage2_contract.Stage2ContractTests.test_high_risk_pair_requires_ack_in_simulation) ... ok
+test_inputs_are_not_modified (test_stage2_contract.Stage2ContractTests.test_inputs_are_not_modified) ... ok
+test_no_forbidden_imports (test_stage2_contract.Stage2ContractTests.test_no_forbidden_imports) ... ok
+test_repo_reports_are_not_written (test_stage2_contract.Stage2ContractTests.test_repo_reports_are_not_written) ... ok
+test_review_and_simulation_cli (test_stage2_contract.Stage2ContractTests.test_review_and_simulation_cli) ... ok
+test_all_records_pending (test_stage2_review.RealReviewQueueTests.test_all_records_pending) ... ok
+test_high_risk_candidates_flagged (test_stage2_review.RealReviewQueueTests.test_high_risk_candidates_flagged) ... ok
+test_new_topic_queue_has_duplicate_checks (test_stage2_review.RealReviewQueueTests.test_new_topic_queue_has_duplicate_checks) ... ok
+test_queue_has_303_nodes (test_stage2_review.RealReviewQueueTests.test_queue_has_303_nodes) ... ok
+test_high_risk_pair_constant (test_stage2_review.ReviewStateMachineTests.test_high_risk_pair_constant) ... ok
+test_high_risk_requires_explicit_ack (test_stage2_review.ReviewStateMachineTests.test_high_risk_requires_explicit_ack) ... ok
+test_invalid_transition (test_stage2_review.ReviewStateMachineTests.test_invalid_transition) ... ok
+test_reject_is_kept_and_can_be_reopened (test_stage2_review.ReviewStateMachineTests.test_reject_is_kept_and_can_be_reopened) ... ok
+test_split_and_merge_do_not_touch_internal_data (test_stage2_review.ReviewStateMachineTests.test_split_and_merge_do_not_touch_internal_data) ... ok
+test_cross_stage_edges_are_not_internalised (test_stage2_sim.Stage2SimulatorTests.test_cross_stage_edges_are_not_internalised) ... ok
+test_cycle_is_detected_and_blocked (test_stage2_sim.Stage2SimulatorTests.test_cycle_is_detected_and_blocked) ... ok
+test_execute_preserves_ids_and_question_links (test_stage2_sim.Stage2SimulatorTests.test_execute_preserves_ids_and_question_links) ... ok
+test_high_risk_requires_acknowledgement (test_stage2_sim.Stage2SimulatorTests.test_high_risk_requires_acknowledgement) ... ok
+test_idempotent_execution (test_stage2_sim.Stage2SimulatorTests.test_idempotent_execution) ... ok
+test_new_topic_requires_parent (test_stage2_sim.Stage2SimulatorTests.test_new_topic_requires_parent) ... ok
+test_preview_counts (test_stage2_sim.Stage2SimulatorTests.test_preview_counts) ... ok
+test_rollback_restores_exact_state (test_stage2_sim.Stage2SimulatorTests.test_rollback_restores_exact_state) ... ok
+test_self_loop_conflict_is_not_written (test_stage2_sim.Stage2SimulatorTests.test_self_loop_conflict_is_not_written) ... ok
+test_standard_confidence_is_preserved (test_stage2_sim.Stage2SimulatorTests.test_standard_confidence_is_preserved) ... ok
+test_alias_target_missing (test_validation_errors.ValidationErrorTests.test_alias_target_missing) ... ok
+test_dependency_cycle (test_validation_errors.ValidationErrorTests.test_dependency_cycle) ... ok
+test_duplicate_topic_id (test_validation_errors.ValidationErrorTests.test_duplicate_topic_id) ... ok
+test_missing_dependency_endpoint (test_validation_errors.ValidationErrorTests.test_missing_dependency_endpoint) ... ok
+test_missing_standard_reference (test_validation_errors.ValidationErrorTests.test_missing_standard_reference) ... ok
+test_self_loop_dependency (test_validation_errors.ValidationErrorTests.test_self_loop_dependency) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 1.547s
+
+OK
+wrote /workspace/.opencode/tmp/tmpjmhv0j3l/internal_snapshot.json (62 rows)
+source validation: 0 errors, 2 warnings
+mapping written: external=315 pairs=12 new=303
+mapping validation: 0 errors, candidate mapping conflicts=1, high-risk pairs=3, cross-stage=45
+preview written (dry-run): direct=8 no_candidate=303 high_risk=3
+wrote /workspace/.opencode/tmp/tmpqbsktrn5/internal_snapshot.json (62 rows)
+source validation: 0 errors, 2 warnings
+mapping written: external=315 pairs=12 new=303
+mapping validation: 0 errors, candidate mapping conflicts=1, high-risk pairs=3, cross-stage=45
+preview written (dry-run): direct=8 no_candidate=303 high_risk=3
+wrote /workspace/.opencode/tmp/tmp2f3x9fw1/work/internal_snapshot.json (62 rows)
+source validation: 0 errors, 2 warnings
+mapping written: external=315 pairs=12 new=303
+mapping validation: 0 errors, candidate mapping conflicts=1, high-risk pairs=3, cross-stage=45
+preview written (dry-run): direct=8 no_candidate=303 high_risk=3
+wrote /workspace/.opencode/tmp/tmptvq_d5dt/inputs/internal_snapshot.json (62 rows)
+source validation: 0 errors, 2 warnings
+mapping written: external=315 pairs=12 new=303
+mapping validation: 0 errors, candidate mapping conflicts=1, high-risk pairs=3, cross-stage=45
+preview written (dry-run): direct=8 no_candidate=303 high_risk=3
+wrote /workspace/.opencode/tmp/tmp_2m959pc/out/internal_snapshot.json (62 rows)
+wrote /workspace/.opencode/tmp/tmp6afhrtqw/internal_snapshot.json (62 rows)
+source inspection written to /workspace/.opencode/tmp/tmp6afhrtqw
+source validation: 0 errors, 2 warnings
+mapping written: external=315 pairs=12 new=303
+mapping validation: 0 errors, candidate mapping conflicts=1, high-risk pairs=3, cross-stage=45
+preview written (dry-run): direct=8 no_candidate=303 high_risk=3
+wrote /workspace/.opencode/tmp/tmpffo2a0a8/a/internal_snapshot.json (62 rows)
+wrote /workspace/.opencode/tmp/tmpffo2a0a8/b/internal_snapshot.json (62 rows)
+wrote /workspace/.opencode/tmp/tmptbqm3ulh/internal_snapshot.json (62 rows)
+wrote /workspace/.opencode/tmp/tmpbcokwnvi/internal_snapshot.json (62 rows)
+stage2 simulation: errors=1 batch_changes=0 rollback_equal=None
+review state machine written: records=315 new_topics=303 high_risk=3
+stage2 simulation: errors=0 batch_changes=10 rollback_equal=True
+review state machine written: records=315 new_topics=303 high_risk=3
+stage2 simulation: errors=0 batch_changes=10 rollback_equal=True
+review state machine written: records=315 new_topics=303 high_risk=3
+stage2 simulation: errors=0 batch_changes=10 rollback_equal=True

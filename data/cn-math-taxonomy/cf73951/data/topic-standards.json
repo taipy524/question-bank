@@ -1,0 +1,2300 @@
+[
+  {
+    "topic_id": "cnm_001",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_002",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "exact",
+    "note": "课标例64即以相反意义的量引入负数"
+  },
+  {
+    "topic_id": "cnm_003",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "inferred",
+    "note": "有理数分类是“理解有理数的意义”的具体表现，课标未单列"
+  },
+  {
+    "topic_id": "cnm_004",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_005",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_006",
+    "standard_id": "cms-2022:4.NA.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_007",
+    "standard_id": "cms-2022:4.NA.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_008",
+    "standard_id": "cms-2022:4.NA.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_009",
+    "standard_id": "cms-2022:4.NA.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_010",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_011",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_012",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_013",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_014",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_015",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_016",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "inferred",
+    "note": "倒数是除法运算的配套概念，课标未单列"
+  },
+  {
+    "topic_id": "cnm_017",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_018",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_019",
+    "standard_id": "cms-2022:4.NA.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_020",
+    "standard_id": "cms-2022:4.NA.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_020",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_021",
+    "standard_id": "cms-2022:4.NA.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_022",
+    "standard_id": "cms-2022:4.NA.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_023",
+    "standard_id": "cms-2022:4.NA.12",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_024",
+    "standard_id": "cms-2022:4.IP.02",
+    "confidence": "inferred",
+    "note": "教材探究活动，课标未列进位制；仅作为数学探究活动挂靠"
+  },
+  {
+    "topic_id": "cnm_025",
+    "standard_id": "cms-2022:4.NA.14",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_026",
+    "standard_id": "cms-2022:4.NA.14",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_027",
+    "standard_id": "cms-2022:4.NA.15",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_028",
+    "standard_id": "cms-2022:4.NA.14",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_028",
+    "standard_id": "cms-2022:4.NA.15",
+    "confidence": "inferred",
+    "note": "课标强调借助现实情境理解代数式，解释实际意义是其延伸"
+  },
+  {
+    "topic_id": "cnm_029",
+    "standard_id": "cms-2022:4.NA.16",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_030",
+    "standard_id": "cms-2022:4.NA.15",
+    "confidence": "inferred",
+    "note": "用代数式表示规律属于“分析数量关系并用代数式表示”的延伸"
+  },
+  {
+    "topic_id": "cnm_031",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_032",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_033",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_034",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_035",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_036",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_037",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_037",
+    "standard_id": "cms-2022:4.NA.16",
+    "confidence": "inferred",
+    "note": "化简后代入求值，结合整式运算与代入计算"
+  },
+  {
+    "topic_id": "cnm_038",
+    "standard_id": "cms-2022:4.NA.15",
+    "confidence": "inferred",
+    "note": "整式加减在实际问题中的应用，课标未单列"
+  },
+  {
+    "topic_id": "cnm_038",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "inferred",
+    "note": "整式加减在实际问题中的应用，课标未单列"
+  },
+  {
+    "topic_id": "cnm_039",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_040",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_041",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "inferred",
+    "note": "一元一次方程的概念是“能解一元一次方程”的前提，课标未单列"
+  },
+  {
+    "topic_id": "cnm_042",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_043",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_044",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_045",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_046",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_047",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_048",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_049",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_050",
+    "standard_id": "cms-2022:4.GG.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_051",
+    "standard_id": "cms-2022:4.GG.83",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_051",
+    "standard_id": "cms-2022:4.GG.82",
+    "confidence": "inferred",
+    "note": "展开图对应课标“侧面展开图”；“从不同方向看”是视图的初步"
+  },
+  {
+    "topic_id": "cnm_052",
+    "standard_id": "cms-2022:4.GG.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_053",
+    "standard_id": "cms-2022:4.GG.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_054",
+    "standard_id": "cms-2022:4.GG.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_054",
+    "standard_id": "cms-2022:4.GG.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_055",
+    "standard_id": "cms-2022:4.GG.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_056",
+    "standard_id": "cms-2022:4.GG.06",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_057",
+    "standard_id": "cms-2022:4.GG.06",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_058",
+    "standard_id": "cms-2022:4.GG.06",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_058",
+    "standard_id": "cms-2022:4.GG.07",
+    "confidence": "inferred",
+    "note": "角平分线的概念在课标中随尺规作图出现，运算部分属角的和差"
+  },
+  {
+    "topic_id": "cnm_059",
+    "standard_id": "cms-2022:4.GG.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_060",
+    "standard_id": "cms-2022:4.GG.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_061",
+    "standard_id": "cms-2022:4.IP.02",
+    "confidence": "inferred",
+    "note": "教材项目活动，综合运用图形与测量；课标对综合与实践只有总体要求"
+  },
+  {
+    "topic_id": "cnm_061",
+    "standard_id": "cms-2022:4.IP.03",
+    "confidence": "inferred",
+    "note": "教材项目活动，综合运用图形与测量；课标对综合与实践只有总体要求"
+  },
+  {
+    "topic_id": "cnm_062",
+    "standard_id": "cms-2022:4.GG.08",
+    "confidence": "inferred",
+    "note": "邻补角是补角概念的特例，课标未单列"
+  },
+  {
+    "topic_id": "cnm_063",
+    "standard_id": "cms-2022:4.GG.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_064",
+    "standard_id": "cms-2022:4.GG.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_064",
+    "standard_id": "cms-2022:4.GG.11",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_065",
+    "standard_id": "cms-2022:4.GG.12",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_065",
+    "standard_id": "cms-2022:4.GG.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_066",
+    "standard_id": "cms-2022:4.GG.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_067",
+    "standard_id": "cms-2022:4.GG.14",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_067",
+    "standard_id": "cms-2022:4.GG.15",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_067",
+    "standard_id": "cms-2022:4.GG.22",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_068",
+    "standard_id": "cms-2022:4.GG.16",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_068",
+    "standard_id": "cms-2022:4.GG.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_069",
+    "standard_id": "cms-2022:4.GG.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_069",
+    "standard_id": "cms-2022:4.GG.19",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_070",
+    "standard_id": "cms-2022:4.GG.17",
+    "confidence": "inferred",
+    "note": "判定与性质的综合运用，课标未单列"
+  },
+  {
+    "topic_id": "cnm_070",
+    "standard_id": "cms-2022:4.GG.19",
+    "confidence": "inferred",
+    "note": "判定与性质的综合运用，课标未单列"
+  },
+  {
+    "topic_id": "cnm_071",
+    "standard_id": "cms-2022:4.GG.55",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_071",
+    "standard_id": "cms-2022:4.GG.56",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_071",
+    "standard_id": "cms-2022:4.GG.58",
+    "confidence": "inferred",
+    "note": "掌握标准含“举反例”，反例条款课标另列"
+  },
+  {
+    "topic_id": "cnm_072",
+    "standard_id": "cms-2022:4.GG.68",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_073",
+    "standard_id": "cms-2022:4.GG.68",
+    "confidence": "inferred",
+    "note": "平移作图依据平移的基本性质，课标未单列作图要求"
+  },
+  {
+    "topic_id": "cnm_074",
+    "standard_id": "cms-2022:4.NA.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_075",
+    "standard_id": "cms-2022:4.NA.10",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_076",
+    "standard_id": "cms-2022:4.NA.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_076",
+    "standard_id": "cms-2022:4.NA.10",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_077",
+    "standard_id": "cms-2022:4.NA.06",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_078",
+    "standard_id": "cms-2022:4.NA.06",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_078",
+    "standard_id": "cms-2022:4.NA.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_079",
+    "standard_id": "cms-2022:4.NA.11",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_079",
+    "standard_id": "cms-2022:4.NA.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_080",
+    "standard_id": "cms-2022:4.NA.06",
+    "confidence": "inferred",
+    "note": "课标未专门列实数运算，仅在相反数、绝对值与近似计算处涉及"
+  },
+  {
+    "topic_id": "cnm_080",
+    "standard_id": "cms-2022:4.NA.08",
+    "confidence": "inferred",
+    "note": "课标未专门列实数运算，仅在相反数、绝对值与近似计算处涉及"
+  },
+  {
+    "topic_id": "cnm_081",
+    "standard_id": "cms-2022:4.GG.85",
+    "confidence": "inferred",
+    "note": "有序数对是平面直角坐标系的铺垫，课标未单列"
+  },
+  {
+    "topic_id": "cnm_082",
+    "standard_id": "cms-2022:4.GG.85",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_083",
+    "standard_id": "cms-2022:4.GG.85",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_084",
+    "standard_id": "cms-2022:4.GG.87",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_085",
+    "standard_id": "cms-2022:4.GG.86",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_085",
+    "standard_id": "cms-2022:4.GG.88",
+    "confidence": "inferred",
+    "note": "用坐标描述地理位置属建立适当坐标系；方位与距离是另一种位置表达"
+  },
+  {
+    "topic_id": "cnm_086",
+    "standard_id": "cms-2022:4.GG.90",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_086",
+    "standard_id": "cms-2022:4.GG.91",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_087",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "inferred",
+    "note": "二元一次方程及其解是方程组的基础概念，课标未单列"
+  },
+  {
+    "topic_id": "cnm_087",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "inferred",
+    "note": "二元一次方程及其解是方程组的基础概念，课标未单列"
+  },
+  {
+    "topic_id": "cnm_088",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "inferred",
+    "note": "方程组及其解是消元法的前提，课标未单列"
+  },
+  {
+    "topic_id": "cnm_089",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_090",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_091",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_091",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "inferred",
+    "note": "二元一次方程组应用题以消元法求解，课标未单列"
+  },
+  {
+    "topic_id": "cnm_092",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_092",
+    "standard_id": "cms-2022:4.NA.25",
+    "confidence": "inferred",
+    "note": "方程组应用的题型归类属教材组织，课标未单列"
+  },
+  {
+    "topic_id": "cnm_093",
+    "standard_id": "cms-2022:4.NA.26",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_094",
+    "standard_id": "cms-2022:4.NA.31",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_095",
+    "standard_id": "cms-2022:4.NA.32",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_096",
+    "standard_id": "cms-2022:4.NA.31",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_097",
+    "standard_id": "cms-2022:4.NA.32",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_098",
+    "standard_id": "cms-2022:4.NA.33",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_099",
+    "standard_id": "cms-2022:4.NA.32",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_100",
+    "standard_id": "cms-2022:4.NA.33",
+    "confidence": "inferred",
+    "note": "不等式组的应用，课标只要求列一元一次不等式解决简单问题"
+  },
+  {
+    "topic_id": "cnm_101",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_101",
+    "standard_id": "cms-2022:4.IP.02",
+    "confidence": "inferred",
+    "note": "项目活动：收集数据、比较方案，涉及试验调查与建模"
+  },
+  {
+    "topic_id": "cnm_102",
+    "standard_id": "cms-2022:4.SP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_103",
+    "standard_id": "cms-2022:4.SP.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_103",
+    "standard_id": "cms-2022:4.SP.01",
+    "confidence": "inferred",
+    "note": "总体、个体、样本是体会样本与总体关系的基本概念"
+  },
+  {
+    "topic_id": "cnm_104",
+    "standard_id": "cms-2022:4.SP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_105",
+    "standard_id": "cms-2022:4.SP.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_105",
+    "standard_id": "cms-2022:4.SP.11",
+    "confidence": "inferred",
+    "note": "条形图、折线图的读图属于用统计图描述数据，并用于感受数据变化趋势（SP.11）"
+  },
+  {
+    "topic_id": "cnm_106",
+    "standard_id": "cms-2022:4.SP.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_107",
+    "standard_id": "cms-2022:4.SP.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_108",
+    "standard_id": "cms-2022:4.SP.11",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_109",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_110",
+    "standard_id": "cms-2022:4.GG.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_111",
+    "standard_id": "cms-2022:4.GG.25",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_112",
+    "standard_id": "cms-2022:4.GG.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_113",
+    "standard_id": "cms-2022:4.GG.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_114",
+    "standard_id": "cms-2022:4.GG.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_115",
+    "standard_id": "cms-2022:4.GG.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_116",
+    "standard_id": "cms-2022:4.GG.34",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_117",
+    "standard_id": "cms-2022:4.GG.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_117",
+    "standard_id": "cms-2022:4.GG.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_118",
+    "standard_id": "cms-2022:4.GG.57",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_119",
+    "standard_id": "cms-2022:4.IP.02",
+    "confidence": "inferred",
+    "note": "悬挂实验与作中线确定重心，对应“了解三角形重心”的实践活动"
+  },
+  {
+    "topic_id": "cnm_119",
+    "standard_id": "cms-2022:4.GG.37",
+    "confidence": "inferred",
+    "note": "悬挂实验与作中线确定重心，对应“了解三角形重心”的实践活动"
+  },
+  {
+    "topic_id": "cnm_120",
+    "standard_id": "cms-2022:4.GG.26",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_121",
+    "standard_id": "cms-2022:4.GG.26",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_122",
+    "standard_id": "cms-2022:4.GG.29",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_123",
+    "standard_id": "cms-2022:4.GG.27",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_124",
+    "standard_id": "cms-2022:4.GG.28",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_124",
+    "standard_id": "cms-2022:4.GG.30",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_125",
+    "standard_id": "cms-2022:4.GG.36",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_126",
+    "standard_id": "cms-2022:4.GG.57",
+    "confidence": "inferred",
+    "note": "综合运用判定并规范书写，课标只要求会用综合法格式"
+  },
+  {
+    "topic_id": "cnm_126",
+    "standard_id": "cms-2022:4.GG.27",
+    "confidence": "inferred",
+    "note": "综合运用判定并规范书写，课标只要求会用综合法格式"
+  },
+  {
+    "topic_id": "cnm_127",
+    "standard_id": "cms-2022:4.GG.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_128",
+    "standard_id": "cms-2022:4.GG.31",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_129",
+    "standard_id": "cms-2022:4.GG.31",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_131",
+    "standard_id": "cms-2022:4.GG.60",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_131",
+    "standard_id": "cms-2022:4.GG.62",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_132",
+    "standard_id": "cms-2022:4.GG.60",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_133",
+    "standard_id": "cms-2022:4.GG.32",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_134",
+    "standard_id": "cms-2022:4.GG.10",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_135",
+    "standard_id": "cms-2022:4.GG.61",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_136",
+    "standard_id": "cms-2022:4.GG.89",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_137",
+    "standard_id": "cms-2022:4.GG.33",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_137",
+    "standard_id": "cms-2022:4.GG.62",
+    "confidence": "inferred",
+    "note": "等腰三角形的轴对称性质另见 GG.62"
+  },
+  {
+    "topic_id": "cnm_138",
+    "standard_id": "cms-2022:4.GG.33",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_139",
+    "standard_id": "cms-2022:4.GG.33",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_140",
+    "standard_id": "cms-2022:4.GG.34",
+    "confidence": "inferred",
+    "note": "课标直角三角形性质定理未列含30°角的结论，属教材延伸"
+  },
+  {
+    "topic_id": "cnm_141",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_141",
+    "standard_id": "cms-2022:4.GG.04",
+    "confidence": "inferred",
+    "note": "项目活动：以轴对称转化折线为线段，依据“两点之间线段最短”"
+  },
+  {
+    "topic_id": "cnm_142",
+    "standard_id": "cms-2022:4.NA.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_143",
+    "standard_id": "cms-2022:4.NA.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_144",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_145",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_146",
+    "standard_id": "cms-2022:4.NA.18",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_147",
+    "standard_id": "cms-2022:4.NA.19",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_148",
+    "standard_id": "cms-2022:4.NA.19",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_149",
+    "standard_id": "cms-2022:4.NA.19",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_150",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_151",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_152",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_153",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_154",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_155",
+    "standard_id": "cms-2022:4.NA.20",
+    "confidence": "inferred",
+    "note": "因式分解的应用（如证明整除性）属代数推理的一类，课标未单列"
+  },
+  {
+    "topic_id": "cnm_155",
+    "standard_id": "cms-2022:4.NA.22",
+    "confidence": "inferred",
+    "note": "因式分解的应用（如证明整除性）属代数推理的一类，课标未单列"
+  },
+  {
+    "topic_id": "cnm_156",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_157",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_158",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_159",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_160",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_161",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_162",
+    "standard_id": "cms-2022:4.NA.21",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_162",
+    "standard_id": "cms-2022:4.NA.16",
+    "confidence": "inferred",
+    "note": "化简后代入求值，课标无专门条款"
+  },
+  {
+    "topic_id": "cnm_163",
+    "standard_id": "cms-2022:4.NA.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_164",
+    "standard_id": "cms-2022:4.NA.17",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_165",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_165",
+    "standard_id": "cms-2022:4.NA.30",
+    "confidence": "inferred",
+    "note": "增根检验对应“检验方程解的合理性”的一部分"
+  },
+  {
+    "topic_id": "cnm_166",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_166",
+    "standard_id": "cms-2022:4.NA.24",
+    "confidence": "inferred",
+    "note": "分式方程应用，课标只要求列方程并解可化为一元一次方程的分式方程"
+  },
+  {
+    "topic_id": "cnm_167",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_168",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "inferred",
+    "note": "二次根式的性质（如√a²=|a|）课标未单列，是运算法则的基础"
+  },
+  {
+    "topic_id": "cnm_169",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_170",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_171",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_172",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_173",
+    "standard_id": "cms-2022:4.NA.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_174",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_175",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "inferred",
+    "note": "课标要求“探索勾股定理”，未专门规定证明方法"
+  },
+  {
+    "topic_id": "cnm_176",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_177",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_178",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_179",
+    "standard_id": "cms-2022:4.GG.35",
+    "confidence": "inferred",
+    "note": "用勾股定理作出长度为无理数的线段并表示在数轴上，课标未单列"
+  },
+  {
+    "topic_id": "cnm_179",
+    "standard_id": "cms-2022:4.NA.07",
+    "confidence": "inferred",
+    "note": "用勾股定理作出长度为无理数的线段并表示在数轴上，课标未单列"
+  },
+  {
+    "topic_id": "cnm_180",
+    "standard_id": "cms-2022:4.GG.39",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_181",
+    "standard_id": "cms-2022:4.GG.39",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_182",
+    "standard_id": "cms-2022:4.GG.39",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_183",
+    "standard_id": "cms-2022:4.GG.41",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_184",
+    "standard_id": "cms-2022:4.GG.41",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_185",
+    "standard_id": "cms-2022:4.GG.44",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_186",
+    "standard_id": "cms-2022:4.GG.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_187",
+    "standard_id": "cms-2022:4.GG.34",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_188",
+    "standard_id": "cms-2022:4.GG.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_189",
+    "standard_id": "cms-2022:4.GG.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_190",
+    "standard_id": "cms-2022:4.GG.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_191",
+    "standard_id": "cms-2022:4.GG.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_191",
+    "standard_id": "cms-2022:4.GG.40",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_193",
+    "standard_id": "cms-2022:4.NA.34",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_194",
+    "standard_id": "cms-2022:4.NA.34",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_195",
+    "standard_id": "cms-2022:4.NA.36",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_196",
+    "standard_id": "cms-2022:4.NA.36",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_197",
+    "standard_id": "cms-2022:4.NA.35",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_198",
+    "standard_id": "cms-2022:4.NA.34",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_198",
+    "standard_id": "cms-2022:4.NA.37",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_199",
+    "standard_id": "cms-2022:4.NA.37",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_199",
+    "standard_id": "cms-2022:4.NA.38",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_200",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_201",
+    "standard_id": "cms-2022:4.NA.39",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_202",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_203",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_204",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "inferred",
+    "note": "图象平移是k、b变化对图象影响的延伸，课标未单列"
+  },
+  {
+    "topic_id": "cnm_205",
+    "standard_id": "cms-2022:4.NA.39",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_206",
+    "standard_id": "cms-2022:4.NA.41",
+    "confidence": "inferred",
+    "note": "课标写一次函数与二元一次方程的关系；与一元一次方程是其特例"
+  },
+  {
+    "topic_id": "cnm_207",
+    "standard_id": "cms-2022:4.NA.32",
+    "confidence": "inferred",
+    "note": "课标未列一次函数与不等式的关系，依托解不等式与一次函数图象"
+  },
+  {
+    "topic_id": "cnm_207",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "inferred",
+    "note": "课标未列一次函数与不等式的关系，依托解不等式与一次函数图象"
+  },
+  {
+    "topic_id": "cnm_208",
+    "standard_id": "cms-2022:4.NA.41",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_209",
+    "standard_id": "cms-2022:4.NA.42",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_210",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_211",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_212",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_213",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_214",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_214",
+    "standard_id": "cms-2022:4.SP.10",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_215",
+    "standard_id": "cms-2022:4.SP.05",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_216",
+    "standard_id": "cms-2022:4.SP.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_217",
+    "standard_id": "cms-2022:4.SP.07",
+    "confidence": "inferred",
+    "note": "分组数据估计平均数基于频数分布与加权平均数，课标未单列"
+  },
+  {
+    "topic_id": "cnm_217",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "inferred",
+    "note": "分组数据估计平均数基于频数分布与加权平均数，课标未单列"
+  },
+  {
+    "topic_id": "cnm_218",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_218",
+    "standard_id": "cms-2022:4.SP.02",
+    "confidence": "inferred",
+    "note": "项目活动含设计调查、收集整理分析数据的完整过程"
+  },
+  {
+    "topic_id": "cnm_219",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "inferred",
+    "note": "一元二次方程的概念是解法的前提，课标未单列"
+  },
+  {
+    "topic_id": "cnm_220",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "inferred",
+    "note": "直接开平方法是配方法的特例，课标未单列"
+  },
+  {
+    "topic_id": "cnm_221",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_222",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_223",
+    "standard_id": "cms-2022:4.NA.28",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_224",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_225",
+    "standard_id": "cms-2022:4.NA.27",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_226",
+    "standard_id": "cms-2022:4.NA.29",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_227",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_227",
+    "standard_id": "cms-2022:4.NA.30",
+    "confidence": "inferred",
+    "note": "解一元二次方程应用题需检验根是否符合实际"
+  },
+  {
+    "topic_id": "cnm_228",
+    "standard_id": "cms-2022:4.NA.23",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_228",
+    "standard_id": "cms-2022:4.NA.30",
+    "confidence": "inferred",
+    "note": "解一元二次方程应用题需检验根是否符合实际"
+  },
+  {
+    "topic_id": "cnm_229",
+    "standard_id": "cms-2022:4.NA.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_230",
+    "standard_id": "cms-2022:4.NA.44",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_231",
+    "standard_id": "cms-2022:4.NA.44",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_232",
+    "standard_id": "cms-2022:4.NA.44",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_233",
+    "standard_id": "cms-2022:4.NA.44",
+    "confidence": "inferred",
+    "note": "课标只对一次函数写明待定系数法，二次函数为类推"
+  },
+  {
+    "topic_id": "cnm_234",
+    "standard_id": "cms-2022:4.NA.46",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_235",
+    "standard_id": "cms-2022:4.NA.45",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_236",
+    "standard_id": "cms-2022:4.NA.45",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_236",
+    "standard_id": "cms-2022:4.NA.43",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_237",
+    "standard_id": "cms-2022:4.NA.47",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_238",
+    "standard_id": "cms-2022:4.NA.48",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_239",
+    "standard_id": "cms-2022:4.NA.48",
+    "confidence": "inferred",
+    "note": "k的几何意义是图象性质的延伸，课标未单列"
+  },
+  {
+    "topic_id": "cnm_240",
+    "standard_id": "cms-2022:4.NA.47",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_241",
+    "standard_id": "cms-2022:4.NA.48",
+    "confidence": "inferred",
+    "note": "反比例函数与一次函数综合，课标未单列"
+  },
+  {
+    "topic_id": "cnm_241",
+    "standard_id": "cms-2022:4.NA.40",
+    "confidence": "inferred",
+    "note": "反比例函数与一次函数综合，课标未单列"
+  },
+  {
+    "topic_id": "cnm_242",
+    "standard_id": "cms-2022:4.NA.49",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_243",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_244",
+    "standard_id": "cms-2022:4.GG.64",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_245",
+    "standard_id": "cms-2022:4.GG.64",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_246",
+    "standard_id": "cms-2022:4.GG.64",
+    "confidence": "inferred",
+    "note": "旋转作图依据旋转的基本性质，课标未单列作图要求"
+  },
+  {
+    "topic_id": "cnm_247",
+    "standard_id": "cms-2022:4.GG.64",
+    "confidence": "inferred",
+    "note": "旋转变换在证明与计算中的应用，课标未单列"
+  },
+  {
+    "topic_id": "cnm_248",
+    "standard_id": "cms-2022:4.GG.65",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_249",
+    "standard_id": "cms-2022:4.GG.65",
+    "confidence": "inferred",
+    "note": "课标仅对轴对称、平移、位似写了坐标表示；关于原点对称是中心对称的坐标化"
+  },
+  {
+    "topic_id": "cnm_250",
+    "standard_id": "cms-2022:4.GG.45",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_251",
+    "standard_id": "cms-2022:4.GG.46",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_252",
+    "standard_id": "cms-2022:4.GG.45",
+    "confidence": "inferred",
+    "note": "弧、弦、圆心角的关系是圆周角关系的基础，课标未单列"
+  },
+  {
+    "topic_id": "cnm_252",
+    "standard_id": "cms-2022:4.GG.47",
+    "confidence": "inferred",
+    "note": "弧、弦、圆心角的关系是圆周角关系的基础，课标未单列"
+  },
+  {
+    "topic_id": "cnm_253",
+    "standard_id": "cms-2022:4.GG.47",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_254",
+    "standard_id": "cms-2022:4.GG.47",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_255",
+    "standard_id": "cms-2022:4.GG.47",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_256",
+    "standard_id": "cms-2022:4.GG.53",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_257",
+    "standard_id": "cms-2022:4.GG.53",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_258",
+    "standard_id": "cms-2022:4.GG.83",
+    "confidence": "inferred",
+    "note": "圆锥侧面展开图为扇形，课标未专门列圆锥的侧面积与全面积"
+  },
+  {
+    "topic_id": "cnm_258",
+    "standard_id": "cms-2022:4.GG.53",
+    "confidence": "inferred",
+    "note": "圆锥侧面展开图为扇形，课标未专门列圆锥的侧面积与全面积"
+  },
+  {
+    "topic_id": "cnm_259",
+    "standard_id": "cms-2022:4.GG.45",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_260",
+    "standard_id": "cms-2022:4.GG.49",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_261",
+    "standard_id": "cms-2022:4.GG.49",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_262",
+    "standard_id": "cms-2022:4.GG.49",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_263",
+    "standard_id": "cms-2022:4.GG.52",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_264",
+    "standard_id": "cms-2022:4.GG.48",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_264",
+    "standard_id": "cms-2022:4.GG.50",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_265",
+    "standard_id": "cms-2022:4.GG.48",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_265",
+    "standard_id": "cms-2022:4.GG.50",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_266",
+    "standard_id": "cms-2022:4.GG.54",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_266",
+    "standard_id": "cms-2022:4.GG.50",
+    "confidence": "inferred",
+    "note": "作圆内接正方形、正六边形属正多边形与圆的关系"
+  },
+  {
+    "topic_id": "cnm_267",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_268",
+    "standard_id": "cms-2022:4.GG.71",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_269",
+    "standard_id": "cms-2022:4.GG.73",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_270",
+    "standard_id": "cms-2022:4.GG.72",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_271",
+    "standard_id": "cms-2022:4.GG.74",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_272",
+    "standard_id": "cms-2022:4.GG.75",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_273",
+    "standard_id": "cms-2022:4.GG.74",
+    "confidence": "inferred",
+    "note": "基本模型是判定与性质的归纳，课标未单列"
+  },
+  {
+    "topic_id": "cnm_273",
+    "standard_id": "cms-2022:4.GG.75",
+    "confidence": "inferred",
+    "note": "基本模型是判定与性质的归纳，课标未单列"
+  },
+  {
+    "topic_id": "cnm_274",
+    "standard_id": "cms-2022:4.GG.77",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_275",
+    "standard_id": "cms-2022:4.GG.76",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_275",
+    "standard_id": "cms-2022:4.GG.92",
+    "confidence": "inferred",
+    "note": "坐标系中的位似另见 GG.92"
+  },
+  {
+    "topic_id": "cnm_276",
+    "standard_id": "cms-2022:4.GG.78",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_277",
+    "standard_id": "cms-2022:4.GG.78",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_277",
+    "standard_id": "cms-2022:4.GG.79",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_278",
+    "standard_id": "cms-2022:4.GG.80",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_279",
+    "standard_id": "cms-2022:4.GG.80",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_280",
+    "standard_id": "cms-2022:4.GG.80",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_281",
+    "standard_id": "cms-2022:4.GG.81",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_282",
+    "standard_id": "cms-2022:4.GG.81",
+    "confidence": "inferred",
+    "note": "正投影是平行投影的特例，课标未单列"
+  },
+  {
+    "topic_id": "cnm_283",
+    "standard_id": "cms-2022:4.GG.82",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_284",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "随机事件的概念是“了解随机事件的概率”的前提，课标未单列"
+  },
+  {
+    "topic_id": "cnm_285",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_286",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_287",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_288",
+    "standard_id": "cms-2022:4.SP.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_289",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "概率的应用与游戏公平性，课标未单列"
+  },
+  {
+    "topic_id": "cnm_290",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_290",
+    "standard_id": "cms-2022:4.GG.80",
+    "confidence": "inferred",
+    "note": "项目活动用解直角三角形建模"
+  },
+  {
+    "topic_id": "cnm_291",
+    "standard_id": "cms-2022:4.IP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_291",
+    "standard_id": "cms-2022:4.GG.82",
+    "confidence": "inferred",
+    "note": "项目活动涉及三视图"
+  },
+  {
+    "topic_id": "cnm_292",
+    "standard_id": "cms-2022:4.SP.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_292",
+    "standard_id": "cms-2022:4.SP.01",
+    "confidence": "inferred",
+    "note": "问卷设计见学业要求，属收集数据的方法"
+  },
+  {
+    "topic_id": "cnm_293",
+    "standard_id": "cms-2022:4.SP.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_294",
+    "standard_id": "cms-2022:4.SP.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_294",
+    "standard_id": "cms-2022:4.SP.11",
+    "confidence": "inferred",
+    "note": "课标 SP.03“能用统计图直观、有效地描述数据”涵盖条形图、折线图；折线图还用于感受变化趋势"
+  },
+  {
+    "topic_id": "cnm_295",
+    "standard_id": "cms-2022:4.SP.03",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_296",
+    "standard_id": "cms-2022:4.SP.03",
+    "confidence": "inferred",
+    "note": "统计图的误导辨识属于“有效描述数据”和“解释分析结果”的延伸"
+  },
+  {
+    "topic_id": "cnm_296",
+    "standard_id": "cms-2022:4.SP.10",
+    "confidence": "inferred",
+    "note": "统计图的误导辨识属于“有效描述数据”和“解释分析结果”的延伸"
+  },
+  {
+    "topic_id": "cnm_297",
+    "standard_id": "cms-2022:4.SP.07",
+    "confidence": "inferred",
+    "note": "相对频数是频数的延伸，也是频率估计概率的基础"
+  },
+  {
+    "topic_id": "cnm_297",
+    "standard_id": "cms-2022:4.SP.13",
+    "confidence": "inferred",
+    "note": "相对频数是频数的延伸，也是频率估计概率的基础"
+  },
+  {
+    "topic_id": "cnm_298",
+    "standard_id": "cms-2022:4.SP.01",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_299",
+    "standard_id": "cms-2022:4.SP.08",
+    "confidence": "inferred",
+    "note": "用样本百分比估计总体，是样本估计总体思想的类比"
+  },
+  {
+    "topic_id": "cnm_300",
+    "standard_id": "cms-2022:4.SP.02",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_301",
+    "standard_id": "cms-2022:4.SP.07",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_302",
+    "standard_id": "cms-2022:4.SP.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_303",
+    "standard_id": "cms-2022:4.SP.04",
+    "confidence": "inferred",
+    "note": "极端值的影响属于解释集中趋势统计量，课标未单列"
+  },
+  {
+    "topic_id": "cnm_303",
+    "standard_id": "cms-2022:4.SP.10",
+    "confidence": "inferred",
+    "note": "极端值的影响属于解释集中趋势统计量，课标未单列"
+  },
+  {
+    "topic_id": "cnm_304",
+    "standard_id": "cms-2022:4.SP.05",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_305",
+    "standard_id": "cms-2022:4.SP.09",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_306",
+    "standard_id": "cms-2022:4.SP.08",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_307",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "可能性大小比较是概率的定性前驱，课标未单列"
+  },
+  {
+    "topic_id": "cnm_308",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "概率取值范围与性质，课标未单列"
+  },
+  {
+    "topic_id": "cnm_309",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "等可能性的判断见学业要求对简单随机事件特征的描述"
+  },
+  {
+    "topic_id": "cnm_310",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "放回与不放回是列表、树状图求概率的情形区分"
+  },
+  {
+    "topic_id": "cnm_311",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "exact",
+    "note": "课标限于简单随机事件，三步及以上试验属教材拓展"
+  },
+  {
+    "topic_id": "cnm_312",
+    "standard_id": "cms-2022:4.SP.13",
+    "confidence": "exact",
+    "note": null
+  },
+  {
+    "topic_id": "cnm_313",
+    "standard_id": "cms-2022:4.SP.10",
+    "confidence": "inferred",
+    "note": "统计图表与概率综合，课标未单列"
+  },
+  {
+    "topic_id": "cnm_313",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "统计图表与概率综合，课标未单列"
+  },
+  {
+    "topic_id": "cnm_314",
+    "standard_id": "cms-2022:4.SP.12",
+    "confidence": "inferred",
+    "note": "概率意义常见误解辨析，课标未单列"
+  },
+  {
+    "topic_id": "cnm_314",
+    "standard_id": "cms-2022:4.SP.13",
+    "confidence": "inferred",
+    "note": "概率意义常见误解辨析，课标未单列"
+  },
+  {
+    "topic_id": "cnm_315",
+    "standard_id": "cms-2022:4.IP.02",
+    "confidence": "inferred",
+    "note": "项目活动：试验调查与频率估计概率"
+  },
+  {
+    "topic_id": "cnm_315",
+    "standard_id": "cms-2022:4.SP.13",
+    "confidence": "inferred",
+    "note": "项目活动：试验调查与频率估计概率"
+  }
+]

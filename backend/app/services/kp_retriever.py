@@ -25,6 +25,54 @@ def _is_transient_error(exc: BaseException) -> bool:
     )
 
 
+async def _filter_live_results(result: Dict[str, Any] | None) -> Dict[str, Any] | None:
+    """Drop vector hits whose knowledge point no longer exists in the database.
+
+    Until the vector index is rebuilt after a taxonomy replacement, Chroma may
+    still contain ids of deleted legacy knowledge points.  Those must never be
+    offered as formal candidates.
+    """
+    if not result or not result.get("ids") or not result["ids"][0]:
+        return result
+    raw_ids = result["ids"][0]
+    numeric: dict[str, int] = {}
+    for raw in raw_ids:
+        try:
+            numeric[str(raw)] = int(raw)
+        except (TypeError, ValueError):
+            continue
+    if not numeric:
+        return result
+
+    from sqlalchemy import select
+
+    from app.db.session import SessionLocal
+    from app.models.taxonomy import KnowledgePointTaxonomy
+
+    async with SessionLocal() as db:
+        rows = await db.execute(
+            select(KnowledgePointTaxonomy.knowledge_point_id)
+            .where(
+                KnowledgePointTaxonomy.knowledge_point_id.in_(set(numeric.values()))
+            )
+            .where(KnowledgePointTaxonomy.is_legacy.is_(False))
+        )
+        live = {row[0] for row in rows}
+
+    keep = [index for index, raw in enumerate(raw_ids) if numeric.get(str(raw)) in live]
+    if len(keep) == len(raw_ids):
+        return result
+    logger.warning(
+        "knowledge point retrieval: dropped %s stale vector hits",
+        len(raw_ids) - len(keep),
+    )
+    filtered = dict(result)
+    for key in ("ids", "documents", "metadatas", "distances"):
+        if key in filtered and filtered[key]:
+            filtered[key] = [[filtered[key][0][index] for index in keep]]
+    return filtered
+
+
 class KnowledgePointRetriever:
     """Gates knowledge-point vector search on availability and isolates by subject."""
 
@@ -46,12 +94,13 @@ class KnowledgePointRetriever:
             return None
         for attempt in range(RETRIEVAL_ATTEMPTS):
             try:
-                return await asyncio.to_thread(
+                result = await asyncio.to_thread(
                     VectorStore.search_similar,
                     query=query,
                     subject_id=subject_id,
                     limit=limit,
                 )
+                return await _filter_live_results(result)
             except Exception as exc:
                 retryable = _is_transient_error(exc)
                 last_attempt = attempt >= RETRIEVAL_ATTEMPTS - 1

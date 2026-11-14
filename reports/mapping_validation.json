@@ -1,0 +1,2718 @@
+{
+  "checks": {
+    "errors": [],
+    "external_rows": 315,
+    "external_unique": 315,
+    "missing_external": [],
+    "pair_count": 12,
+    "pair_duplicates": 0,
+    "warnings": []
+  },
+  "dependencies": {
+    "basis": "candidate_projection",
+    "both_mapped": 4,
+    "candidate_mapping_conflicts": [
+      {
+        "external_prerequisite": "cnm_088",
+        "external_topic": "cnm_208",
+        "internal_id": 10,
+        "strength": "hard"
+      }
+    ],
+    "cross_stage_edges": 45,
+    "cross_stage_topic_mapped": 2,
+    "internal_edges": 563,
+    "mapped_cycles": [],
+    "mapped_duplicate_edges": [],
+    "none_mapped": 516,
+    "one_mapped": 43,
+    "one_mapped_prerequisite_only": 25,
+    "one_mapped_topic_only": 18,
+    "real_self_loops": [],
+    "senior_to_junior_edges": 69,
+    "strength_counts": {
+      "hard": 454,
+      "soft": 109
+    },
+    "suspicious_direction": []
+  },
+  "high_risk": {
+    "external_ids": [
+      "cnm_093",
+      "cnm_200",
+      "cnm_208"
+    ],
+    "pair_count": 3,
+    "pairs": [
+      {
+        "confidence": 0.714,
+        "conflict": false,
+        "evidence": "semantic",
+        "external_chapter": "七下 第十章 二元一次方程组 10.4",
+        "external_domain": "数与代数",
+        "external_grade": 7,
+        "external_id": "cnm_093",
+        "external_name": "三元一次方程组",
+        "external_semester": "下",
+        "high_risk": true,
+        "internal_id": 10,
+        "internal_name": "二元一次方程组",
+        "internal_parent_path": "初三数学 > 方程与不等式",
+        "reason": "semantic_bigram_jaccard=0.714 (threshold 0.6); domain=数与代数; path=初三数学 > 方程与不等式",
+        "review_status": "pending_review",
+        "risk": "confusable_single_char:三->二",
+        "similarity": 0.714
+      },
+      {
+        "confidence": 0.6,
+        "conflict": false,
+        "evidence": "semantic",
+        "external_chapter": "八下 第二十三章 一次函数 23.1",
+        "external_domain": "数与代数",
+        "external_grade": 8,
+        "external_id": "cnm_200",
+        "external_name": "正比例函数",
+        "external_semester": "下",
+        "high_risk": true,
+        "internal_id": 19,
+        "internal_name": "反比例函数",
+        "internal_parent_path": "初三数学 > 函数",
+        "reason": "semantic_bigram_jaccard=0.600 (threshold 0.6); domain=数与代数; path=初三数学 > 函数",
+        "review_status": "pending_review",
+        "risk": "confusable_single_char:正->反",
+        "similarity": 0.6
+      },
+      {
+        "confidence": 0.6,
+        "conflict": false,
+        "evidence": "semantic",
+        "external_chapter": "八下 第二十三章 一次函数 23.3",
+        "external_domain": "数与代数",
+        "external_grade": 8,
+        "external_id": "cnm_208",
+        "external_name": "一次函数与二元一次方程组",
+        "external_semester": "下",
+        "high_risk": true,
+        "internal_id": 10,
+        "internal_name": "二元一次方程组",
+        "internal_parent_path": "初三数学 > 方程与不等式",
+        "reason": "semantic_bigram_jaccard=0.600 (threshold 0.6); domain=数与代数; path=初三数学 > 方程与不等式",
+        "review_status": "pending_review",
+        "risk": "composite_topic_contains_other_concept",
+        "similarity": 0.6
+      }
+    ]
+  },
+  "internal": {
+    "candidate_mapped_ids": [
+      3,
+      5,
+      9,
+      10,
+      13,
+      19,
+      30,
+      39,
+      40,
+      51
+    ],
+    "confirmed_mapped_ids": [],
+    "structural": 1,
+    "suggestion_mapped_ids": [
+      3,
+      5,
+      9,
+      10,
+      13,
+      30,
+      39,
+      40,
+      51
+    ],
+    "total": 62
+  },
+  "meta": {
+    "confirmed_mappings_available": false,
+    "database_writes": 0,
+    "internal_snapshot_sha256": "126ea8f5a2952b2a2b6d01ca82e832c2fb79acf11b80a22501b0f98897dd963f",
+    "mapping_pairs": 12,
+    "mode": "analysis_only",
+    "projection_basis": "candidate_projection",
+    "source_commit": "cf73951cf4b5d2bdbc8a75bb9cb9e961e55277ab"
+  },
+  "projections": {
+    "candidate": {
+      "basis": "candidate_projection",
+      "both_mapped": 4,
+      "candidate_mapping_conflicts": [
+        {
+          "external_prerequisite": "cnm_088",
+          "external_topic": "cnm_208",
+          "internal_id": 10,
+          "strength": "hard"
+        }
+      ],
+      "cross_stage_edges": 45,
+      "cross_stage_topic_mapped": 2,
+      "internal_edges": 563,
+      "mapped_cycles": [],
+      "mapped_duplicate_edges": [],
+      "none_mapped": 516,
+      "one_mapped": 43,
+      "one_mapped_prerequisite_only": 25,
+      "one_mapped_topic_only": 18,
+      "real_self_loops": [],
+      "senior_to_junior_edges": 69,
+      "strength_counts": {
+        "hard": 454,
+        "soft": 109
+      },
+      "suspicious_direction": []
+    },
+    "candidate_excluding_high_risk": {
+      "basis": "candidate_projection_excluding_high_risk",
+      "both_mapped": 3,
+      "candidate_mapping_conflicts": [],
+      "cross_stage_edges": 45,
+      "cross_stage_topic_mapped": 1,
+      "internal_edges": 563,
+      "mapped_cycles": [],
+      "mapped_duplicate_edges": [],
+      "none_mapped": 524,
+      "one_mapped": 36,
+      "one_mapped_prerequisite_only": 23,
+      "one_mapped_topic_only": 13,
+      "real_self_loops": [],
+      "senior_to_junior_edges": 69,
+      "strength_counts": {
+        "hard": 454,
+        "soft": 109
+      },
+      "suspicious_direction": []
+    },
+    "confirmed": {
+      "basis": "confirmed_projection",
+      "both_mapped": 0,
+      "candidate_mapping_conflicts": [],
+      "cross_stage_edges": 45,
+      "cross_stage_topic_mapped": 0,
+      "internal_edges": 563,
+      "mapped_cycles": [],
+      "mapped_duplicate_edges": [],
+      "none_mapped": 563,
+      "one_mapped": 0,
+      "one_mapped_prerequisite_only": 0,
+      "one_mapped_topic_only": 0,
+      "real_self_loops": [],
+      "senior_to_junior_edges": 69,
+      "strength_counts": {
+        "hard": 454,
+        "soft": 109
+      },
+      "suspicious_direction": []
+    }
+  },
+  "standards": {
+    "basis": "candidate_projection",
+    "candidate_coverage": 12,
+    "confirmed_coverage": 0,
+    "rows": [
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_050",
+          "cnm_052",
+          "cnm_053"
+        ],
+        "standard_id": "cms-2022:4.GG.01",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_055"
+        ],
+        "standard_id": "cms-2022:4.GG.02",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_054"
+        ],
+        "standard_id": "cms-2022:4.GG.03",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_054",
+          "cnm_141"
+        ],
+        "standard_id": "cms-2022:4.GG.04",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.05",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_056",
+          "cnm_057",
+          "cnm_058"
+        ],
+        "standard_id": "cms-2022:4.GG.06",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_058",
+          "cnm_127"
+        ],
+        "standard_id": "cms-2022:4.GG.07",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_059",
+          "cnm_060",
+          "cnm_062",
+          "cnm_063"
+        ],
+        "standard_id": "cms-2022:4.GG.08",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_064",
+          "cnm_065"
+        ],
+        "standard_id": "cms-2022:4.GG.09",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_134"
+        ],
+        "standard_id": "cms-2022:4.GG.10",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_064"
+        ],
+        "standard_id": "cms-2022:4.GG.11",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_065"
+        ],
+        "standard_id": "cms-2022:4.GG.12",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_066"
+        ],
+        "standard_id": "cms-2022:4.GG.13",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_067"
+        ],
+        "standard_id": "cms-2022:4.GG.14",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_067"
+        ],
+        "standard_id": "cms-2022:4.GG.15",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_068"
+        ],
+        "standard_id": "cms-2022:4.GG.16",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_068",
+          "cnm_070"
+        ],
+        "standard_id": "cms-2022:4.GG.17",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_069"
+        ],
+        "standard_id": "cms-2022:4.GG.18",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_069",
+          "cnm_070"
+        ],
+        "standard_id": "cms-2022:4.GG.19",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.20",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.21",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_067"
+        ],
+        "standard_id": "cms-2022:4.GG.22",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_110",
+          "cnm_112",
+          "cnm_113",
+          "cnm_114",
+          "cnm_117"
+        ],
+        "standard_id": "cms-2022:4.GG.23",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_115",
+          "cnm_117"
+        ],
+        "standard_id": "cms-2022:4.GG.24",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_111"
+        ],
+        "standard_id": "cms-2022:4.GG.25",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_120",
+          "cnm_121"
+        ],
+        "standard_id": "cms-2022:4.GG.26",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_123",
+          "cnm_126"
+        ],
+        "standard_id": "cms-2022:4.GG.27",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_124"
+        ],
+        "standard_id": "cms-2022:4.GG.28",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_122"
+        ],
+        "standard_id": "cms-2022:4.GG.29",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_124"
+        ],
+        "standard_id": "cms-2022:4.GG.30",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_128",
+          "cnm_129"
+        ],
+        "standard_id": "cms-2022:4.GG.31",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_133"
+        ],
+        "standard_id": "cms-2022:4.GG.32",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_137",
+          "cnm_138",
+          "cnm_139"
+        ],
+        "standard_id": "cms-2022:4.GG.33",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_116",
+          "cnm_140",
+          "cnm_187"
+        ],
+        "standard_id": "cms-2022:4.GG.34",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          30
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_174",
+          "cnm_175",
+          "cnm_176",
+          "cnm_177",
+          "cnm_178",
+          "cnm_179"
+        ],
+        "standard_id": "cms-2022:4.GG.35",
+        "suggestion_internal_ids": [
+          30
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_125"
+        ],
+        "standard_id": "cms-2022:4.GG.36",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_119"
+        ],
+        "standard_id": "cms-2022:4.GG.37",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.38",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_180",
+          "cnm_181",
+          "cnm_182"
+        ],
+        "standard_id": "cms-2022:4.GG.39",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_191"
+        ],
+        "standard_id": "cms-2022:4.GG.40",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_183",
+          "cnm_184"
+        ],
+        "standard_id": "cms-2022:4.GG.41",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.42",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_186",
+          "cnm_188",
+          "cnm_189",
+          "cnm_190",
+          "cnm_191"
+        ],
+        "standard_id": "cms-2022:4.GG.43",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_185"
+        ],
+        "standard_id": "cms-2022:4.GG.44",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_250",
+          "cnm_252",
+          "cnm_259"
+        ],
+        "standard_id": "cms-2022:4.GG.45",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_251"
+        ],
+        "standard_id": "cms-2022:4.GG.46",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_252",
+          "cnm_253",
+          "cnm_254",
+          "cnm_255"
+        ],
+        "standard_id": "cms-2022:4.GG.47",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_264",
+          "cnm_265"
+        ],
+        "standard_id": "cms-2022:4.GG.48",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_260",
+          "cnm_261",
+          "cnm_262"
+        ],
+        "standard_id": "cms-2022:4.GG.49",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_264",
+          "cnm_265",
+          "cnm_266"
+        ],
+        "standard_id": "cms-2022:4.GG.50",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.51",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_263"
+        ],
+        "standard_id": "cms-2022:4.GG.52",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_256",
+          "cnm_257",
+          "cnm_258"
+        ],
+        "standard_id": "cms-2022:4.GG.53",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_266"
+        ],
+        "standard_id": "cms-2022:4.GG.54",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_071"
+        ],
+        "standard_id": "cms-2022:4.GG.55",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_071"
+        ],
+        "standard_id": "cms-2022:4.GG.56",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_118",
+          "cnm_126"
+        ],
+        "standard_id": "cms-2022:4.GG.57",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_071"
+        ],
+        "standard_id": "cms-2022:4.GG.58",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.59",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_131",
+          "cnm_132"
+        ],
+        "standard_id": "cms-2022:4.GG.60",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_135"
+        ],
+        "standard_id": "cms-2022:4.GG.61",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_131",
+          "cnm_137"
+        ],
+        "standard_id": "cms-2022:4.GG.62",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.63",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_244",
+          "cnm_245",
+          "cnm_246",
+          "cnm_247"
+        ],
+        "standard_id": "cms-2022:4.GG.64",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_248",
+          "cnm_249"
+        ],
+        "standard_id": "cms-2022:4.GG.65",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.66",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.67",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_072",
+          "cnm_073"
+        ],
+        "standard_id": "cms-2022:4.GG.68",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.69",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.70",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_268"
+        ],
+        "standard_id": "cms-2022:4.GG.71",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_270"
+        ],
+        "standard_id": "cms-2022:4.GG.72",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_269"
+        ],
+        "standard_id": "cms-2022:4.GG.73",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_271",
+          "cnm_273"
+        ],
+        "standard_id": "cms-2022:4.GG.74",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_272",
+          "cnm_273"
+        ],
+        "standard_id": "cms-2022:4.GG.75",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_275"
+        ],
+        "standard_id": "cms-2022:4.GG.76",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_274"
+        ],
+        "standard_id": "cms-2022:4.GG.77",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          39
+        ],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_276",
+          "cnm_277"
+        ],
+        "standard_id": "cms-2022:4.GG.78",
+        "suggestion_internal_ids": [
+          39
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_277"
+        ],
+        "standard_id": "cms-2022:4.GG.79",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          40
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_278",
+          "cnm_279",
+          "cnm_280",
+          "cnm_290"
+        ],
+        "standard_id": "cms-2022:4.GG.80",
+        "suggestion_internal_ids": [
+          40
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_281",
+          "cnm_282"
+        ],
+        "standard_id": "cms-2022:4.GG.81",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_051",
+          "cnm_283",
+          "cnm_291"
+        ],
+        "standard_id": "cms-2022:4.GG.82",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_051",
+          "cnm_258"
+        ],
+        "standard_id": "cms-2022:4.GG.83",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "图形与几何",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.GG.84",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_081",
+          "cnm_082",
+          "cnm_083"
+        ],
+        "standard_id": "cms-2022:4.GG.85",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_085"
+        ],
+        "standard_id": "cms-2022:4.GG.86",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_084"
+        ],
+        "standard_id": "cms-2022:4.GG.87",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_085"
+        ],
+        "standard_id": "cms-2022:4.GG.88",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_136"
+        ],
+        "standard_id": "cms-2022:4.GG.89",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_086"
+        ],
+        "standard_id": "cms-2022:4.GG.90",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_086"
+        ],
+        "standard_id": "cms-2022:4.GG.91",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "图形与几何",
+        "external_topic_ids": [
+          "cnm_275"
+        ],
+        "standard_id": "cms-2022:4.GG.92",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "综合与实践",
+        "external_topic_ids": [
+          "cnm_101",
+          "cnm_109",
+          "cnm_141",
+          "cnm_210",
+          "cnm_218",
+          "cnm_243",
+          "cnm_267",
+          "cnm_290",
+          "cnm_291"
+        ],
+        "standard_id": "cms-2022:4.IP.01",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "综合与实践",
+        "external_topic_ids": [
+          "cnm_024",
+          "cnm_061",
+          "cnm_101",
+          "cnm_119",
+          "cnm_315"
+        ],
+        "standard_id": "cms-2022:4.IP.02",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "综合与实践",
+        "external_topic_ids": [
+          "cnm_061"
+        ],
+        "standard_id": "cms-2022:4.IP.03",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_001",
+          "cnm_002",
+          "cnm_003",
+          "cnm_004",
+          "cnm_005",
+          "cnm_009"
+        ],
+        "standard_id": "cms-2022:4.NA.01",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_006",
+          "cnm_007",
+          "cnm_008"
+        ],
+        "standard_id": "cms-2022:4.NA.02",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_019",
+          "cnm_020"
+        ],
+        "standard_id": "cms-2022:4.NA.03",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_010",
+          "cnm_011",
+          "cnm_012",
+          "cnm_013",
+          "cnm_014",
+          "cnm_015",
+          "cnm_016",
+          "cnm_017",
+          "cnm_018",
+          "cnm_020",
+          "cnm_021"
+        ],
+        "standard_id": "cms-2022:4.NA.04",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "数与代数",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.NA.05",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          3
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_077",
+          "cnm_078",
+          "cnm_080"
+        ],
+        "standard_id": "cms-2022:4.NA.06",
+        "suggestion_internal_ids": [
+          3
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_078",
+          "cnm_079",
+          "cnm_179"
+        ],
+        "standard_id": "cms-2022:4.NA.07",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          3
+        ],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_080"
+        ],
+        "standard_id": "cms-2022:4.NA.08",
+        "suggestion_internal_ids": [
+          3
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_074",
+          "cnm_076"
+        ],
+        "standard_id": "cms-2022:4.NA.09",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_075",
+          "cnm_076"
+        ],
+        "standard_id": "cms-2022:4.NA.10",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_079"
+        ],
+        "standard_id": "cms-2022:4.NA.11",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_023"
+        ],
+        "standard_id": "cms-2022:4.NA.12",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_167",
+          "cnm_168",
+          "cnm_169",
+          "cnm_170",
+          "cnm_171",
+          "cnm_172",
+          "cnm_173"
+        ],
+        "standard_id": "cms-2022:4.NA.13",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_025",
+          "cnm_026",
+          "cnm_028"
+        ],
+        "standard_id": "cms-2022:4.NA.14",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_027",
+          "cnm_028",
+          "cnm_030",
+          "cnm_038"
+        ],
+        "standard_id": "cms-2022:4.NA.15",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_029",
+          "cnm_037",
+          "cnm_162"
+        ],
+        "standard_id": "cms-2022:4.NA.16",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_022",
+          "cnm_142",
+          "cnm_143",
+          "cnm_163",
+          "cnm_164"
+        ],
+        "standard_id": "cms-2022:4.NA.17",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_031",
+          "cnm_032",
+          "cnm_033",
+          "cnm_034",
+          "cnm_035",
+          "cnm_036",
+          "cnm_037",
+          "cnm_038",
+          "cnm_144",
+          "cnm_145",
+          "cnm_146"
+        ],
+        "standard_id": "cms-2022:4.NA.18",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_147",
+          "cnm_148",
+          "cnm_149"
+        ],
+        "standard_id": "cms-2022:4.NA.19",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_150",
+          "cnm_151",
+          "cnm_152",
+          "cnm_153",
+          "cnm_154",
+          "cnm_155"
+        ],
+        "standard_id": "cms-2022:4.NA.20",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_156",
+          "cnm_157",
+          "cnm_158",
+          "cnm_159",
+          "cnm_160",
+          "cnm_161",
+          "cnm_162"
+        ],
+        "standard_id": "cms-2022:4.NA.21",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_155"
+        ],
+        "standard_id": "cms-2022:4.NA.22",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_039",
+          "cnm_045",
+          "cnm_046",
+          "cnm_047",
+          "cnm_048",
+          "cnm_049",
+          "cnm_087",
+          "cnm_091",
+          "cnm_092",
+          "cnm_166",
+          "cnm_227",
+          "cnm_228"
+        ],
+        "standard_id": "cms-2022:4.NA.23",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          9
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_040",
+          "cnm_041",
+          "cnm_042",
+          "cnm_043",
+          "cnm_044",
+          "cnm_165",
+          "cnm_166"
+        ],
+        "standard_id": "cms-2022:4.NA.24",
+        "suggestion_internal_ids": [
+          9
+        ]
+      },
+      {
+        "candidate_internal_ids": [
+          10
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_087",
+          "cnm_088",
+          "cnm_089",
+          "cnm_090",
+          "cnm_091",
+          "cnm_092"
+        ],
+        "standard_id": "cms-2022:4.NA.25",
+        "suggestion_internal_ids": [
+          10
+        ]
+      },
+      {
+        "candidate_internal_ids": [
+          10
+        ],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_high_risk_only",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_093"
+        ],
+        "standard_id": "cms-2022:4.NA.26",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          5,
+          13
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_219",
+          "cnm_220",
+          "cnm_221",
+          "cnm_222",
+          "cnm_224",
+          "cnm_225"
+        ],
+        "standard_id": "cms-2022:4.NA.27",
+        "suggestion_internal_ids": [
+          5,
+          13
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_223"
+        ],
+        "standard_id": "cms-2022:4.NA.28",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_226"
+        ],
+        "standard_id": "cms-2022:4.NA.29",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_165",
+          "cnm_227",
+          "cnm_228"
+        ],
+        "standard_id": "cms-2022:4.NA.30",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_094",
+          "cnm_096"
+        ],
+        "standard_id": "cms-2022:4.NA.31",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_095",
+          "cnm_097",
+          "cnm_099",
+          "cnm_207"
+        ],
+        "standard_id": "cms-2022:4.NA.32",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_098",
+          "cnm_100"
+        ],
+        "standard_id": "cms-2022:4.NA.33",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_193",
+          "cnm_194",
+          "cnm_198"
+        ],
+        "standard_id": "cms-2022:4.NA.34",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_197"
+        ],
+        "standard_id": "cms-2022:4.NA.35",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_195",
+          "cnm_196"
+        ],
+        "standard_id": "cms-2022:4.NA.36",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_198",
+          "cnm_199"
+        ],
+        "standard_id": "cms-2022:4.NA.37",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_199"
+        ],
+        "standard_id": "cms-2022:4.NA.38",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_201",
+          "cnm_205"
+        ],
+        "standard_id": "cms-2022:4.NA.39",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          19
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_high_risk_only",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_200",
+          "cnm_202",
+          "cnm_203",
+          "cnm_204",
+          "cnm_207",
+          "cnm_241"
+        ],
+        "standard_id": "cms-2022:4.NA.40",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          10
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_high_risk_only",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_206",
+          "cnm_208"
+        ],
+        "standard_id": "cms-2022:4.NA.41",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_209"
+        ],
+        "standard_id": "cms-2022:4.NA.42",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_229",
+          "cnm_236"
+        ],
+        "standard_id": "cms-2022:4.NA.43",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_230",
+          "cnm_231",
+          "cnm_232",
+          "cnm_233"
+        ],
+        "standard_id": "cms-2022:4.NA.44",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_235",
+          "cnm_236"
+        ],
+        "standard_id": "cms-2022:4.NA.45",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_234"
+        ],
+        "standard_id": "cms-2022:4.NA.46",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_237",
+          "cnm_240"
+        ],
+        "standard_id": "cms-2022:4.NA.47",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_238",
+          "cnm_239",
+          "cnm_241"
+        ],
+        "standard_id": "cms-2022:4.NA.48",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "数与代数",
+        "external_topic_ids": [
+          "cnm_242"
+        ],
+        "standard_id": "cms-2022:4.NA.49",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_102",
+          "cnm_103",
+          "cnm_104",
+          "cnm_292",
+          "cnm_298"
+        ],
+        "standard_id": "cms-2022:4.SP.01",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_218",
+          "cnm_292",
+          "cnm_293",
+          "cnm_300"
+        ],
+        "standard_id": "cms-2022:4.SP.02",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_105",
+          "cnm_294",
+          "cnm_295",
+          "cnm_296"
+        ],
+        "standard_id": "cms-2022:4.SP.03",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [
+          51
+        ],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "candidate_suggestion",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_211",
+          "cnm_212",
+          "cnm_213",
+          "cnm_214",
+          "cnm_217",
+          "cnm_303"
+        ],
+        "standard_id": "cms-2022:4.SP.04",
+        "suggestion_internal_ids": [
+          51
+        ]
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_215",
+          "cnm_304"
+        ],
+        "standard_id": "cms-2022:4.SP.05",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_external_topics",
+        "domain": "统计与概率",
+        "external_topic_ids": [],
+        "standard_id": "cms-2022:4.SP.06",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_106",
+          "cnm_107",
+          "cnm_217",
+          "cnm_297",
+          "cnm_301"
+        ],
+        "standard_id": "cms-2022:4.SP.07",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_103",
+          "cnm_299",
+          "cnm_302",
+          "cnm_306"
+        ],
+        "standard_id": "cms-2022:4.SP.08",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_216",
+          "cnm_305"
+        ],
+        "standard_id": "cms-2022:4.SP.09",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_214",
+          "cnm_296",
+          "cnm_303",
+          "cnm_313"
+        ],
+        "standard_id": "cms-2022:4.SP.10",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_105",
+          "cnm_108",
+          "cnm_294"
+        ],
+        "standard_id": "cms-2022:4.SP.11",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_284",
+          "cnm_285",
+          "cnm_286",
+          "cnm_287",
+          "cnm_289",
+          "cnm_307",
+          "cnm_308",
+          "cnm_309",
+          "cnm_310",
+          "cnm_311",
+          "cnm_313",
+          "cnm_314"
+        ],
+        "standard_id": "cms-2022:4.SP.12",
+        "suggestion_internal_ids": []
+      },
+      {
+        "candidate_internal_ids": [],
+        "confidence": [
+          "exact",
+          "inferred"
+        ],
+        "confirmed_internal_ids": [],
+        "coverage_status": "no_candidate",
+        "domain": "统计与概率",
+        "external_topic_ids": [
+          "cnm_288",
+          "cnm_297",
+          "cnm_312",
+          "cnm_314",
+          "cnm_315"
+        ],
+        "standard_id": "cms-2022:4.SP.13",
+        "suggestion_internal_ids": []
+      }
+    ],
+    "stage4_total": 157,
+    "suggestion_coverage": 9,
+    "with_external_but_without_candidate": 130,
+    "without_external_topics": [
+      "cms-2022:4.GG.05",
+      "cms-2022:4.GG.20",
+      "cms-2022:4.GG.21",
+      "cms-2022:4.GG.38",
+      "cms-2022:4.GG.42",
+      "cms-2022:4.GG.51",
+      "cms-2022:4.GG.59",
+      "cms-2022:4.GG.63",
+      "cms-2022:4.GG.66",
+      "cms-2022:4.GG.67",
+      "cms-2022:4.GG.69",
+      "cms-2022:4.GG.70",
+      "cms-2022:4.GG.84",
+      "cms-2022:4.NA.05",
+      "cms-2022:4.SP.06"
+    ]
+  }
+}

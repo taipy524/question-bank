@@ -1,0 +1,138 @@
+{
+  "batch": {
+    "after_hash": "b9e52e606993226d1df63629212ae42d512130ca7146d0e74f09cc27d5978b48",
+    "before_hash": "6484aaaceb1dead12caf7a195c0461936e22d98294f77483c514c0fc73834f82",
+    "change_count": 13,
+    "comment": "示例决策，仅用于内存模拟与回滚验证；不代表任何真实确认",
+    "executed_hash": "b9e52e606993226d1df63629212ae42d512130ca7146d0e74f09cc27d5978b48",
+    "id": 1,
+    "mode": "apply",
+    "reviewer": "stage2-simulation",
+    "rolled_back_hash": "6484aaaceb1dead12caf7a195c0461936e22d98294f77483c514c0fc73834f82",
+    "source_id": 1,
+    "status": "rolled_back",
+    "summary": {
+      "existing_knowledge_points": 62,
+      "mapping_rows": 5,
+      "new_knowledge_points": 1,
+      "prerequisite_rows": 1,
+      "question_links": 38,
+      "standard_links": 6
+    }
+  },
+  "database": "in-memory only",
+  "mode": "simulation",
+  "preview": {
+    "duplicate_new_topics": [],
+    "errors": [],
+    "high_risk_conflicts": [],
+    "impact": {
+      "existing_knowledge_points": 62,
+      "mapping_rows": 5,
+      "new_knowledge_points": 1,
+      "prerequisite_rows": 1,
+      "question_links": 38,
+      "standard_links": 6
+    },
+    "mapping_rows": [
+      {
+        "external_id": "cnm_041",
+        "internal_id": 9
+      },
+      {
+        "external_id": "cnm_080",
+        "internal_id": 3
+      },
+      {
+        "external_id": "cnm_174",
+        "internal_id": 30
+      },
+      {
+        "external_id": "cnm_276",
+        "internal_id": 39
+      },
+      {
+        "external_id": "cnm_001",
+        "internal_id": 63
+      }
+    ],
+    "new_knowledge_points": [
+      {
+        "external_id": "cnm_001",
+        "id": 63,
+        "name": "正数与负数的概念",
+        "parent_id": 2
+      }
+    ],
+    "prerequisite_conflicts": [],
+    "prerequisite_rows": [
+      {
+        "external_prerequisite": "cnm_174",
+        "external_topic": "cnm_276",
+        "knowledge_point_id": 39,
+        "prerequisite_knowledge_point_id": 30,
+        "strength": "hard"
+      }
+    ],
+    "rejected_candidates": [],
+    "standard_rows": [
+      {
+        "confidence": "inferred",
+        "knowledge_point_id": 9,
+        "standard_external_id": "cms-2022:4.NA.24",
+        "standard_id": 119
+      },
+      {
+        "confidence": "inferred",
+        "knowledge_point_id": 3,
+        "standard_external_id": "cms-2022:4.NA.06",
+        "standard_id": 101
+      },
+      {
+        "confidence": "inferred",
+        "knowledge_point_id": 3,
+        "standard_external_id": "cms-2022:4.NA.08",
+        "standard_id": 103
+      },
+      {
+        "confidence": "exact",
+        "knowledge_point_id": 30,
+        "standard_external_id": "cms-2022:4.GG.35",
+        "standard_id": 35
+      },
+      {
+        "confidence": "exact",
+        "knowledge_point_id": 39,
+        "standard_external_id": "cms-2022:4.GG.78",
+        "standard_id": 78
+      },
+      {
+        "confidence": "exact",
+        "knowledge_point_id": 63,
+        "standard_external_id": "cms-2022:4.NA.01",
+        "standard_id": 96
+      }
+    ]
+  },
+  "review_status_counts": {
+    "new_topic_pending": 303,
+    "pending_review": 12
+  },
+  "rollback": {
+    "batch_id": 1,
+    "before_hash": "6484aaaceb1dead12caf7a195c0461936e22d98294f77483c514c0fc73834f82",
+    "data_equal": true,
+    "executed_hash": "b9e52e606993226d1df63629212ae42d512130ca7146d0e74f09cc27d5978b48",
+    "restored_hash": "6484aaaceb1dead12caf7a195c0461936e22d98294f77483c514c0fc73834f82",
+    "status": "rolled_back"
+  },
+  "verify": {
+    "existing_internal_ids_preserved": true,
+    "knowledge_point_count": 62,
+    "mapping_count": 0,
+    "prerequisite_count": 0,
+    "question_link_count": 38,
+    "question_links_unchanged": true,
+    "standard_link_count": 0
+  }
+}

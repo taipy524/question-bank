@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import KnowledgePointImportDialog from '@/components/manager/KnowledgePointImportDialog.vue'
 import { toast } from 'vue-sonner'
+import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select'
+import { Badge } from '@/components/ui/badge'
 
 const { $api } = useNuxtApp()
 
@@ -47,20 +49,51 @@ const { data: knowledgePoints, refresh, status } = await useAPI<KnowledgePoint[]
   watch: [selectedSubjectId]
 })
 
+// --- Filtering (grade / semester / chapter / domain + name search) ---
+const filterGrade = ref<number | null>(null)
+const filterSemester = ref<string | null>(null)
+const filterChapter = ref<string | null>(null)
+const filterDomain = ref<string | null>(null)
+const searchQuery = ref('')
+const showLegacy = ref(false)
+
+const legacyCount = computed(
+  () => (knowledgePoints.value ?? []).filter(kp => kp.is_formal === false).length,
+)
+
+const filteredKnowledgePoints = computed<KnowledgePoint[]>(() => {
+  const query = searchQuery.value.trim().toLowerCase()
+  return (knowledgePoints.value ?? []).filter(kp => {
+    // Default: only the 315 formal knowledge points. Legacy points stay in the
+    // database and remain resolvable for existing question links.
+    if (!showLegacy.value && kp.is_formal === false) return false
+    if (filterGrade.value != null && kp.grade !== filterGrade.value) return false
+    if (filterSemester.value && kp.semester !== filterSemester.value) return false
+    if (filterChapter.value && kp.chapter !== filterChapter.value) return false
+    if (filterDomain.value && kp.domain !== filterDomain.value) return false
+    if (query) {
+      const haystack = `${kp.name} ${kp.chapter ?? ''} ${kp.domain ?? ''} ${kp.semester ?? ''}`.toLowerCase()
+      if (!haystack.includes(query)) return false
+    }
+    return true
+  })
+})
+
 // --- Tree Logic ---
 const knowledgePointTree = computed<KnowledgePointNode[]>(() => {
-  if (!knowledgePoints.value) return []
+  const source = filteredKnowledgePoints.value
+  if (!source) return []
 
   const map = new Map<number, KnowledgePointNode>()
   const roots: KnowledgePointNode[] = []
 
   // Initialize map with clones to avoid mutating original data
-  knowledgePoints.value.forEach(kp => {
+  source.forEach(kp => {
     map.set(kp.id, { ...kp, children: [] })
   })
 
   // Build tree
-  knowledgePoints.value.forEach(kp => {
+  source.forEach(kp => {
     const node = map.get(kp.id)!
     if (kp.parent_id) {
       const parent = map.get(kp.parent_id)
@@ -76,6 +109,31 @@ const knowledgePointTree = computed<KnowledgePointNode[]>(() => {
   })
 
   return roots
+})
+
+// --- Detail (prerequisites + curriculum standards) ---
+const detailKpId = ref<number | null>(null)
+const detailPrereqs = ref<any[]>([])
+const detailStandards = ref<any[]>([])
+const detailLoading = ref(false)
+
+watch(detailKpId, async (id) => {
+  detailPrereqs.value = []
+  detailStandards.value = []
+  if (!id) return
+  detailLoading.value = true
+  try {
+    const [prereqs, standards] = await Promise.all([
+      $api<any[]>(`/knowledge-points/${id}/prerequisites`),
+      $api<any[]>(`/knowledge-points/${id}/standards`),
+    ])
+    detailPrereqs.value = prereqs
+    detailStandards.value = standards
+  } catch (e: any) {
+    toast.error('加载知识点详情失败: ' + (e.data?.detail || e.message))
+  } finally {
+    detailLoading.value = false
+  }
 })
 
 // --- Actions ---
@@ -250,9 +308,16 @@ const handleImported = async () => {
 }
 
 const handleReindex = async () => {
+  if (!selectedSubjectId.value) {
+    toast.error('请先选择学科')
+    return
+  }
   isReindexing.value = true
   try {
-    const res = await $api<ReindexResult>('/knowledge-points/reindex-vectors', { method: 'POST' })
+    const res = await $api<ReindexResult>(
+      `/knowledge-points/reindex-vectors?subject_id=${selectedSubjectId.value}`,
+      { method: 'POST' },
+    )
     toast.success(`向量索引已重建（${res.reindexed} 个知识点，耗时 ${res.duration}s）`)
     await fetchVectorStatus()
   } catch (e: any) {
@@ -327,6 +392,33 @@ onMounted(fetchVectorStatus)
             </Button>
           </div>
 
+          <!-- Filters -->
+          <div class="mb-4 flex flex-wrap items-center gap-2">
+            <Input v-model="searchQuery" class="h-8 w-56" placeholder="搜索知识点 / 章节 / 领域" />
+            <KnowledgePointTaxonomyFilters
+              :knowledge-points="knowledgePoints ?? []"
+              :grade="filterGrade"
+              :semester="filterSemester"
+              :chapter="filterChapter"
+              :domain="filterDomain"
+              @update:grade="filterGrade = $event"
+              @update:semester="filterSemester = $event"
+              @update:chapter="filterChapter = $event"
+              @update:domain="filterDomain = $event"
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              class="h-8"
+              @click="showLegacy = !showLegacy"
+            >
+              {{ showLegacy ? '隐藏旧知识点' : `显示旧知识点（${legacyCount}）` }}
+            </Button>
+            <span class="text-xs text-muted-foreground">
+              {{ filteredKnowledgePoints.length }} / {{ (knowledgePoints ?? []).length }} 个知识点
+            </span>
+          </div>
+
           <!-- Loading State -->
           <div v-if="status === 'pending'" class="flex justify-center py-10">
             <Loader2 class="w-8 h-8 animate-spin text-muted-foreground" />
@@ -340,6 +432,54 @@ onMounted(fetchVectorStatus)
 
             <ManagerKnowledgePointTreeItem v-for="node in knowledgePointTree" :key="node.id" :knowledge-point="node" :editable="canManage"
               @update="handleUpdate" @delete="handleDelete" @create="handleCreateChild" @move="handleMove" />
+          </div>
+
+          <!-- Detail: prerequisites + curriculum standards -->
+          <div class="mt-6 border-t pt-4">
+            <div class="mb-3 flex flex-wrap items-center gap-2">
+              <h4 class="text-sm font-medium">知识点详情</h4>
+              <NativeSelect
+                :model-value="detailKpId ?? ''"
+                class="h-8 w-80"
+                @update:model-value="value => detailKpId = value === '' || value == null ? null : Number(value)"
+              >
+                <NativeSelectOption value="">选择知识点查看先修与课标</NativeSelectOption>
+                <NativeSelectOption v-for="kp in filteredKnowledgePoints" :key="kp.id" :value="kp.id">
+                  {{ kp.name }}{{ kp.chapter ? `（${kp.chapter}）` : '' }}
+                </NativeSelectOption>
+              </NativeSelect>
+            </div>
+
+            <div v-if="detailLoading" class="text-sm text-muted-foreground">加载中…</div>
+            <div v-else-if="detailKpId" class="grid gap-4 md:grid-cols-2">
+              <div>
+                <div class="mb-2 text-sm font-medium">先修关系（{{ detailPrereqs.length }}）</div>
+                <div v-if="detailPrereqs.length === 0" class="text-sm text-muted-foreground">无先修关系</div>
+                <ul class="space-y-1 text-sm">
+                  <li v-for="item in detailPrereqs" :key="item.id" class="flex flex-wrap items-center gap-2">
+                    <Badge :variant="item.strength === 'soft' ? 'outline' : 'secondary'">
+                      {{ item.strength === 'soft' ? '建议先修' : '必需先修' }}
+                    </Badge>
+                    <span>{{ item.name }}</span>
+                    <span v-if="item.chapter" class="text-xs text-muted-foreground">{{ item.chapter }}</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div class="mb-2 text-sm font-medium">课程标准（{{ detailStandards.length }}）</div>
+                <div v-if="detailStandards.length === 0" class="text-sm text-muted-foreground">无课标映射</div>
+                <ul class="space-y-2 text-sm">
+                  <li v-for="item in detailStandards" :key="item.id" class="space-y-1">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <Badge variant="outline">{{ item.confidence === 'inferred' ? '推断' : '精确' }}</Badge>
+                      <span class="text-xs text-muted-foreground">{{ item.standard_id }}</span>
+                      <span v-if="item.domain" class="text-xs text-muted-foreground">{{ item.domain }}</span>
+                    </div>
+                    <p class="text-muted-foreground">{{ item.content }}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </Tabs>

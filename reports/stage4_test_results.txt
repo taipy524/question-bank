@@ -1,0 +1,12 @@
+Stage-4 test summary
+date: 2026-11-08T17:13:11+08:00
+
+SKIPPED [1] tests/test_migrations.py:114: MYSQL_TEST_URL not set (needs a real MySQL)
+SKIPPED [1] tests/test_taxonomy_mysql.py:40: MYSQL_TEST_URL not set (needs a dedicated MySQL database)
+753 passed, 2 skipped, 2 warnings in 65.58s (0:01:05)
+
+Frontend:
+ Test Files  21 passed (21)
+      Tests  248 passed (248)
+
+Taxonomy + migration targeted: 30 passed, 2 skipped

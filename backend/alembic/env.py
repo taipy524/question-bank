@@ -66,7 +66,10 @@ def run_migrations_offline() -> None:
 
 # 迁移内联建的无 FK 归档表,不进 ORM;autogenerate / command.check 必须忽略它,
 # 否则会误报 "应 DROP" 的漂移。仅精确匹配该表名,不宽泛忽略其它对象。
-_MIGRATION_ONLY_TABLES = {"questions_content_archive_v1"}
+_MIGRATION_ONLY_TABLES = {
+    "questions_content_archive_v1",
+    "taxonomy_legacy_mappings",
+}
 
 
 def _include_object(object, name, type_, reflected, compare_to):

@@ -109,6 +109,11 @@ export interface KnowledgePoint {
   slug: string
   subject_id: number
   parent_id?: number
+  grade?: number | null
+  semester?: string | null
+  chapter?: string | null
+  domain?: string | null
+  is_formal?: boolean
 }
 
 export interface VectorStatus {

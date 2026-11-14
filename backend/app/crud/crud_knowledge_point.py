@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, delete, text
 from app.crud.base import CRUDBase
 from app.models.knowledge_point import KnowledgePoint
+from app.models.taxonomy import KnowledgePointTaxonomy
 from app.schemas.knowledge_point import KnowledgePointCreate, KnowledgePointUpdate
 from app.services.activity_logger import log_activity
 from app.core.vector_store import VectorStore
@@ -73,6 +74,17 @@ class CRUDKnowledgePoint(CRUDBase[KnowledgePoint, KnowledgePointCreate, Knowledg
             db_obj.created_by = user_id
             db_obj.updated_by = user_id
         db.add(db_obj)
+        await db.flush()
+        # A manually created knowledge point is formal by definition; the
+        # metadata row carries no external taxonomy identifiers.
+        db.add(
+            KnowledgePointTaxonomy(
+                knowledge_point_id=db_obj.id,
+                source_id=None,
+                is_legacy=False,
+                is_active=True,
+            )
+        )
         await db.commit()
         await db.refresh(db_obj)
         await log_activity(db, user_id, "create", "knowledge_point", db_obj.id, details=obj_in.model_dump())
@@ -202,6 +214,16 @@ class CRUDKnowledgePoint(CRUDBase[KnowledgePoint, KnowledgePointCreate, Knowledg
                 db_obj.updated_by = user_id
             db.add(db_obj)
             db_objs.append(db_obj)
+        await db.flush()
+        for obj in db_objs:
+            db.add(
+                KnowledgePointTaxonomy(
+                    knowledge_point_id=obj.id,
+                    source_id=None,
+                    is_legacy=False,
+                    is_active=True,
+                )
+            )
         await db.commit()
         for obj in db_objs:
             await db.refresh(obj)
@@ -247,23 +269,61 @@ class CRUDKnowledgePoint(CRUDBase[KnowledgePoint, KnowledgePointCreate, Knowledg
 
     # --- Manual vector reindex (deferred indexing) ---
 
-    async def reindex_vectors(self, db: AsyncSession, *, subject_id: Optional[int] = None) -> int:
+    async def reindex_vectors(
+        self,
+        db: AsyncSession,
+        *,
+        subject_id: Optional[int] = None,
+        full: bool = False,
+    ) -> int:
         """
-        Rebuild the vector store from the database (source of truth).
-        If subject_id is given, only that subject's points are reindexed;
-        otherwise the whole collection is reset and rebuilt.
-        Returns the number of knowledge points reindexed.
+        Rebuild the vector store from formal knowledge points only.
+
+        ``subject_id`` scopes the rebuild and removes every vector for that
+        subject (including legacy ids) before re-adding the formal set.
+        ``full=True`` is required to reset the entire collection; the default
+        refuses an unscoped rebuild so other subjects cannot be wiped by accident.
         """
         if not VectorStore.is_available():
             raise ValueError("Embedding model is not configured.")
+        if subject_id is None and not full:
+            raise ValueError(
+                "subject_id is required for a scoped rebuild; pass full=True "
+                "to rebuild every subject"
+            )
+
+        formal_stmt = (
+            select(KnowledgePoint)
+            .join(
+                KnowledgePointTaxonomy,
+                KnowledgePointTaxonomy.knowledge_point_id == KnowledgePoint.id,
+            )
+            .where(
+                KnowledgePointTaxonomy.is_legacy.is_(False),
+                KnowledgePointTaxonomy.is_active.is_(True),
+            )
+        )
+        if subject_id is not None:
+            formal_stmt = formal_stmt.where(KnowledgePoint.subject_id == subject_id)
+        kps = (
+            await db.execute(formal_stmt.order_by(KnowledgePoint.id))
+        ).scalars().all()
 
         if subject_id is not None:
-            kps = await self.get_by_subject(db, subject_id=subject_id, limit=None)
-            # Remove any stale vectors for this subject before re-adding.
-            VectorStore.delete_knowledge_points_batch([kp.id for kp in kps])
+            # Remove every vector for this subject, including legacy ids.
+            all_ids = [
+                row
+                for (row,) in (
+                    await db.execute(
+                        select(KnowledgePoint.id).where(
+                            KnowledgePoint.subject_id == subject_id
+                        )
+                    )
+                )
+            ]
+            VectorStore.delete_knowledge_points_batch(all_ids)
         else:
             VectorStore.reset_collection()
-            kps = await self.get_multi(db, limit=None)
 
         items: List[Dict[str, Any]] = []
         for kp in kps:

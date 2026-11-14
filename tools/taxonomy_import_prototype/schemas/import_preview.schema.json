@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "import_preview",
+  "type": "object",
+  "required": ["meta", "summary"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["dry_run", "database_writes"],
+      "properties": {
+        "mode": {"const": "dry_run"},
+        "dry_run": {"const": true},
+        "database_writes": {"const": 0}
+      }
+    },
+    "summary": {"type": "object"},
+    "direct_matches": {"type": "array"},
+    "new_topics": {"type": "array"},
+    "risks": {"type": "array", "items": {"type": "string"}}
+  }
+}
