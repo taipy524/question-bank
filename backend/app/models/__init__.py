@@ -29,6 +29,15 @@ from .taxonomy import (
     TaxonomyMappingTarget,
     TaxonomyQuestionLinkMigration,
 )
+from .learning_analysis import (
+    LearningStudent,
+    LearningSession,
+    LearningSessionItem,
+    LearningAttempt,
+    LearningWrongStat,
+    LearningReviewSchedule,
+    LearningImportBatch,
+)
 from .composition import (
     ScopeType,
     CompositionStatus,

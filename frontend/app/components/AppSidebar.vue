@@ -26,7 +26,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import UserProfileDialog from '~/components/UserProfileDialog.vue'
 import ChangePasswordDialog from '~/components/ChangePasswordDialog.vue'
 import { useColorMode } from '@vueuse/core'
-import { BookOpen, ChevronsUpDown, ListTree, LogOut, Settings, Sparkles, User, Users, Tags, Library, HelpCircle, KeyRound, Activity, Layers, Info, Moon, Sun, Bot, Lock, Network } from '@lucide/vue'
+import { BookOpen, ChevronsUpDown, ListTree, LogOut, Settings, Sparkles, User, Users, Tags, Library, HelpCircle, KeyRound, Activity, Layers, Info, Moon, Sun, Bot, Lock, Network, BarChart3 } from '@lucide/vue'
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   collapsible: "icon",
@@ -104,6 +104,20 @@ const navActiveClass = 'border-l-2 border-transparent data-[active=true]:border-
                   <NuxtLink to="/questions">
                     <BookOpen />
                     <span>题目管理</span>
+                  </NuxtLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </div>
+
+          <div v-if="isAdmin || isManagerSomewhere">
+            <SidebarGroupLabel>学习分析</SidebarGroupLabel>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton as-child :is-active="route.path === '/learning-analysis'" :class="navActiveClass">
+                  <NuxtLink to="/learning-analysis">
+                    <BarChart3 />
+                    <span>学习分析</span>
                   </NuxtLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
