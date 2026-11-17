@@ -289,3 +289,41 @@ async def test_csv_import_preview(db_session):
     )
     assert preview["summary"]["ready"] == 1
     assert preview["rows"][0]["student_id"] is not None
+
+
+async def test_natural_language_ai_failure_is_reported(db_session, monkeypatch):
+    subject, _, _, _ = await _seed(db_session)
+
+    async def fake_resolve(db, is_vision=False):
+        return "openai", {"API_KEY": "x", "MODEL_NAME": "m"}
+
+    class FakeProvider:
+        async def chat_stream(self, messages, config, tools=None):
+            raise TimeoutError("upstream timeout")
+            yield ""
+
+    monkeypatch.setattr(
+        "app.services.importing.provider_config.resolve_active_provider", fake_resolve
+    )
+    monkeypatch.setattr("app.services.ai_provider.get_ai_provider", lambda name: FakeProvider())
+    with pytest.raises(service.LearningError) as exc:
+        await service.preview_nl_import(db_session, subject_id=subject.id, text="任意文本", user_id=None)
+    assert "AI 调用失败" in str(exc.value)
+
+
+async def test_ambiguous_student_match_is_rejected(db_session):
+    subject, _, _, question = await _seed(db_session)
+    await service.create_student(db_session, subject_id=subject.id, name="重复", grade=9, user_id=None)
+    await service.create_student(db_session, subject_id=subject.id, name="重复", grade=9, user_id=None)
+    wb = Workbook()
+    ws = wb.active
+    ws.append(["学生姓名", "年级", "学科", "题目ID", "错误原因", "备注", "错误时间"])
+    ws.append(["重复", 9, subject.name, question.id, "计算错误", "", ""])
+    buf = io.BytesIO()
+    wb.save(buf)
+    preview = await service.preview_excel_import(
+        db_session, subject_id=subject.id, file_bytes=buf.getvalue(), filename="ambiguous.xlsx", user_id=None
+    )
+    row = preview["rows"][0]
+    assert row["status"] == "error"
+    assert any("不唯一" in item for item in row["errors"])

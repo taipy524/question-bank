@@ -1186,12 +1186,17 @@ async def _parse_nl_rows(db: AsyncSession, text: str) -> list[dict[str, Any]]:
         "无法确定的字段留空，不要猜测题目 ID。"
     )
     chunks = []
-    async for chunk in provider.chat_stream(
-        [{"role": "system", "content": prompt}, {"role": "user", "content": text}],
-        config,
-    ):
-        if isinstance(chunk, str):
-            chunks.append(chunk)
+    try:
+        async for chunk in provider.chat_stream(
+            [{"role": "system", "content": prompt}, {"role": "user", "content": text}],
+            config,
+        ):
+            if isinstance(chunk, str):
+                chunks.append(chunk)
+    except Exception as exc:
+        raise LearningError(
+            f"AI 调用失败（{type(exc).__name__}），请稍后重试"
+        ) from exc
     raw = "".join(chunks).strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
