@@ -254,8 +254,14 @@ async function commitPreview(preview: { batch_id: number } | null) {
 }
 function reasonsText(reasons: string[]) { return reasons?.length ? reasons.join('、') : '—' }
 
-watch(subjectId, async () => { await refreshAll() })
-watch(selectedStudentId, loadStudentData)
+function clearRecommendations() {
+  recommendations.value = []
+  recommendationReason.value = ''
+}
+
+watch(subjectId, async () => { clearRecommendations(); await refreshAll() })
+watch(selectedStudentId, async () => { clearRecommendations(); await loadStudentData() })
+watch([() => recoForm.mode, () => recoForm.stage], clearRecommendations)
 onMounted(async () => {
   await loadSubjects()
   await refreshAll()
