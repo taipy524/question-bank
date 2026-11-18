@@ -327,3 +327,24 @@ async def test_ambiguous_student_match_is_rejected(db_session):
     row = preview["rows"][0]
     assert row["status"] == "error"
     assert any("不唯一" in item for item in row["errors"])
+
+
+async def test_recommend_four_stage_difficulty_range(db_session):
+    subject, kp1, _, question = await _seed(db_session)
+    question.difficulty = 2
+    question.status = "pending"
+    await db_session.commit()
+    student = await service.create_student(
+        db_session, subject_id=subject.id, name="孙八", grade=9, user_id=None
+    )
+    result = await service.recommend_questions(
+        db_session,
+        subject_id=subject.id,
+        student_id=student["id"],
+        mode="four_stage",
+        stage=1,
+        limit=3,
+        include_unpublished=True,
+    )
+    assert result["items"], result
+    assert result["items"][0]["question_id"] == question.id

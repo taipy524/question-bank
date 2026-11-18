@@ -693,7 +693,7 @@ async def recommend_questions(
         )
     if mode == "four_stage" and stage:
         low, high = STAGE_DIFFICULTY[stage]
-        conditions.append(Question.difficulty >= low, Question.difficulty <= high)
+        conditions.extend([Question.difficulty >= low, Question.difficulty <= high])
     rows = (
         await db.execute(
             select(Question).where(*conditions).order_by(Question.difficulty, Question.id).limit(500)
