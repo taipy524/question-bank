@@ -651,15 +651,33 @@ async def compute_type_mastery(
 # ---------------------------------------------------------------------------
 
 
-async def _attempted_question_ids(db: AsyncSession, *, subject_id: int, student_id: int) -> set[int]:
+async def _latest_attempt_results(
+    db: AsyncSession, *, subject_id: int, student_id: int
+) -> dict[int, str]:
+    """Return the latest result per question for one student.
+
+    ``exclude_practiced`` should only remove questions the student has most
+    recently answered correctly.  Wrong/partial answers stay eligible so the
+    wrong-question recommendation loop can actually re-practice them.
+    """
     rows = (
         await db.execute(
-            select(LearningAttempt.question_id).where(
-                LearningAttempt.subject_id == subject_id, LearningAttempt.student_id == student_id
+            select(LearningAttempt.question_id, LearningAttempt.result)
+            .where(
+                LearningAttempt.subject_id == subject_id,
+                LearningAttempt.student_id == student_id,
+            )
+            .order_by(
+                LearningAttempt.question_id,
+                LearningAttempt.answered_at.desc(),
+                LearningAttempt.id.desc(),
             )
         )
-    ).scalars().all()
-    return set(rows)
+    ).all()
+    latest: dict[int, str] = {}
+    for question_id, result in rows:
+        latest.setdefault(question_id, result)
+    return latest
 
 
 async def recommend_questions(
@@ -706,7 +724,13 @@ async def recommend_questions(
         )
         return {"items": [], "reason": reason, "student_id": student_id, "mode": mode, "stage": stage}
 
-    practiced = await _attempted_question_ids(db, subject_id=subject_id, student_id=student_id) if exclude_practiced else set()
+    latest_results = (
+        await _latest_attempt_results(db, subject_id=subject_id, student_id=student_id)
+        if exclude_practiced
+        else {}
+    )
+    # Only questions most recently answered correctly are de-duplicated.
+    practiced = {qid for qid, result in latest_results.items() if result == "correct"}
     wrong_rows = (
         await db.execute(
             select(LearningWrongStat.question_id)

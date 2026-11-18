@@ -125,6 +125,18 @@ async def test_recommendation_status_and_practiced_filter(db_session):
     recommended = await service.recommend_questions(
         db_session, subject_id=subject.id, student_id=student["id"], exclude_practiced=True
     )
+    # Wrong answers remain eligible for further practice.
+    assert recommended["items"][0]["question_id"] == question.id
+    assert "错题/部分正确历史" in recommended["items"][0]["reasons"]
+
+    await service.create_attempt(
+        db_session, subject_id=subject.id, student_id=student["id"], question_id=question.id,
+        result="correct",
+    )
+    recommended = await service.recommend_questions(
+        db_session, subject_id=subject.id, student_id=student["id"], exclude_practiced=True
+    )
+    # Only the latest result counts: once answered correctly, it is de-duplicated.
     assert recommended["items"] == []
     assert recommended["reason"] == "all_candidates_already_practiced"
 
