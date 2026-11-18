@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import PageHeader from '~/components/PageHeader.vue'
+import LearningQuestionCard from '~/components/LearningQuestionCard.vue'
+import type { AnswerSpec, OptionSpec, RichDoc } from '~/types'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -34,6 +36,12 @@ interface TypeMasteryRow {
 interface Recommendation {
   question_id: number; q_type: string; difficulty: number; status: string
   reasons: string[]; score: number; knowledge_point_ids: number[]
+  knowledge_points?: Array<{ id: number; name: string }>
+  content?: RichDoc
+  options?: OptionSpec[] | null
+  answer?: AnswerSpec | null
+  thinking?: RichDoc
+  analysis?: RichDoc
 }
 interface Report {
   student: Student
@@ -82,7 +90,6 @@ const ERROR_REASONS = ['概念不清', '公式记忆错误', '方法不会', '�
 const RESULT_LABELS: Record<string, string> = { correct: '正确', wrong: '错误', partial: '部分正确' }
 const MASTERY_LABELS: Record<string, string> = { unassessed: '未评估', weak: '薄弱', learning: '学习中', basic: '基本掌握', mastered: '熟练掌握' }
 const STAGE_NAMES: Record<string, string> = { '1': '基础补弱', '2': '核心巩固', '3': '变式训练', '4': '综合检测' }
-const selectedStudent = computed(() => students.value.find(s => s.id === selectedStudentId.value) || null)
 
 async function loadSubjects() {
   subjects.value = await $api<Subject[]>('/subjects')
@@ -173,24 +180,8 @@ async function generateRecommendations() {
     recommendationReason.value = result.reason || ''
   } catch (error: any) { toast.error(error?.data?.detail || error.message) }
 }
-async function createSessionFromRecommendations() {
-  if (subjectId.value == null || selectedStudentId.value == null || !recommendations.value.length) return
-  try {
-    await $api('/learning-analysis/sessions', {
-      method: 'POST',
-      body: {
-        subject_id: subjectId.value,
-        student_id: selectedStudentId.value,
-        question_ids: recommendations.value.map(item => item.question_id),
-        mode: recoForm.mode,
-        stage: recoForm.mode === 'four_stage' ? recoForm.stage : null,
-        title: `${STAGE_NAMES[String(recoForm.stage)] || '推荐练习'} - ${selectedStudent.value?.name || ''}`,
-        reasons: Object.fromEntries(recommendations.value.map(item => [String(item.question_id), item.reasons])),
-      },
-    })
-    toast.success('练习会话已创建')
-    await loadStudentData()
-  } catch (error: any) { toast.error(error?.data?.detail || error.message) }
+async function onRecommendationMarked() {
+  await loadStudentData()
 }
 async function loadConfig() {
   try { config.value = await $api('/learning-analysis/config') } catch { config.value = null }
@@ -402,24 +393,25 @@ onMounted(async () => {
           <label class="text-sm">题量 <Input v-model.number="recoForm.limit" type="number" min="1" max="100" class="ml-2 w-24" /></label>
           <label class="flex items-center gap-2 text-sm"><input v-model="recoForm.includeUnpublished" type="checkbox" /> 包含未发布题</label>
           <Button @click="generateRecommendations">生成推荐</Button>
-          <Button variant="outline" :disabled="!recommendations.length" @click="createSessionFromRecommendations">创建练习会话</Button>
         </div>
         <div v-if="recommendationReason" class="rounded border border-amber-300 bg-amber-50 p-3 text-sm">
           暂无推荐：{{ recommendationReason }}（当前默认仅使用已发布题）
         </div>
-        <Table>
-          <TableHeader><TableRow><TableHead>题目</TableHead><TableHead>类型</TableHead><TableHead>难度</TableHead><TableHead>状态</TableHead><TableHead>推荐理由</TableHead></TableRow></TableHeader>
-          <TableBody>
-            <TableRow v-for="item in recommendations" :key="item.question_id">
-              <TableCell>#{{ item.question_id }}</TableCell>
-              <TableCell>{{ item.q_type }}</TableCell>
-              <TableCell>{{ item.difficulty }}</TableCell>
-              <TableCell>{{ item.status }}</TableCell>
-              <TableCell>{{ item.reasons.join('、') }}</TableCell>
-            </TableRow>
-            <TableRow v-if="!recommendations.length"><TableCell colspan="5" class="text-center text-muted-foreground">暂无推荐结果</TableCell></TableRow>
-          </TableBody>
-        </Table>
+        <div v-if="recommendations.length" class="space-y-3">
+          <div class="text-sm text-muted-foreground">共 {{ recommendations.length }} 道推荐题</div>
+          <LearningQuestionCard
+            v-for="item in recommendations"
+            :key="item.question_id"
+            :item="item"
+            :subject-id="subjectId"
+            :student-id="selectedStudentId"
+            :error-reasons="ERROR_REASONS"
+            @marked="onRecommendationMarked"
+          />
+        </div>
+        <div v-else class="rounded border p-6 text-center text-sm text-muted-foreground">
+          暂无推荐结果
+        </div>
       </TabsContent>
 
       <TabsContent value="mastery" class="space-y-4">

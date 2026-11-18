@@ -348,3 +348,29 @@ async def test_recommend_four_stage_difficulty_range(db_session):
     )
     assert result["items"], result
     assert result["items"][0]["question_id"] == question.id
+
+
+async def test_recommendation_includes_question_payload(db_session):
+    subject, kp1, _, question = await _seed(db_session)
+    question.content = '{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"1+1=?"}]}]}'
+    question.options = [
+        {"id": "opt_a", "label": "A", "content": {"type": "doc", "content": []}},
+        {"id": "opt_b", "label": "B", "content": {"type": "doc", "content": []}},
+    ]
+    question.answer = '{"kind":"single_choice","correct":"opt_b"}'
+    question.thinking = '{"type":"doc","content":[]}'
+    question.analysis = '{"type":"doc","content":[]}'
+    await db_session.commit()
+    student = await service.create_student(
+        db_session, subject_id=subject.id, name="周九", grade=9, user_id=None
+    )
+    result = await service.recommend_questions(
+        db_session, subject_id=subject.id, student_id=student["id"]
+    )
+    item = result["items"][0]
+    assert item["content"]["content"][0]["content"][0]["text"] == "1+1=?"
+    assert item["options"][1]["id"] == "opt_b"
+    assert item["answer"] == {"kind": "single_choice", "correct": "opt_b"}
+    assert item["knowledge_points"] == [{"id": kp1.id, "name": "一元二次方程"}]
+    assert item["thinking"]["type"] == "doc"
+    assert item["analysis"]["type"] == "doc"

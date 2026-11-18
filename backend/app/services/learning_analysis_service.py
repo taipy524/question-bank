@@ -36,6 +36,7 @@ from app.models.learning_analysis import (
     LearningWrongStat,
 )
 from app.services.activity_logger import log_activity
+from app.services.question_content import parse_json_field
 
 ERROR_REASONS = (
     "概念不清",
@@ -757,6 +758,17 @@ async def recommend_questions(
         ).all()
         for question_id, knowledge_point_id in links:
             kp_map.setdefault(question_id, set()).add(knowledge_point_id)
+    kp_name_map: dict[int, str] = {}
+    all_kp_ids = {kp_id for ids in kp_map.values() for kp_id in ids}
+    if all_kp_ids:
+        kp_rows = (
+            await db.execute(
+                select(KnowledgePoint.id, KnowledgePoint.name).where(
+                    KnowledgePoint.id.in_(all_kp_ids)
+                )
+            )
+        ).all()
+        kp_name_map = {kp_id: name for kp_id, name in kp_rows}
     items = []
     for question in rows:
         if exclude_practiced and question.id in practiced:
@@ -785,6 +797,15 @@ async def recommend_questions(
                 "difficulty": question.difficulty,
                 "status": question.status,
                 "knowledge_point_ids": sorted(kp_ids),
+                "knowledge_points": [
+                    {"id": kp_id, "name": kp_name_map.get(kp_id, "")}
+                    for kp_id in sorted(kp_ids)
+                ],
+                "content": parse_json_field(question.content),
+                "options": question.options or [],
+                "answer": parse_json_field(question.answer),
+                "thinking": parse_json_field(question.thinking),
+                "analysis": parse_json_field(question.analysis),
                 "reasons": reasons,
                 "score": score,
             }
